@@ -19,12 +19,16 @@ public class FlyingEnemy : EnemyBase
     public bool _isCanChase;
     public bool _isCanAttack;
     public bool endAttack = true;
+    public bool attackWaiting = false;
+
+    FlyingAnimation anim;
 
     private void Start()
     {
         EnemyRB = GetComponent<Rigidbody2D>();
         lineOfSite = _enemy.DetectRange();
         attackLineOfSite = _enemy.AttackRange();
+        anim = transform.GetChild(0).GetComponent<FlyingAnimation>();// 비쥬얼 스프라이트는 이 스크립트가 있는 곳 바로 밑에 존재해야함
         //speed = _enemy.BeforeDetectSpeed();
     }
 
@@ -87,18 +91,26 @@ public class FlyingEnemy : EnemyBase
         distanceFromPlayer = Vector2.Distance(_target.transform.position, transform.position);
         if(distanceFromPlayer < lineOfSite)
         {
-            if(distanceFromPlayer > attackLineOfSite && !_isAttacking)
+            if(distanceFromPlayer > attackLineOfSite) // attack범위 바깥쪽에 있을때
             {
                 _isChasing = true;
                 speed = _enemy.AfterDetectSpeed();
                 Debug.Log("쫓아가는중");
                 //transform.position = Vector2.MoveTowards(this.transform.position, _target.position, speed * Time.deltaTime);
             }
-            else
+            else //attack 범위 안에있을때
             {
-                _isChasing = false;
-                speed = 0;
-                CanAttackPlayer();
+                if (!_isAttacking) //공격중이 아닐때 / 공격할수 있는지 감지시작한다
+                {
+                    _isChasing = false;
+                    speed = 0;
+                    CanAttackPlayer();
+                }
+                else
+                {
+                    speed = 0;
+                }
+
             }
         }
         else
@@ -112,30 +124,22 @@ public class FlyingEnemy : EnemyBase
     {
         if (_isCanAttack)
         {
-            Attack();
-        }  
-    }
-
-    
-    public void Attack()// 어택 애니메이션 실행
-    {
-        _isCanAttack = false;
-        _isAttacking = true;
-        //animator attack실행
-    }
-
-    public void FlyingAttackEnd() // 애니메이터 어택 애니메이션 뒤에 넣어줌
-    {
-        endAttack = true;
-        _isAttacking = false;
-        StartCoroutine("AttackCount");
+            anim.Attack();
+        }
+        else if (endAttack)
+        {
+            AttackCount();
+        }
     }
 
     IEnumerator AttackCount()
     {
+        endAttack = false;
+        attackWaiting = true;
         Debug.Log("공격 쿨타임 대기중");
         yield return new WaitForSeconds(_enemy.AttackDelay());
         _isCanAttack = true;
+        attackWaiting = false;
     }
 
     private void OnDrawGizmosSelected()
