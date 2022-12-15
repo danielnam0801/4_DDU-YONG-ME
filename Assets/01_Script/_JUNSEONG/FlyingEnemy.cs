@@ -21,20 +21,20 @@ public class FlyingEnemy : EnemyBase
     public bool endAttack = true;
     public bool attackWaiting = false;
 
-    FlyingAnimation anim;
+    FlyingEnemyAnim anim;
 
     private void Start()
     {
         EnemyRB = GetComponent<Rigidbody2D>();
         lineOfSite = _enemy.DetectRange();
         attackLineOfSite = _enemy.AttackRange();
-        anim = transform.GetChild(0).GetComponent<FlyingAnimation>();// 비쥬얼 스프라이트는 이 스크립트가 있는 곳 바로 밑에 존재해야함
+        anim = transform.GetChild(0).GetComponent<FlyingEnemyAnim>();// 비쥬얼 스프라이트는 이 스크립트가 있는 곳 바로 밑에 존재해야함
         //speed = _enemy.BeforeDetectSpeed();
     }
 
     private void Update()
     {
-         HitDetection();
+        HitDetection();
         if (!_isChasing)
         {
             EnemyRB.velocity = new Vector2 (dirX, dirY) * speed * Time.deltaTime;
@@ -91,26 +91,32 @@ public class FlyingEnemy : EnemyBase
         distanceFromPlayer = Vector2.Distance(_target.transform.position, transform.position);
         if(distanceFromPlayer < lineOfSite)
         {
-            if(distanceFromPlayer > attackLineOfSite) // attack범위 바깥쪽에 있을때
+            if(distanceFromPlayer > attackLineOfSite && !_isAttacking) // attack범위 바깥쪽에 있을때
             {
                 _isChasing = true;
                 speed = _enemy.AfterDetectSpeed();
                 Debug.Log("쫓아가는중");
-                //transform.position = Vector2.MoveTowards(this.transform.position, _target.position, speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(this.transform.position, _target.position, speed * Time.deltaTime);
             }
             else //attack 범위 안에있을때
             {
-                if (!_isAttacking) //공격중이 아닐때 / 공격할수 있는지 감지시작한다
+                if(_enemy.enemyType == EnemyType.OneShotFlying)
                 {
-                    _isChasing = false;
-                    speed = 0;
-                    CanAttackPlayer();
+                    //enemyHPManager.Hp = 0;
                 }
                 else
                 {
-                    speed = 0;
+                    if (_isCanAttack) //공격중이 아닐때 / 공격할수 있는지 감지시작한다
+                    {
+                        _isChasing = false;
+                        speed = 0;
+                        AttackPlayer();
+                    }
+                    else
+                    {
+                        speed = 0;
+                    }
                 }
-
             }
         }
         else
@@ -120,19 +126,12 @@ public class FlyingEnemy : EnemyBase
         }
     }
 
-    private void CanAttackPlayer()
+    private void AttackPlayer()
     {
-        if (_isCanAttack)
-        {
-            anim.Attack();
-        }
-        else if (endAttack)
-        {
-            AttackCount();
-        }
+        anim.Attack();
     }
 
-    IEnumerator AttackCount()
+    public IEnumerator AttackCount()
     {
         endAttack = false;
         attackWaiting = true;

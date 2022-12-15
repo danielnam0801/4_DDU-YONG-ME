@@ -18,6 +18,7 @@ public class EnemyAttack : EnemyBase
     public UnityEvent AttackFeedBack;
 
     EnemyMovement enemyMovement;
+    GroundEnemyAnim anim;
 
     //[SerializeField]
     //Animator _animator;
@@ -26,6 +27,7 @@ public class EnemyAttack : EnemyBase
     {
         base.Awake();
         enemyMovement = GetComponent<EnemyMovement>();
+        anim =  transform.GetComponentInChildren<GroundEnemyAnim>();
         //if(_enemy.enemyType == EnemyType.FlyingEnemy)
         //{
         //    _animator = GameObject.Find("VisualEnemy").GetComponent<Animator>();
@@ -41,11 +43,6 @@ public class EnemyAttack : EnemyBase
         }
         if (_attackDelay < 0f) _attackDelay = 0;
 
-        //if (_animator.GetCurrentAnimatorStateInfo(0).IsName("canAttack"))
-        //{
-        //    _isAttacking = true;
-        //}
-        // else _isAttacking = false;
         float distance = Vector3.Distance(transform.position, _target.position);
 
         if (distance <= _enemy.AttackRange())
@@ -91,20 +88,7 @@ public class EnemyAttack : EnemyBase
     private void EnemyAttacking()
     {
         AttackFeedBack?.Invoke();// 공격시 효과같은거 넣어주기
-        int randAttack = UnityEngine.Random.Range(1, 5); //현재 기본 : 스페셜 = 3 : 1 비율
-        _animator.SetInteger("Attack", randAttack);
-        _animator.SetTrigger("canAttack");
-        _animator.SetBool("IsAttacking", true);
-        Debug.Log("randAttack : " + randAttack);
         _attackDelay = _enemy.AttackDelay();
-        Debug.Log("endAttack");
-    }
-
-    public void EndAttacking()
-    {
-        Debug.Log("공격이 끝났습니다");
-        endAttacking = true;
-        _isAttacking = false;
-        _animator.SetBool("IsAttacking", false);
+        anim.EnemeyAttack();
     }
 }

@@ -29,6 +29,7 @@ public class EnemyMovement : EnemyBase
 
     EnemyAttack _enemyAttack;
 
+    GroundEnemyAnim _groundEnemyAnim;
     //[SerializeField]
     //Animator _animator;
 
@@ -45,6 +46,7 @@ public class EnemyMovement : EnemyBase
         _isThinking = true;
         _isChasing = false;
         _isCanDetectAttacking = false;
+        _groundEnemyAnim = transform.GetComponentInChildren<GroundEnemyAnim>();
     }
 
     private void Update()
@@ -57,17 +59,17 @@ public class EnemyMovement : EnemyBase
         }
         else
         {
-            _animator.SetBool("moving", false);
+            _groundEnemyAnim.EnemyMoving(false);
             _rigid.velocity = new Vector2(0, _rigid.velocity.y);
         }
 
         if (nextMove != 0 && !_enemyAttack._isAttacking)
         {
-            _animator.SetBool("moving", true);
+            _groundEnemyAnim.EnemyMoving(true);
         }
         else if (nextMove == 0)
         {
-            _animator.SetBool("moving", false);
+            _groundEnemyAnim.EnemyMoving(false);
         }
 
         dir = (transform.localScale.x) >= 0 ? Vector2.right : Vector2.left; // 고쳐야될수도
@@ -99,7 +101,7 @@ public class EnemyMovement : EnemyBase
             {
                 speed = _enemy.AfterDetectSpeed();
                 afterNoChasingTime = 0;
-                _animator.SetBool("moving", true);
+                _groundEnemyAnim.EnemyMoving(true);
             }
 
             if (!_isChasing)

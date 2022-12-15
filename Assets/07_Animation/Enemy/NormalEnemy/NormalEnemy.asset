@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11c030c348b4aaa4c88d6d3d6977abef, type: 3}
-  m_Name: ShieldEnemy
+  m_Name: NormalEnemy
   m_EditorClassIdentifier: 
-  enemyType: 3
-  enemyName: Shield Enemy
+  enemyType: 0
+  enemyName: NormalEnemy
   hp: 1
   damage: 1
-  beforeDetectSpeed: 1
-  afterDetectSpeed: 1.5
-  detectRange: 2
+  beforeDetectSpeed: 2
+  afterDetectSpeed: 3
+  detectRange: 5
   attackRange: 2
-  attackSpeed: 0
+  attackSpeed: 2
   attackDelay: 0
-  dropMinExPValue: 0
-  dropMaxExPValue: 0
+  dropMinExPValue: 5
+  dropMaxExPValue: 6
