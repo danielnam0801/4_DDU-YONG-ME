@@ -16,7 +16,13 @@ public class Arrow : MonoBehaviour
     {
         if (collision.GetComponent<PlayerHP>())
         {
-            collision.GetComponent<PlayerHP>().Damage(damage) ;
+            if (collision.gameObject.GetComponent<PlayerHP>().stCross > 0)
+            {
+                collision.gameObject.GetComponent<PlayerHP>().Damage(damage);
+                collision.gameObject.GetComponent<PlayerHP>().stCross--;
+
+            }
+
             Destroy(gameObject);
         }
     }

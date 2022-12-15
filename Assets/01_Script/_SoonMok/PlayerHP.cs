@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHP : MonoBehaviour
 {
+    public int stCross;
     public static PlayerHP instance;
     public bool isArmor;
     [SerializeField] private int hp;

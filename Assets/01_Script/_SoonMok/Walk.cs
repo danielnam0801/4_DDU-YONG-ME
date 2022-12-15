@@ -6,6 +6,7 @@ public class Walk : MonoBehaviour
 {
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private LayerMask _layerMask2;
+    [SerializeField] private LayerMask _layerMask3;
     [SerializeField] private float _boxX;
     [SerializeField] private float _boxY;
     [SerializeField] private float _jumppower;
@@ -118,7 +119,8 @@ public class Walk : MonoBehaviour
         {
 
             if (Physics2D.BoxCast(_col.bounds.center, _col.size, 0f, Vector2.down, 0.1f, _layerMask) ||
-                Physics2D.BoxCast(_col.bounds.center, _col.size, 0f, Vector2.down, 0.1f, _layerMask2))
+                Physics2D.BoxCast(_col.bounds.center, _col.size, 0f, Vector2.down, 0.1f, _layerMask2) || 
+                Physics2D.BoxCast(_col.bounds.center, _col.size, 0f, Vector2.down, 0.1f, _layerMask3))
             {
                 _moveTo.y = 0;
                 return true;

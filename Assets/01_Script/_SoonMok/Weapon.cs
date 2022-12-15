@@ -42,7 +42,12 @@ public class Weapon : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 transform.position = _playerObject.transform.position;
-                state = State.Item;
+                if(state != State.Grab)
+                {
+                    state = State.Item;
+                    _rigidbody.gravityScale = 1f;
+
+                }
             }
         }
     }
@@ -51,9 +56,9 @@ public class Weapon : MonoBehaviour
         state = State.Grab;
         _collider.isTrigger = true;
         counter = counter_origin;
-        Physics2D.IgnoreLayerCollision(_weaponLayer, _enemyLayer, false);
+        gameObject.layer = _weaponLayer;
         _rigidbody.gravityScale = 0f;
-
+        _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
 
     }
     public void Shooting(Vector2 dir, float Power, float Damage)
@@ -76,16 +81,17 @@ public class Weapon : MonoBehaviour
                 {
                     state = State.Item;
                     _collider.isTrigger = false;
-                    Physics2D.IgnoreLayerCollision(_weaponLayer, _enemyLayer, true);
-                    _rigidbody.gravityScale = 5f;
+                    gameObject.layer = _enemyLayer;
+                    _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+
                 }
             }
             if (collision.gameObject.GetComponent<IsWall>())
             {
                 state = State.Item;
                 _collider.isTrigger = false;
-                Physics2D.IgnoreLayerCollision(_weaponLayer, _enemyLayer, true);
-                _rigidbody.gravityScale = 5f;
+                gameObject.layer = _enemyLayer;
+                _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll; 
 
             }
         }
@@ -99,22 +105,24 @@ public class Weapon : MonoBehaviour
             {
                 state = State.Item;
                 _collider.isTrigger = false;
-            }
-        //if (collision.gameObject.GetComponentInParent<EnemyOnHit>())
-        //{
-        //    if (counter > 0)
-        //    {
-        //        Debug.LogError("ASdf");
-        //        collision.gameObject.GetComponentInParent<EnemyOnHit>().WeaponHit();
-        //        counter--;
-        //    }
-        //    else
-        //    {
-        //        state = State.Item;
-        //        _collider.isTrigger = false;
+                _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
 
-        //    }
-        //}
+            }
+            //if (collision.gameObject.GetComponentInParent<EnemyOnHit>())
+            //{
+            //    if (counter > 0)
+            //    {
+            //        Debug.LogError("ASdf");
+            //        collision.gameObject.GetComponentInParent<EnemyOnHit>().WeaponHit();
+            //        counter--;
+            //    }
+            //    else
+            //    {
+            //        state = State.Item;
+            //        _collider.isTrigger = false;
+
+            //    }
+            //}
         }
     
     }

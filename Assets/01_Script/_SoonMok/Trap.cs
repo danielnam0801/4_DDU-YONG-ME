@@ -20,7 +20,12 @@ public class Trap : MonoBehaviour
             dir.Normalize();
             collision.gameObject.GetComponent<Walk>().JumpKiller(0.5f);
             collision.gameObject.GetComponent<Walk>().KnockBack(dir.normalized * 13);
-            collision.gameObject.GetComponent<PlayerHP>().Damage(damage);
+            if (collision.gameObject.GetComponent<PlayerHP>().stCross > 0)
+            {
+                collision.gameObject.GetComponent<PlayerHP>().Damage(damage);
+                collision.gameObject.GetComponent<PlayerHP>().stCross--;
+
+            }
             Debug.Log("asdf;");
 
         }
