@@ -14,14 +14,18 @@ public class FlyingEnemy : EnemyBase
     private bool facingRight = true, groundTouch, roofTouch, rightTouch;
     public float dirX = 1, dirY = 0.25f;
 
-    public bool _isAttacking = false;
-    public bool _isChasing = false;
-    public bool _isCanChase;
-    public bool _isCanAttack;
-    public bool endAttack = true;
-    public bool attackWaiting = false;
+    [Header("Enemy상태")]
+    public bool isCanChase = false;
+    public bool isAttacking = false;
+    public bool startAttack = false;
+    public bool endAttack = false;
+    public bool isCanAttack = true;
+    public bool isWaitingAttackCool = false;
+
+    float distanceFromPlayer; // 플레이어와 나 사이 거리
 
     FlyingEnemyAnim anim;
+    EnemyHPManager hpManager;
 
     private void Start()
     {
@@ -29,25 +33,73 @@ public class FlyingEnemy : EnemyBase
         lineOfSite = _enemy.DetectRange();
         attackLineOfSite = _enemy.AttackRange();
         anim = transform.GetChild(0).GetComponent<FlyingEnemyAnim>();// 비쥬얼 스프라이트는 이 스크립트가 있는 곳 바로 밑에 존재해야함
+        hpManager = transform.GetComponent<EnemyHPManager>();
         //speed = _enemy.BeforeDetectSpeed();
     }
 
     private void Update()
     {
-        HitDetection();
-        if (!_isChasing)
+        distanceFromPlayer = Vector2.Distance(_target.transform.position, transform.position); // target과 나 사이 거리
+
+        if (_enemy.enemyType == EnemyType.OneShotFlying)// 얘는 공격 한번이 끝임
         {
-            EnemyRB.velocity = new Vector2 (dirX, dirY) * speed * Time.deltaTime;
+            if (startAttack)
+            {
+                hpManager.HP = 0; // 공격이 시작되면 범위 안에 들어왔다는 뜻임으로 체력을 0으로 만들어서 터트림 
+            }
         }
-        else
-        {
-            transform.position = Vector2.MoveTowards(this.transform.position, _target.position, speed * Time.deltaTime);
-        }
-        
-        if(_enemy.enemyType == EnemyType.FlyingAttack)
+
+        if((_enemy.enemyType == EnemyType.FlyingAttack || _enemy.enemyType == EnemyType.OneShotFlying) && !isAttacking) //공격중이 아니고 
         {
             DetectPlayer();
         }
+
+        anim.IsChasing(isCanChase && !isAttacking); // 추적이 가능하고 공격중이 아닌경우 true반환
+        anim.IsIdle(!isCanChase && !isAttacking); //추적중이 아니거나 공격중이 아닐경우 true반환
+
+        HitDetection(); // 벽과의 충돌 감지
+
+        if (endAttack) StartCoroutine(AttackCount());
+        if (isAttacking) speed = 0; // 공격중일때는 멈춘다
+
+        
+
+        if (!isCanChase) // 플레이어와 나(적) 사이에 벽이있거나 범위 밖인 경으
+        {
+            speed = _enemy.BeforeDetectSpeed();
+            EnemyRB.velocity = new Vector2(dirX, dirY) * speed * Time.deltaTime;
+        }
+        else //범위 안에 있고 플레이어와 나 사이에 아무것도 없을경우
+        {
+            if (CanAttackCheck())// 공격이 가능한지 체크
+            {
+                isCanAttack = false;
+                startAttack = true;
+                AttackPlayer();
+                startAttack = false;
+            }
+            else
+            {
+                speed = _enemy.AfterDetectSpeed();
+                transform.position = Vector2.MoveTowards(this.transform.position, _target.position, speed * Time.deltaTime);
+            }
+        }
+        
+        
+    }
+
+    private bool CanAttackCheck()
+    {
+        return distanceFromPlayer < attackLineOfSite && isCanAttack; // target이 Attack 사정거리 안에있고 공격이 가능한 상태일때 true를 반환
+    }
+
+    private void PlayerPosCheck()
+    {
+        if(transform.position.x >= _target.position.x)
+            transform.Rotate(new Vector3(0, 180, 0));
+        else
+            transform.Rotate(new Vector3(0, 0, 0));
+
     }
 
     void HitDetection()
@@ -85,44 +137,56 @@ public class FlyingEnemy : EnemyBase
         dirX = -dirX;   
     }
 
-    float distanceFromPlayer;
-    private void DetectPlayer()
+    private void DetectPlayer() // 플레이어 감지
     {
-        distanceFromPlayer = Vector2.Distance(_target.transform.position, transform.position);
-        if(distanceFromPlayer < lineOfSite)
+        if (distanceFromPlayer < lineOfSite)
         {
-            if(distanceFromPlayer > attackLineOfSite && !_isAttacking) // attack범위 바깥쪽에 있을때
+            RaycastHit2D canChasePlayer = Physics2D.Raycast(transform.position, _target.transform.position - transform.position, (-1) - LayerMask.NameToLayer("Enemy")); // EnemyLayer을 제외한 모든 레이어를 감지
+            if (canChasePlayer.collider.CompareTag("Player"))// 가장 먼저 닿은 레이가 플레이어일때 // 추적할 수 있게 됨
             {
-                _isChasing = true;
-                speed = _enemy.AfterDetectSpeed();
-                Debug.Log("쫓아가는중");
-                transform.position = Vector2.MoveTowards(this.transform.position, _target.position, speed * Time.deltaTime);
+                Debug.Log("추적가능!");
+                isCanChase = true; // 현재는 장애물이 사이에 있으면 추적이 그냥 끊기는 방식
             }
-            else //attack 범위 안에있을때
-            {
-                if(_enemy.enemyType == EnemyType.OneShotFlying)
-                {
-                    //enemyHPManager.Hp = 0;
-                }
-                else
-                {
-                    if (_isCanAttack) //공격중이 아닐때 / 공격할수 있는지 감지시작한다
-                    {
-                        _isChasing = false;
-                        speed = 0;
-                        AttackPlayer();
-                    }
-                    else
-                    {
-                        speed = 0;
-                    }
-                }
-            }
-        }
-        else
-        {
-            _isChasing = false;
-            speed = _enemy.BeforeDetectSpeed();
+            else isCanChase = false;
+            #region 바꾸기 전
+            //if(_enemy.enemyType == EnemyType.OneShotFlying)
+            //PlayerPosCheck();
+            //if (distanceFromPlayer > attackLineOfSite && !_isAttacking) // attack범위 바깥쪽에 있을때
+            //{
+            //    _isChasing = true;
+            //    speed = _enemy.AfterDetectSpeed();
+            //    Debug.Log("쫓아가는중");
+            //    transform.position = Vector2.MoveTowards(this.transform.position, _target.position, speed * Time.deltaTime);
+            //}
+            //else //attack 범위 안에있을때
+            //{
+            //    if(_enemy.enemyType == EnemyType.OneShotFlying)
+            //    {
+            //        Debug.Log("OneShotFlying Check = true");
+            //        hpManager.HP = 0;// hp를 0으로 만들어서 터지게
+            //    }
+            //    else
+            //    {
+            //        if (_isCanAttack) //공격중이 아닐때 / 공격할수 있는지 감지시작한다
+            //        {
+            //            _isChasing = false;
+            //            speed = 0;
+            //            AttackPlayer();
+            //        }
+            //        else
+            //        {
+            //            speed = 0;
+            //        }
+            //    }
+            //}
+            //}
+            //else
+            //{
+            //    _isChasing = false;
+            //    speed = _enemy.BeforeDetectSpeed();
+            // 
+            //}
+            #endregion
         }
     }
 
@@ -134,11 +198,11 @@ public class FlyingEnemy : EnemyBase
     public IEnumerator AttackCount()
     {
         endAttack = false;
-        attackWaiting = true;
+        isWaitingAttackCool = true;
         Debug.Log("공격 쿨타임 대기중");
         yield return new WaitForSeconds(_enemy.AttackDelay());
-        _isCanAttack = true;
-        attackWaiting = false;
+        isCanAttack = true;
+        isWaitingAttackCool = false;
     }
 
     private void OnDrawGizmosSelected()

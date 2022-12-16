@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class EnemyHPManager : EnemyBase
 {
-    int hp;
+    [SerializeField]
+    private int hp;
+    public int HP { get { return hp; }
+        set { this.hp = value; }
+    }
 
+    
     bool isDead = false;
 
     protected override void Awake()
@@ -15,19 +20,20 @@ public class EnemyHPManager : EnemyBase
 
     private void Update()
     {
-        if(hp <=0)
+        if(this.hp <=0)
         {
+            Debug.Log($"{_enemy.enemyName} : Die");
             if(isDead == false)
             {
                 isDead = true;
                 if (this.gameObject.CompareTag("FlyingEnemy"))
                 {
-                    FlyingEnemyAnim flyingAnim = transform.parent.GetComponent<FlyingEnemyAnim>();
+                    FlyingEnemyAnim flyingAnim = transform.GetComponentInChildren<FlyingEnemyAnim>();
                     flyingAnim.IsDead();
                 }
                 else if (this.gameObject.CompareTag("GroundEnemy"))
                 {
-                    GroundEnemyAnim groundAnim = transform.parent.GetComponent<GroundEnemyAnim>();
+                    GroundEnemyAnim groundAnim = transform.GetComponentInChildren<GroundEnemyAnim>();
                     groundAnim.EnemyDead();
                 }
                 else
