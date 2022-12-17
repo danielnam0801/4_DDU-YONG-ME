@@ -16,10 +16,10 @@ MonoBehaviour:
   enemyName: One Shot Flying
   hp: 1
   damage: 2
-  beforeDetectSpeed: 100
-  afterDetectSpeed: 3
+  beforeDetectSpeed: 50
+  afterDetectSpeed: 4
   detectRange: 5
-  attackRange: 0.5
+  attackRange: 0.4
   attackSpeed: 0
   attackDelay: 0
   dropMinExPValue: 0

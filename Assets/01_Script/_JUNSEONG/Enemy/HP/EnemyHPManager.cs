@@ -53,4 +53,13 @@ public class EnemyHPManager : EnemyBase
         }
         
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Weapon"))
+        {
+            //hp -= collision.gameObject.GetComponent<Weapon>().damage;
+            hp -= 1;
+        }
+    }
 }
