@@ -6,7 +6,7 @@ using UnityEngine;
 public class Shooting : EnemyBase
 {
     FlyingEnemy flyingEnemy;
-    GameObject bullet;
+    [SerializeField] GameObject enemyBullet;
 
     private void OnEnable()
     {
@@ -16,6 +16,6 @@ public class Shooting : EnemyBase
     public void Shoot()
     {
         Vector2 dir = _target.position - transform.position;
-        GameObject Bu = Instantiate(bullet, transform.position, Quaternion.Euler(dir));
+        GameObject Bu = Instantiate(enemyBullet, transform.position, Quaternion.Euler(dir));
     }
 }

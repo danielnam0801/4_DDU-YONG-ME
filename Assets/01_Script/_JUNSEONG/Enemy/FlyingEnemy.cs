@@ -65,15 +65,13 @@ public class FlyingEnemy : EnemyBase
         anim.IsIdle(!isCanChase && !isAttacking); //추적중이 아니거나 공격중이 아닐경우 true반환
         
         HitDetection(); // 벽과의 충돌 감지
-
+      
         if (endAttack) StartCoroutine(AttackCount());
+        #region 공격관련
         if (isAttacking) speed = 0; // 공격중일때는 멈춘다
-
-
-        if (!isCanChase) // 플레이어와 나(적) 사이에 벽이있거나 범위 밖인 경으
+        else if (!isCanChase) // 플레이어와 나(적) 사이에 벽이있거나 범위 밖인 경으
         {
             speed = _enemy.BeforeDetectSpeed();
-            EnemyRB.velocity = new Vector2(dirX, dirY) * speed * Time.deltaTime;
         }
         else //범위 안에 있고 플레이어와 나 사이에 아무것도 없을경우
         {
@@ -90,7 +88,8 @@ public class FlyingEnemy : EnemyBase
                 transform.position = Vector2.MoveTowards(this.transform.position, _target.position, speed * Time.deltaTime);
             }
         }
-        
+        #endregion
+        EnemyRB.velocity = new Vector2(dirX, dirY) * speed * Time.deltaTime;
         
     }
 
@@ -99,6 +98,7 @@ public class FlyingEnemy : EnemyBase
         return (distanceFromPlayer < attackLineOfSite) && isCanAttack; // target이 Attack 사정거리 안에있고 공격이 가능한 상태일때 true를 반환
     }
 
+    #region 스프라이트 뒤집기
     private void PlayerPosCheck()
     {
         if(transform.position.x >= _target.position.x)
@@ -108,6 +108,13 @@ public class FlyingEnemy : EnemyBase
 
     }
 
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(new Vector3(0, 180, 0));
+        dirX = -dirX;   
+    }
+    #endregion
     void HitDetection()
     {
         rightTouch = Physics2D.OverlapCircle(rightCheck.transform.position, circleRadius, groundLayer);
@@ -136,12 +143,6 @@ public class FlyingEnemy : EnemyBase
         }
     }
 
-    private void Flip()
-    {
-        facingRight = !facingRight;
-        transform.Rotate(new Vector3(0, 180, 0));
-        dirX = -dirX;   
-    }
 
     private void DetectPlayer() // 플레이어 감지
     {
