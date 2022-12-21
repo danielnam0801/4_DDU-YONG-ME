@@ -22,8 +22,10 @@ public class PlayerHP : MonoBehaviour
     }
     public void Damage(int damage)
     {
-        if (isArmor) damage -= 1; 
+        if (isArmor) damage -= 1;
+        Debug.Log(damage);
         HP -= damage;
+        Debug.Log(HP);
     }
     public void Heal(int heal)
     {

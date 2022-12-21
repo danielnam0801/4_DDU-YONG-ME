@@ -22,10 +22,11 @@ public class Trap : MonoBehaviour
             collision.gameObject.GetComponent<Walk>().KnockBack(dir.normalized * 13);
             if (collision.gameObject.GetComponent<PlayerHP>().stCross > 0)
             {
-                collision.gameObject.GetComponent<PlayerHP>().Damage(damage);
+                collision.gameObject.GetComponent<PlayerHP>().Damage(-damage);
                 collision.gameObject.GetComponent<PlayerHP>().stCross--;
 
             }
+            collision.gameObject.GetComponent<PlayerHP>().Damage(damage);
             Debug.Log("asdf;");
 
         }
