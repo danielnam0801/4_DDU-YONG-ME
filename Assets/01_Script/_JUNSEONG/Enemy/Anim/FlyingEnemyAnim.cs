@@ -44,10 +44,10 @@ public class FlyingEnemyAnim : EnemyBase
     }
    
 
-    public void DeadInitInAnimation()
+    public void DeadInitInAnimation(float deadTime)
     {
         DeadInitInAnim?.Invoke();
-        Destroy(transform.parent.gameObject); //적 자체를 지움 // 이 스크립트는 한칸 아래있기 때문에 부모 오브젝트를 지우면 됨
+        Destroy(transform.parent.gameObject, deadTime); //적 자체를 지움 // 이 스크립트는 한칸 아래있기 때문에 부모 오브젝트를 지우면 됨
     }
     public void Attack()// 어택 애니메이션 실행
     {

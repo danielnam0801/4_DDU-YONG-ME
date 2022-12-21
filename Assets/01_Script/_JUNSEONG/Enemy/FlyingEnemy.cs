@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class FlyingEnemy : EnemyBase
 {
-
     public float speed, circleRadius, lineOfSite, attackLineOfSite;
 
     private Rigidbody2D EnemyRB;
@@ -21,6 +20,7 @@ public class FlyingEnemy : EnemyBase
     public bool endAttack = false;
     public bool isCanAttack = true; // 공격 쿨타임이 끝났는지맘ㄴ 체크
     public bool isWaitingAttackCool = false;
+    public bool isMoving = false;
 
     bool OneShotEnemyDetectPlayer = false;
 
@@ -68,12 +68,12 @@ public class FlyingEnemy : EnemyBase
       
         if (endAttack) StartCoroutine(AttackCount());
         #region 공격관련
-        if (isAttacking) speed = 0; // 공격중일때는 멈춘다
-        else if (!isCanChase) // 플레이어와 나(적) 사이에 벽이있거나 범위 밖인 경으
+        //if (isAttacking) speed = 0; // 공격중일때는 멈춘다
+        if (!isCanChase) // 플레이어와 나(적) 사이에 벽이있거나 범위 밖인 경으
         {
             speed = _enemy.BeforeDetectSpeed();
         }
-        else //범위 안에 있고 플레이어와 나 사이에 아무것도 없을경우
+        else if(!isAttacking && isCanAttack)//범위 안에 있고 플레이어와 나 사이에 아무것도 없을경우 
         {
             if (CanAttackCheck())// 공격이 가능한지 체크
             {
@@ -86,16 +86,20 @@ public class FlyingEnemy : EnemyBase
             {
                 speed = _enemy.AfterDetectSpeed();
                 transform.position = Vector2.MoveTowards(this.transform.position, _target.position, speed * Time.deltaTime);
+
             }
         }
         #endregion
+
         EnemyRB.velocity = new Vector2(dirX, dirY) * speed * Time.deltaTime;
         
     }
 
+
     private bool CanAttackCheck()
-    {
-        return (distanceFromPlayer < attackLineOfSite) && isCanAttack; // target이 Attack 사정거리 안에있고 공격이 가능한 상태일때 true를 반환
+    { 
+        Debug.Log("AttackCnt");
+        return (distanceFromPlayer < attackLineOfSite); // target이 Attack 사정거리 안에있고 공격이 가능한 상태일때 true를 반환
     }
 
     #region 스프라이트 뒤집기
