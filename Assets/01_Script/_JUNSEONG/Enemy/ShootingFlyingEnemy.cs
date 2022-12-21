@@ -45,7 +45,7 @@ public class ShootingFlyingEnemy : EnemyBase
             {
                 if (!isMoving) // 움직이는 중이 아니면
                 {
-                    EnemyMoving();
+                    EnemyMoving(transform.position);
                     isMoving = true;    
                 }
             }
@@ -55,7 +55,7 @@ public class ShootingFlyingEnemy : EnemyBase
             speed = 0; // 현재는 그냥 가만히 있는거로
         }
 
-        rb.velocity = new Vector2(dirX, dirY) * speed;
+        //rb.velocity = new Vector2(dirX, dirY) * speed;
     }
 
     private void Flip()
@@ -70,29 +70,36 @@ public class ShootingFlyingEnemy : EnemyBase
         }
     }
 
-    private void EnemyMoving()
+    private void EnemyMoving(Vector2 InputTrans)
     {
-        StartCoroutine("Moving");
+        StartCoroutine(Moving(InputTrans));
     }
 
-    IEnumerator Moving()
+    IEnumerator Moving(Vector2 InputTrans)// 호출된 시점에 위치값
     {
-        dirX = -dirX;
-        speed = _enemy.BeforeDetectSpeed();
-        for (int i = 0; i < 10; i++)
-        {
-            if (i <= 5)
+
+        if (transform.localScale.x == 1) { //플레이어가 오른쪽에 있을 때
+            int i = 0;
+            while (transform.position.x >= InputTrans.x - BackMovingDistance) // 점점 왼쪽으로 가야함 /// transform.position 이 계속 바껴서 들어가지는지 잘 모르겠음
             {
-                Mathf.Lerp(speed, _enemy.AfterDetectSpeed(), 0.5f * i); //속도 증가
+                float x = Mathf.Pow(transform.position.y,2);
+                float y = -Mathf.Sqrt(InputTrans.x);
+
+
+                transform.position.x = Mathf.Lerp(InputTrans.x, InputTrans.x - BackMovingDistance, );
+                Mathf.Lerp(transform.position.y, transform.position.y + 1, );
+                i++;
             }
-            else
-            {
-                Mathf.Lerp(speed, _enemy.BeforeDetectSpeed(), 0.5f);//속도 감소
-            }
-            yield return null;
         }
-        yield return new WaitForSeconds(2f);
-        isMoving = false;
+        else // 플레이어가 왼쪽에 있을 때
+        {
+            while(transform.position.x <= InputTrans.x + BackMovingDistance) // 점점 오른쪽으로 가야함
+            {
+
+            }
+        }
+
+        yield return new WaitUntil(() =>
     }
 
     IEnumerator ShootingWaiter()
