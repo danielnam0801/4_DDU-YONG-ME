@@ -9,9 +9,11 @@ public class Attack : MonoBehaviour
     public int Spear_Count;
     public GameObject Spear;
     public GameObject  _weapon;
+    public KeyCode grabKey;
     [SerializeField]GameObject _grabPoint;
     public Weapon _weaponsc;
     public float Power;
+    public float damage;
     [SerializeField] float angle;
     [SerializeField] Vector2 dir;
     private void Awake()
@@ -28,14 +30,15 @@ public class Attack : MonoBehaviour
             _weapon.transform.rotation = Quaternion.Euler(0, 0, angle);
             if (Input.GetMouseButtonDown(0))
                 {
-                _weaponsc.Shooting(dir, Power);
+                _weaponsc.Shooting(dir.normalized, Power, damage);
+                weapons.Dequeue();
                 _weaponsc = null;
                 _weapon = null;
             }
-        }else if (weapons.Count >0) 
+        }
+        if (weapons.Count >0) 
         {
-            Debug.Log(weapons.Peek().name);
-            _weaponsc = weapons.Dequeue();
+            _weaponsc = weapons.Peek();
             _weaponsc.gameObject.SetActive(true);
             _weapon = _weaponsc.gameObject;
         }
@@ -45,22 +48,71 @@ public class Attack : MonoBehaviour
             _weaponsc = null;
 
         }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Debug.Log(weapons.Count);
+        }
+    }
+    public void GodON(Weapon weapon)
+    {
+        Spear_Count = 1;
+        weapon.godSpear = true;
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<Weapon>() )
-        {
-            Weapon script = (collision.gameObject.GetComponent<Weapon>());
-            if(script.state == State.Item)
-            {
-                weapons.Enqueue(script);
-                script.Grab();
-                script.gameObject.SetActive(false);
-
-            }
-        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (Input.GetKey(grabKey))
+        {
+            Debug.Log("ASdf");
+            if (weapons.Count < Spear_Count)
+            {
+                if (collision.transform.parent)
+                {
+                    if (collision.transform.parent.GetComponent<Weapon>())
+                    {
+
+                        Debug.Log(weapons.Count);
+                        Weapon SC = (collision.transform.parent.GetComponent<Weapon>());
+                        if (SC.state == State.Item)
+                        {
+                            weapons.Enqueue(SC);
+                            SC.Grab();
+                            SC.gameObject.SetActive(false);
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKey(grabKey))
+        {
+            Debug.Log("ASdf");
+            if (weapons.Count < Spear_Count)
+            {
+                if (collision.transform.parent)
+                {
+                    if (collision.transform.parent.GetComponent<Weapon>())
+                    {
+    
+                        Debug.Log(weapons.Count);
+                        Weapon SC = (collision.transform.parent.GetComponent<Weapon>());
+                        if (SC.state == State.Item)
+                        {
+                            weapons.Enqueue(SC);
+                            SC.Grab();
+                            SC.gameObject.SetActive(false);
+                        }
+                    }
+                }
+
+            }
+        }
+
     }
 }
