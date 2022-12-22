@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 203402724}
   - component: {fileID: 203402723}
   - component: {fileID: 203402722}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: RisingTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1448,7 +1448,7 @@ GameObject:
   - component: {fileID: 1413576814}
   - component: {fileID: 1413576813}
   - component: {fileID: 1413576812}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: NormalTrap (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1827,7 +1827,7 @@ GameObject:
   - component: {fileID: 1595837953}
   - component: {fileID: 1595837955}
   - component: {fileID: 1595837954}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Gamji
   m_TagString: Untagged
   m_Icon: {fileID: 0}
