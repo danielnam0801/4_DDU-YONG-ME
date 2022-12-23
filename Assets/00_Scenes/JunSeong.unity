@@ -183,7 +183,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -217,8 +217,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32182408}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.54, y: 13.27, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.34, y: 2.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -243,10 +243,13 @@ MonoBehaviour:
   _enemy: {fileID: 11400000, guid: d5b9dfdf25b45b442bbe63c159e1b699, type: 2}
   _animator: {fileID: 0}
   isCanAttack: 1
-  isMoving: 1
-  dirX: 1
-  dirY: 0
-  speed: 0
+  isMoving: 0
+  BackMovingTime: 3
+  BackAfterMovingTime: 3
+  speed: 3
+  XSpeedValueControl: 3
+  YSpeedValueControl: 0.11
+  speedRelativeControl: 0.1
 --- !u!1 &138750931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,7 +1475,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712548756}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.17, y: 11.66, z: 0}
+  m_LocalPosition: {x: 2.66, y: 1.52, z: 0}
   m_LocalScale: {x: 1, y: 1.0357523, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1575,7 +1578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1214552582488862639, guid: 1ad50f164d1e1c1449585dc85646e097, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1214552583838753409, guid: 1ad50f164d1e1c1449585dc85646e097, type: 3}
       propertyPath: m_Layer
@@ -2405,6 +2408,10 @@ PrefabInstance:
     - target: {fileID: 1214552582488862639, guid: 1ad50f164d1e1c1449585dc85646e097, type: 3}
       propertyPath: m_Name
       value: GameObject (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214552582488862639, guid: 1ad50f164d1e1c1449585dc85646e097, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1214552583838753421, guid: 1ad50f164d1e1c1449585dc85646e097, type: 3}
       propertyPath: m_SortingOrder

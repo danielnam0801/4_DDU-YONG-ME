@@ -8,24 +8,33 @@ public class ShootingFlyingEnemy : EnemyBase
     Shooting shooting;
     Rigidbody2D rb;
     [SerializeField] bool isCanAttack = true;
-    [SerializeField] bool isMoving = true;
-
-    [SerializeField] private float dirX = 1;
-    [SerializeField] private float dirY = 0;
+    [SerializeField] bool isMoving = false;
 
     [Header("백무빙 수치")]
-    [SerializeField] private float BackMovingDistance = 3f;
+    [SerializeField] private float BackMovingTime = 3f;
+    [SerializeField] private float BackAfterMovingTime = 3f;
+    [SerializeField] private float AfterMovingTime = 3f;
+
+    [Header("속도")]
+    [SerializeField] private float speed;
+
+    [Header("속도 조작 속성")]
+    [SerializeField] private float XSpeedValueControl = 3;
+    [SerializeField] 
+    [Range(0.0f,1f)] private float YSpeedValueControl = 0.1f;
+
+    [SerializeField] 
+    [Range(0,10)] private float speedRelativeControl;
 
 
-    [SerializeField]
-    private float speed;
+    // 숫자 높아질수록 움직임 폭 완화됨
+    // 무리함수 시작점 지정해줌
 
     protected override void Awake()
     {
         base.Awake();
         rb = GetComponent<Rigidbody2D>();
         shooting = transform.GetComponentInChildren<Shooting>();
-        speed = _enemy.BeforeDetectSpeed();   
     }
 
     void Update()
@@ -52,7 +61,7 @@ public class ShootingFlyingEnemy : EnemyBase
         }
         else
         {
-            speed = 0; // 현재는 그냥 가만히 있는거로
+            //speed = 0; // 현재는 그냥 가만히 있는거로
         }
 
         //rb.velocity = new Vector2(dirX, dirY) * speed;
@@ -74,32 +83,39 @@ public class ShootingFlyingEnemy : EnemyBase
     {
         StartCoroutine(Moving(InputTrans));
     }
-
+    
     IEnumerator Moving(Vector2 InputTrans)// 호출된 시점에 위치값
     {
 
-        if (transform.localScale.x == 1) { //플레이어가 오른쪽에 있을 때
-            int i = 0;
-            while (transform.position.x >= InputTrans.x - BackMovingDistance) // 점점 왼쪽으로 가야함 /// transform.position 이 계속 바껴서 들어가지는지 잘 모르겠음
+        if (transform.localScale.x == 1)
+        { //플레이어가 오른쪽에 있을 때
+            float x = 0; 
+            while (x <= BackMovingTime) // 점점 왼쪽으로 가야함 /// transform.position 이 계속 바껴서 들어가지는지 잘 모르겠음
             {
-                float x = Mathf.Pow(transform.position.y,2);
-                float y = -Mathf.Sqrt(InputTrans.x);
-
-
-                transform.position.x = Mathf.Lerp(InputTrans.x, InputTrans.x - BackMovingDistance, );
-                Mathf.Lerp(transform.position.y, transform.position.y + 1, );
-                i++;
+                // 0, 0 을 기준으로 사용 
+                float x1 = XSpeedValueControl * (-Mathf.Sqrt(x + speedRelativeControl) + Mathf.Sqrt(speedRelativeControl)); // 제 3분면쪽으로 꺽는 무리함수
+                float y1 = Mathf.Pow(x, 2) * YSpeedValueControl; // 위 함수의 역함수
+                transform.position = new Vector3(x1 + InputTrans.x, y1 + InputTrans.y, 0);
+                x += Time.deltaTime;
+                yield return null;
             }
-        }
-        else // 플레이어가 왼쪽에 있을 때
-        {
-            while(transform.position.x <= InputTrans.x + BackMovingDistance) // 점점 오른쪽으로 가야함
+
+            x = 0;
+            Vector2 MovingAfterPos = transform.position;// 첫번째 빽무빙 수행후 끝날때 위치 저장
+            while (x <= AfterMovingTime)
             {
-
+                // 0, 0 을 기준으로 사용 
+                float x1 = Mathf.Pow(x, 2) * XSpeedValueControl; //제 1분면쪽으로 꺽는 무리함수
+                float y1 =  YSpeedValueControl * (Mathf.Sqrt(x + speedRelativeControl) - Mathf.Sqrt(speedRelativeControl)); // 위 함수의 역함수
+                transform.position = new Vector3( MovingAfterPos.x + x1 , MovingAfterPos.y - y1, 0);
+                x += Time.deltaTime;
+                yield return null;
             }
-        }
+            yield return new WaitForSeconds(1f);
 
-        yield return new WaitUntil(() =>
+            Debug.Log("이동끝");
+            isMoving = false;
+        }
     }
 
     IEnumerator ShootingWaiter()

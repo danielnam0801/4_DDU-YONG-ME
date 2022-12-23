@@ -223,7 +223,6 @@ public class FlyingEnemy : EnemyBase
     {
         endAttack = false;
         isWaitingAttackCool = true;
-        Debug.Log("공격 쿨타임 대기중");
         yield return new WaitForSeconds(_enemy.AttackDelay());
         isCanAttack = true;
         isWaitingAttackCool = false;
