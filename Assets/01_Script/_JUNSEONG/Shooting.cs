@@ -7,6 +7,7 @@ public class Shooting : EnemyBase
 {
     FlyingEnemy flyingEnemy;
     [SerializeField] GameObject enemyBullet;
+    [SerializeField] float shootingPower = 3f;
 
     private void OnEnable()
     {
@@ -16,6 +17,11 @@ public class Shooting : EnemyBase
     public void Shoot()
     {
         Vector2 dir = _target.position - transform.position;
-        GameObject Bu = Instantiate(enemyBullet, transform.position, Quaternion.Euler(dir));
+
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        GameObject Bu = Instantiate(enemyBullet, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
+        Bu.GetComponent<Rigidbody2D>().AddForce(dir.normalized * shootingPower,ForceMode2D.Impulse);
     }
+    
+
 }

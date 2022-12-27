@@ -18,8 +18,8 @@ MonoBehaviour:
   damage: 1
   beforeDetectSpeed: 0.5
   afterDetectSpeed: 2
-  detectRange: 3
-  attackRange: 7
+  detectRange: 5
+  attackRange: 10
   attackSpeed: 3
   attackDelay: 3
   dropMinExPValue: 0
