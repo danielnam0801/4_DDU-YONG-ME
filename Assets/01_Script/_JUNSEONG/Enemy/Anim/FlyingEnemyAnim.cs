@@ -11,8 +11,8 @@ public class FlyingEnemyAnim : EnemyBase
     FlyingEnemy enemy;
     Shooting shoot;
 
-    public UnityEvent DeadInit;
-    public UnityEvent DeadInitInAnim;
+    [SerializeField] UnityEvent DeadInit;
+    [SerializeField] UnityEvent DeadInitInAnim;
 
     private void Start()
     {

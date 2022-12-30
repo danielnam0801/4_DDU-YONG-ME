@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GroundEnemyAnim : EnemyBase
 {
     EnemyMovement enemyMove;
     EnemyAttack enemyAttack;
+
+    [SerializeField] UnityEvent DeadInit;
+    [SerializeField] UnityEvent DeadInitInAnim;
 
     protected override void Awake()
     {
@@ -15,8 +19,11 @@ public class GroundEnemyAnim : EnemyBase
 
     public void EnemeyAttack()
     {
-        int randAttack = UnityEngine.Random.Range(1, 5); //현재 기본 : 스페셜 = 3 : 1 비율
-        _animator.SetInteger("Attack", randAttack);
+        if(_enemy.enemyType != EnemyType.ShieldEnemy)
+        {
+             int randAttack = UnityEngine.Random.Range(1, 5); //현재 기본 : 스페셜 = 3 : 1 비율
+             _animator.SetInteger("Attack", randAttack);
+        }
         _animator.SetTrigger("canAttack");
         _animator.SetBool("IsAttacking", true);
     }

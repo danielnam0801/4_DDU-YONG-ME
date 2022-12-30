@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7587118615238385464}
   - component: {fileID: 7587118615238385465}
   - component: {fileID: 7587118615238385459}
+  - component: {fileID: 2076726659}
+  - component: {fileID: 2076726660}
   m_Layer: 10
   m_Name: ShieldEnemy
   m_TagString: Untagged
@@ -119,6 +121,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemy: {fileID: 11400000, guid: 433c6db2ebca91c4a92be94f0e158869, type: 2}
   _animator: {fileID: 0}
+--- !u!114 &2076726659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7587118615238385412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0388ea5a7f6d6645853c8f51c8287b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 11400000, guid: 433c6db2ebca91c4a92be94f0e158869, type: 2}
+  _animator: {fileID: 0}
+  hp: 0
+--- !u!70 &2076726660
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7587118615238385412}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.32264113, y: -0.016545653}
+  m_Size: {x: 1.1452823, y: 1.3107393}
+  m_Direction: 0
 --- !u!1 &7587118616233869176
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +164,7 @@ GameObject:
   - component: {fileID: 7587118616233869181}
   - component: {fileID: 7587118616233869182}
   - component: {fileID: 7587118616233869171}
+  - component: {fileID: 757595718}
   m_Layer: 10
   m_Name: Visual
   m_TagString: Untagged
@@ -238,6 +272,20 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.2798965, y: -0.052480638}
-  m_Size: {x: 1.0769773, y: 1.4968218}
+  m_Offset: {x: -0.2798965, y: -0.027949631}
+  m_Size: {x: 1.0769773, y: 1.4477597}
   m_Direction: 0
+--- !u!114 &757595718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7587118616233869176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9466801d5c8eadf4b97f5d1acbe984aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 0}
+  _animator: {fileID: 7587118616233869182}
