@@ -6,9 +6,17 @@ public class ChaseAction : AIAction
 {
     public override void TakeAction()
     {
+        if (_aiActionData.isAttack)
+        {
+            _aiActionData.isAttack = false;
+        }
+
         Vector2 dir = _brain.Target.position - transform.position;
 
-        _brain.Move(dir.normalized, _brain.Target.position);
+        _aiMovementData.direction = dir.normalized;
+        _aiMovementData.pointOfInterest = _brain.Target.position;
+
+        _brain.Move(_aiMovementData.direction, _aiMovementData.pointOfInterest);
     }
 
 }

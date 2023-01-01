@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class AIActionData : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool isAttack;//현재 공격중인가
+    public bool targetSpotted;//타겟을 발견했는가
+    public bool arrived;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

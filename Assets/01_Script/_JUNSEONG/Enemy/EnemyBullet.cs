@@ -5,11 +5,11 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     Shooting shooting;
-    Rigidbody2d rigid;
+    Rigidbody2D rigid;
 
     private void Awake()
     {
-        rigid = GetComponent<Rigidbody2d>();
+        rigid = GetComponent<Rigidbody2D>();
     }
 
     

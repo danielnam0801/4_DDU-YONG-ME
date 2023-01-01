@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleAction : AIAction
+public class AttackAction : AIAction
 {
-    
     public override void TakeAction()
     {
         _aiMovementData.direction = Vector2.zero;
-        _aiMovementData.pointOfInterest = transform.position;
-
+        if(_aiActionData.isAttack == false)
+        {
+            _brain.Attack();
+            _aiMovementData.pointOfInterest = _brain.Target.position;
+        }
         _brain.Move(_aiMovementData.direction, _aiMovementData.pointOfInterest);
     }
 }

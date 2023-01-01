@@ -5,16 +5,20 @@ using UnityEngine.Events;
 
 public class GroundEnemyAnim : EnemyBase
 {
-    EnemyMovement enemyMove;
-    EnemyAttack enemyAttack;
+
+    protected AIBrain _brain;
 
     [SerializeField] UnityEvent DeadInit;
     [SerializeField] UnityEvent DeadInitInAnim;
 
+    protected readonly int _attackHash = Animator.StringToHash("Attack");
+    protected readonly int _DeadTriggerHash = Animator.StringToHash("Dead");
+    protected readonly int _DeadBoolHash = Animator.StringToHash("IsDead");
+    protected readonly int _walkHash = Animator.StringToHash("Walk");
+
     protected override void Awake()
     {
-       enemyMove = transform.parent.GetComponent<EnemyMovement>();
-       enemyAttack = transform.parent.GetComponent<EnemyAttack>();
+       _brain = transform.parent.GetComponent<AIBrain>();
     }
 
     public void EnemeyAttack()
@@ -28,21 +32,21 @@ public class GroundEnemyAnim : EnemyBase
         _animator.SetBool("IsAttacking", true);
     }
 
-    public void EndAttacking()
+    public void SetEndOfAttackAnimation()
     {
-        Debug.Log("공격이 끝났습니다");
-        enemyAttack.endAttacking = true;
-        enemyAttack._isAttacking = false;
-        _animator.SetBool("IsAttacking", false);
+        _brain.AIActionData.isAttack = false;
     }
 
-    public void EnemyMoving(bool boolean)
+    public void PlayAttackAnimation()
     {
-        _animator.SetBool("moving", boolean);
+        _animator.SetTrigger(_attackHash);
     }
 
+    
     public void EnemyDead()
     {
         _animator.SetTrigger("IsDead");
     }
+
+
 }

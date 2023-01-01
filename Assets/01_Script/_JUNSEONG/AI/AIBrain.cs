@@ -5,7 +5,9 @@ using UnityEngine.Events;
 
 public class AIBrain : MonoBehaviour
 {
+    public UnityEvent OnFireButtonPress;
     public UnityEvent<Vector2> OnMovementKeyPress;
+    public UnityEvent<Vector2> OnPointerPositionChanged;
     
     [SerializeField]
     private AIState _currentState;
@@ -15,6 +17,18 @@ public class AIBrain : MonoBehaviour
     public Transform Target
     {
         get => _target;
+    }
+
+    private AIActionData _aiActionData;
+    public AIActionData AIActionData { get => _aiActionData; }
+
+    private AIMovementData _aimovementData;
+    public AIMovementData AIMovementData { get => _aimovementData; }
+
+    protected virtual void Awake()
+    {
+        _aiActionData = transform.Find("AI").GetComponent<AIActionData>();
+        _aimovementData = transform.Find("AI").GetComponent<AIMovementData>();
     }
 
     protected void Update()
@@ -35,8 +49,14 @@ public class AIBrain : MonoBehaviour
         _currentState = state;
     }
 
-    public void Move(Vector2 speed, Vector3 pos)
+    public void Move(Vector2 direction, Vector3 targetPos)
     {
+        OnMovementKeyPress?.Invoke(direction);
+        OnPointerPositionChanged?.Invoke(targetPos);
+    }
 
+    public virtual void Attack()
+    {
+        OnFireButtonPress?.Invoke();
     }
 }
