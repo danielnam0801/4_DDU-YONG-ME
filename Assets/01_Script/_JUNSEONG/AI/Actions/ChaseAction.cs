@@ -11,7 +11,7 @@ public class ChaseAction : AIAction
             _aiActionData.isAttack = false;
         }
 
-        Vector2 dir = _brain.Target.position - transform.position;
+        Vector2 dir = (_brain.Target.position.x - transform.position.x > 0) ? new Vector2(1,0) : new Vector2(-1,0);
 
         _aiMovementData.direction = dir.normalized;
         _aiMovementData.pointOfInterest = _brain.Target.position;

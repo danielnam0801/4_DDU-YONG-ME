@@ -8,21 +8,28 @@ public abstract class EnemyAttack : MonoBehaviour
     protected AIBrain _brain;
 
     public UnityEvent AttackFeedBack;
-    private EnemyAttackData _enemyAttackData;
+    [SerializeField]
+    protected float _attackDelay;
+    public float AttackDelay
+    {
+        get => _attackDelay;
+        set => _attackDelay = Mathf.Clamp(value, 0.1f, 10f);
+    }
+    protected bool _waitBeforeNextAttack;
+    public bool WaitBeforeNextAttack { get => _waitBeforeNextAttack; }
 
     protected virtual void Awake()
     {
         _brain = GetComponent<AIBrain>();
-        _enemyAttackData = transform.Find("AI").GetComponent<EnemyAttackData>();
     }
 
     public abstract void Attack(int damage);
 
     protected IEnumerator WaitBeforeAttackCoroutine()
     {
-        _enemyAttackData._waitBeforeNextAttack = true;
-        yield return new WaitForSeconds(_enemyAttackData._attackDelay);
-        _enemyAttackData._waitBeforeNextAttack = false;
+        _waitBeforeNextAttack = true;
+        yield return new WaitForSeconds(_attackDelay);
+        _waitBeforeNextAttack = false;
     }
 
 

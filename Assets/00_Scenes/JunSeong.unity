@@ -713,7 +713,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 474408103}
+  - component: {fileID: 474408106}
   - component: {fileID: 474408104}
+  - component: {fileID: 474408109}
+  - component: {fileID: 474408105}
+  - component: {fileID: 474408108}
+  - component: {fileID: 474408107}
   m_Layer: 10
   m_Name: ShieldEnemy
   m_TagString: Untagged
@@ -750,17 +755,165 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52ccbd65c61b1c45858fe84a8f0fe85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnFireButtonPress:
-    m_PersistentCalls:
-      m_Calls: []
   OnMovementKeyPress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 474408106}
+        m_TargetAssemblyTypeName: GroundMovement, Assembly-CSharp
+        m_MethodName: MoveAgent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnPointerPositionChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 813100058}
+        m_TargetAssemblyTypeName: AgentRenderer, Assembly-CSharp
+        m_MethodName: FaceDirection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnFireButtonPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 474408105}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: PerformAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _currentState: {fileID: 1081985503}
   _target: {fileID: 712548762}
+--- !u!114 &474408105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474408095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08ddd6cc5be13947a8833a4d4c865b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyData: {fileID: 11400000, guid: 433c6db2ebca91c4a92be94f0e158869, type: 2}
+  <OnDie>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnGetHit>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  _isActive: 0
+--- !u!114 &474408106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474408095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17d4077cd6f4db84cbf86a647616b5f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onVelocityChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 813100057}
+        m_TargetAssemblyTypeName: GroundEnemyAnim, Assembly-CSharp
+        m_MethodName: AnimatePlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!70 &474408107
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474408095}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08473933, y: -0.08473933}
+  m_Size: {x: 1.0931747, y: 1.3897624}
+  m_Direction: 0
+--- !u!50 &474408108
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474408095}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &474408109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474408095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b71138428985d498a0c761a94b1a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackFeedBack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 813100057}
+        m_TargetAssemblyTypeName: GroundEnemyAnim, Assembly-CSharp
+        m_MethodName: PlayAttackAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _attackDelay: 0
 --- !u!1 &526557460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,6 +1708,7 @@ GameObject:
   - component: {fileID: 813100057}
   - component: {fileID: 813100056}
   - component: {fileID: 813100055}
+  - component: {fileID: 813100058}
   m_Layer: 10
   m_Name: VisualSprite
   m_TagString: Untagged
@@ -1587,7 +1741,7 @@ Animator:
   m_GameObject: {fileID: 813100053}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d08841dc7fc113746b9e256aa8297c5e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1638,15 +1792,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 2072601995, guid: 03d48bf10b56c3441950426381ec0aed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.6666666, y: 1.625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &813100057
@@ -1669,6 +1823,18 @@ MonoBehaviour:
   DeadInitInAnim:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &813100058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813100053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8d9cf78a1214947a55323e7a7e679e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &835720525
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,8 +3003,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decisions:
   - {fileID: 2142899566}
-  positiveState: {fileID: 0}
-  negativeState: {fileID: 601800752}
+  positiveState: {fileID: 601800752}
+  negativeState: {fileID: 0}
 --- !u!114 &2142899566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2848,7 +3014,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2142899563}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc5f9741ab399c740896345fe573b854, type: 3}
+  m_Script: {fileID: 11500000, guid: 313b46bf0f54ddf44a5bc44078470a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _distance: 1

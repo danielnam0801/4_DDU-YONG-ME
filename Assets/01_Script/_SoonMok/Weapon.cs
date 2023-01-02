@@ -54,12 +54,12 @@ public class Weapon : MonoBehaviour
                 state = State.Item;
                 _collider.isTrigger = false;
             }
-            if (collision.gameObject.GetComponent<EnemyOnHit>())
+            if (collision.gameObject.GetComponent<EnemyHPManager>())
             {
                 if(cnt > 0)
                 {
                     cnt--;
-                    collision.gameObject.GetComponent<EnemyOnHit>().HitOnWeapon();
+                    //collision.gameObject.GetComponent<EnemyHPManager>().EnemyOnHit();
                 }
                 else
                 {
@@ -80,7 +80,7 @@ public class Weapon : MonoBehaviour
                 _collider.isTrigger = false;
             }
         }
-        if (collision.gameObject.GetComponent<EnemyOnHit>())
+        if (collision.gameObject.GetComponent<EnemyHPManager>())
         {
             state = State.Item;
             _collider.isTrigger = false;

@@ -34,7 +34,7 @@ public class EnemyHPManager : EnemyBase
                 else if (this.gameObject.CompareTag("GroundEnemy"))
                 {
                     GroundEnemyAnim groundAnim = transform.GetComponentInChildren<GroundEnemyAnim>();
-                    groundAnim.EnemyDead();
+                    groundAnim.PlayDeadAnimation();
                 }
                 else
                 {
