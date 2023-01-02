@@ -83,6 +83,4 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
     {
         Destroy(gameObject);
     }
-
-
 }

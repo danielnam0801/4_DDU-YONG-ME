@@ -16,28 +16,26 @@ public class GroundMovement : MonoBehaviour
     protected float _currentVelocity = 0;
     protected Vector2 _movementdirection;
 
+    AIMovementData _data;
+
     protected virtual void Awake()
-    { 
+    {
         _enemy = transform.GetComponent<Enemy>();
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    public int NextMove()
-    {
-        _currentVelocity = Random.Range(-1, 2);
-        StartCoroutine("EnemyThink");
-        return nextMove;
+        _data = transform.Find("AI").GetComponent<AIMovementData>();
     }
 
     public void MoveAgent(Vector2 moveInput)
     {
-        _movementdirection = moveInput.normalized;
+        _currentVelocity = _data.speed;
+        _movementdirection = moveInput;
     }
 
 
     private void FixedUpdate()
     {
-        onVelocityChange?.Invoke(_currentVelocity);
+        Debug.Log("Current Velocity : " + _currentVelocity);
+        onVelocityChange?.Invoke(_movementdirection.x);
         rb.velocity = _movementdirection * _currentVelocity;
     }
 

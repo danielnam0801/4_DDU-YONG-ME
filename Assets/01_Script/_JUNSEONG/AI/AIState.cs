@@ -21,31 +21,28 @@ public class AIState : MonoBehaviour
             action.TakeAction();
         }
         
-        foreach(AITransition t in _transition)
+        foreach(AITransition tr in _transition)
         {
             bool result = false;
-            foreach(AIDecision d in t.decisions)
+            foreach(AIDecision d in tr.decisions)
             {
                 result = d.MakeADecision();
-                if (!result)
-                {
-                    break;
-                }
+                if (result == false) break;
             }
 
-            if (result == false)
+            if (result == true)
             {
-                if(t.positiveState != null)
+                if(tr.positiveState != null)
                 {
-                    _brain.ChangeState(t.positiveState);
+                    _brain.ChangeState(tr.positiveState);
                     return;
                 }
             }
             else
             {
-                if(t.negativeState != null)
+                if(tr.negativeState != null)
                 {
-                    _brain.ChangeState(t.negativeState);
+                    _brain.ChangeState(tr.negativeState);
                     return;
                 }
             }

@@ -50,6 +50,7 @@ public class AIBrain : MonoBehaviour
 
     public void ChangeState(AIState state)
     {
+        Debug.Log(state.ToString());
         _currentState = state;
     }
 

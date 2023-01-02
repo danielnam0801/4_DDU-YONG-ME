@@ -9,7 +9,7 @@ public class DecisionInner : AIDecision
     public float Distance { get => _distance; set => _distance = Mathf.Clamp(value, 0.1f, 30f); }
     public override bool MakeADecision()
     {
-        float calc = Vector3.Distance(_brain.Target.position, transform.position);
+        float calc = Vector2.Distance(_brain.Target.position, transform.position);
 
         if(calc < _distance)
         {
