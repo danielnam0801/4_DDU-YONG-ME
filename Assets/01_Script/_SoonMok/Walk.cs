@@ -100,9 +100,10 @@ public class Walk : MonoBehaviour
         }
         if (CheckGround())
         {
-
+            _animControl.EndJump();
             if (Input.GetKeyDown(JumpKey))
             {
+                _animControl.StartJump();
                 //rigibody.AddForce(new Vector2(0, JumpPow), ForceMode2D.Impulse);
                 _moveTo += Vector2.up * JumpPow;
                 JumpKiller(0.1f);

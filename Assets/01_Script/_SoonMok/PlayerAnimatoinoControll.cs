@@ -32,4 +32,12 @@ public class PlayerAnimatoinoControll : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         animator.SetBool("OnAttack", false);
     }
+    public void StartJump()
+    {
+        animator.SetBool("Jump", true);
+    }
+    public void EndJump()
+    {
+        animator.SetBool("Jump", false);
+    }
 }
