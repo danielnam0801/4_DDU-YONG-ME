@@ -113,7 +113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1214552583838753422}
   - component: {fileID: 1214552583838753421}
-  - component: {fileID: 9157760769942659782}
+  - component: {fileID: 8341060908884308900}
   m_Layer: 15
   m_Name: Spear
   m_TagString: Untagged
@@ -176,7 +176,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 4e420a03241f4a649acb326938658849, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -188,8 +188,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &9157760769942659782
-CircleCollider2D:
+--- !u!60 &8341060908884308900
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -201,6 +201,24 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.032163836, y: 0.4824562}
-  serializedVersion: 2
-  m_Radius: 1.0000002
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.4839181, y: 0.25877196}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.039205045, y: 1.4436234}
+      - {x: -0.31140247, y: 0.97542435}
+      - {x: -0.30345488, y: -0.049663782}
+      - {x: -0.16847512, y: -0.22912207}
+      - {x: -0.07840535, y: -0.44764468}
+      - {x: 0.041032672, y: -0.47871104}
+      - {x: 0.2549808, y: -0.06451078}
+      - {x: 0.28604716, y: 1.0467932}
+      - {x: 0.040665224, y: 1.4513898}

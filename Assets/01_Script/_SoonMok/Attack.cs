@@ -16,8 +16,10 @@ public class Attack : MonoBehaviour
     public float damage;
     [SerializeField] float angle;
     [SerializeField] Vector2 dir;
+    private PlayerAnimatoinoControll animCtrl;
     private void Awake()
     {
+        animCtrl = GetComponent<PlayerAnimatoinoControll>();
         weapons = new Queue<Weapon> ();
     }
     void Update()
@@ -30,6 +32,7 @@ public class Attack : MonoBehaviour
             _weapon.transform.rotation = Quaternion.Euler(0, 0, angle);
             if (Input.GetMouseButtonDown(0))
                 {
+                animCtrl.StartAttack();
                 _weaponsc.Shooting(dir.normalized, Power, damage);
                 weapons.Dequeue();
                 _weaponsc = null;

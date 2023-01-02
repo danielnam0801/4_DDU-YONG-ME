@@ -10,6 +10,7 @@ public class Walk : MonoBehaviour
     [SerializeField] private float _boxX;
     [SerializeField] private float _boxY;
     [SerializeField] private float _jumppower;
+    [SerializeField] private PlayerAnimatoinoControll _animControl;
     public float originSpeed;
     public float speed;
     public bool slimeShoes;
@@ -35,6 +36,7 @@ public class Walk : MonoBehaviour
     private void Awake()
     {
         _col = GetComponentsInChildren<BoxCollider2D>()[1];
+        _animControl = GetComponent<PlayerAnimatoinoControll>();
         rigibody = GetComponent<Rigidbody2D>();
     }
     private void Update()
@@ -59,7 +61,13 @@ public class Walk : MonoBehaviour
             }
             else _gravity = _originGravity;
         }
-
+        if (Mathf.Abs(_moveTo.x) > 0)
+        {
+            _animControl.StartRun();
+        }
+        else _animControl.EndRun();
+        if (_moveTo.x < 0) transform.localScale = new Vector3(-1, 1, 1);
+        else if (_moveTo.x > 0) transform.localScale = new Vector3(1, 1, 1);
     }
     private void FixedUpdate()
     {
