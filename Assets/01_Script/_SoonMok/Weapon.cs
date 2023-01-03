@@ -107,12 +107,27 @@ public class Weapon : MonoBehaviour
                 _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
 
             }
-            if (collision.gameObject.GetComponent<Enemy>())
+            if (collision.gameObject.CompareTag("GroundEnemy"))
             {
                 if (counter > 0)
                 {
                     //Debug.LogError("ASdf");
                     collision.gameObject.GetComponent<Enemy>().GetHit(damage, gameObject);
+                    counter--;
+                }
+                else
+                {
+                    state = State.Item;
+                    _collider.isTrigger = false;
+
+                }
+            }
+            if (collision.gameObject.CompareTag("FlyingEnemy"))
+            {
+                if (counter > 0)
+                {
+                    //Debug.LogError("ASdf");
+                    collision.gameObject.GetComponent<EnemyHPManager>().WeaponHit(damage);
                     counter--;
                 }
                 else

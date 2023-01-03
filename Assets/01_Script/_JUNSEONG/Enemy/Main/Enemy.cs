@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
             _attack.Attack(_enemyData.Damage());
         }
     }
-
+    
     public void GetHit(float damage, GameObject damageDealer)
     {
         Debug.Log("PlayerÇÑÅ× ¸Â¾ÒÂÇ¿°");
