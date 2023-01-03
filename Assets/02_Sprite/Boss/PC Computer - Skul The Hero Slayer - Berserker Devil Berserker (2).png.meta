@@ -1,0 +1,2036 @@
+fileFormatVersion: 2
+guid: f63731f0617b08c4f962c2b885895518
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1650
+        width: 82
+        height: 55
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f4d2987e73633547bb455f45eb61b2d
+      internalID: 1045674613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_1
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1649
+        width: 82
+        height: 56
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383ff602dcf38174a877129e0921a637
+      internalID: 808531928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_2
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 1648
+        width: 82
+        height: 57
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcaddd5ab8fcc1e41a74cb120760635d
+      internalID: -1409305823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_3
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 1648
+        width: 82
+        height: 57
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b899c1ffb6d59644cae9d190b0d5366e
+      internalID: 915545043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_4
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1648
+        width: 82
+        height: 57
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 083a2abdbef96de468bf5e074c2b1be7
+      internalID: -905890799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_5
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 1649
+        width: 82
+        height: 56
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7faae6a931460234aa7fde0aacb6a662
+      internalID: -269380448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_6
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 1650
+        width: 82
+        height: 55
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ffe9fdd7af356d488b354ff3d8a986f
+      internalID: 517658718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_7
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1650
+        width: 82
+        height: 55
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0d009a74251e1f4981e14b6cee97a83
+      internalID: 2135667814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1578
+        width: 85
+        height: 53
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b976ac5372742b34d820698a1a1d2d05
+      internalID: -1976378704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_9
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 1576
+        width: 84
+        height: 55
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e527d4ad01803d543ad194ce43d64c3d
+      internalID: -44910099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1574
+        width: 84
+        height: 57
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b430969181a2d014cb4510b33a1fac90
+      internalID: 306249800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_11
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 1577
+        width: 83
+        height: 54
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f226da57d0b764bb37cca82f5c38fe
+      internalID: -494682799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_12
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1578
+        width: 83
+        height: 53
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84432199b2575c44b82b0f23d38a9ee7
+      internalID: 1202778497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_13
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 1576
+        width: 85
+        height: 55
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e02c55f8613a80c40b586c58e9731309
+      internalID: 538594254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_14
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 1574
+        width: 87
+        height: 57
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b51c3841c2c4e44a62ed3bbdba16b9
+      internalID: -1826301877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_15
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 1577
+        width: 86
+        height: 54
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c48ded9b6303241945c64c56adfb09
+      internalID: -1469870018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_16
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1508
+        width: 90
+        height: 49
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd31c43256e437a448db887084682726
+      internalID: 500683766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_17
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1432
+        width: 89
+        height: 59
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6812b985139634098756410faf4bdf
+      internalID: 1837233765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_18
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1432
+        width: 87
+        height: 59
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2b26d0e1a540b4197b72b49f7ca8f4
+      internalID: -1512121500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_19
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1432
+        width: 87
+        height: 59
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e782cf7d6d98c7f4da6bd8ba25b94f0f
+      internalID: -655808661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_20
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1355
+        width: 83
+        height: 60
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b72a6b3d6b39c43b2bc1c3e75cb642
+      internalID: 655765681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_21
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1356
+        width: 75
+        height: 59
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ec4ee6c64e6f94ba7f0c16fd08b9fc
+      internalID: 1983905581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_22
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1279
+        width: 70
+        height: 59
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b257cb4e9347b2498d1b1a386497724
+      internalID: 1375039504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_23
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 1280
+        width: 70
+        height: 58
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de3cd0e85aa38914996e9127899732ef
+      internalID: -680651655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_24
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 1280
+        width: 70
+        height: 58
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 355315dc85f51824ab117a152339922b
+      internalID: -1619396361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_25
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1194
+        width: 54
+        height: 68
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7324562f5cf0f5240828895e064f07f2
+      internalID: 83653726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_26
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1194
+        width: 58
+        height: 68
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a926f39891943a43a5edee2aa65b06d
+      internalID: -526736856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_27
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1195
+        width: 59
+        height: 67
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e586ed5ea6776ca4d847abeb6646e3d8
+      internalID: 885828507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_28
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1195
+        width: 58
+        height: 67
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 421180e5a7c8e454f99f951ad5772547
+      internalID: 378571368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_29
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1145
+        width: 131
+        height: 118
+      alignment: 9
+      pivot: {x: 0, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be16ef5323cad084290dceae2559d5a3
+      internalID: -1071991939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_30
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 1148
+        width: 131
+        height: 114
+      alignment: 9
+      pivot: {x: 0, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29e64781beacc8e4389c09441d0d26fd
+      internalID: -558142489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_31
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 1211
+        width: 70
+        height: 51
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14651b39d712ec848b983813724dac81
+      internalID: -674127473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_32
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 1211
+        width: 70
+        height: 51
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7d57ad262b2944aaf60486b2c70f7f
+      internalID: 1185450051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_33
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 1211
+        width: 70
+        height: 51
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4018a110fcd3c9a45ae0e795bf2f4e06
+      internalID: 1131924777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_34
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1073
+        width: 71
+        height: 54
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663a46feaebabea44a39ed2e07581356
+      internalID: -1969111200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_35
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 1070
+        width: 71
+        height: 57
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb70e98350d6a24ab9d72adedee9125
+      internalID: 876363994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_36
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 1067
+        width: 82
+        height: 60
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 299a73ab0cdadcd41960e53423d2ecf7
+      internalID: -1809133787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_37
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1067
+        width: 77
+        height: 60
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7930a10281870645a8f91270768ac2b
+      internalID: 96561352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_38
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 1067
+        width: 68
+        height: 60
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c34fa5e23e4cda4994a0612bfebe34b
+      internalID: 1956381523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_39
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 1030
+        width: 147
+        height: 97
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246c09c9ef37b444d839dfb78b9edde1
+      internalID: -29885635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_40
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 1030
+        width: 117
+        height: 97
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf03a7d7da6530469131a1cc3086f78
+      internalID: -778269623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_41
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 1083
+        width: 112
+        height: 44
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb5c4edabfa722469be0b310c573e7b
+      internalID: -1219332689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_42
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 1083
+        width: 113
+        height: 44
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 509f4c8a590f8c54d946dd6c7e4d5c18
+      internalID: -319994270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_43
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 1083
+        width: 113
+        height: 44
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56e2be53b78d9a94ebffe25d1782b159
+      internalID: 2039263693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_44
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 1083
+        width: 113
+        height: 44
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc5d3ff61fdec024b8ddcf0fd7ed4f61
+      internalID: -578279376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_45
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 955
+        width: 79
+        height: 58
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b35cf13b1c0d045b6223c981000cc3
+      internalID: 1837236883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_46
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 953
+        width: 79
+        height: 60
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d58ff9798ae9044d8a52ea9b1494644
+      internalID: 1339039797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_47
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 878
+        width: 58
+        height: 58
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0358d228ade99344b89160be14c463f
+      internalID: 1056137422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_48
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 875
+        width: 59
+        height: 61
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c86819cf4a0e1d41887f4f1114e7940
+      internalID: -405070131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_49
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 834
+        width: 147
+        height: 102
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d66dc6c687642c4da5a291871c9f308
+      internalID: -1026586152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_50
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 835
+        width: 111
+        height: 101
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a34c1abba8b444786c60e9e8c160b6
+      internalID: -128435424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_51
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 891
+        width: 106
+        height: 45
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 371f94f08adfdea4a9e6c51c428bce8a
+      internalID: -615092111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_52
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 773
+        width: 105
+        height: 44
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65a1ea27b37096247987786c3ea39fd5
+      internalID: 103722333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_53
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 773
+        width: 105
+        height: 44
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df9ef52d9c1524744bdb9b254a652612
+      internalID: 574404912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_54
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 773
+        width: 105
+        height: 44
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe631589ab5d4594bb4ba9bfb3c7a693
+      internalID: 530769501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_55
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 762
+        width: 84
+        height: 55
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53650d25e69f42747afaa2df1a400758
+      internalID: -463130171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_56
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 687
+        width: 63
+        height: 58
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b29896f7c8fa8542ba7ab2e6f07ac54
+      internalID: 550022954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_57
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 687
+        width: 64
+        height: 58
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3567c2ebce2be6f4ba5e2dc2a7202b1a
+      internalID: 1702670686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_58
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 612
+        width: 66
+        height: 58
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f5ff546844cde340b572a287805c96e
+      internalID: 70953152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_59
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 612
+        width: 67
+        height: 58
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 492005c6db4e69042b8ccd2e34406b0c
+      internalID: -773733336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_60
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 612
+        width: 68
+        height: 58
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23b4816ec5e2dbf46ac962143dd8236b
+      internalID: -1488002357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_61
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 612
+        width: 67
+        height: 58
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be726a235bd8a5a46bfb83db19bd970b
+      internalID: 1105057477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_62
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 498
+        width: 147
+        height: 97
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e2ab011749dd6d429c2f8e273a6d727
+      internalID: 1431356118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_63
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 498
+        width: 117
+        height: 97
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d96f1c5d4b63bc4b9637575df057699
+      internalID: -1649153396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_64
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 551
+        width: 112
+        height: 44
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57887bb1ef7bfaf48885ebeb794de109
+      internalID: -1382171688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_65
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 551
+        width: 113
+        height: 44
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62d16615a00c4e14695e542f7264f7f9
+      internalID: -513672643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_66
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 551
+        width: 113
+        height: 44
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5796bd0031052564da1925e8ab96b8e0
+      internalID: -1098107055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_67
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 551
+        width: 113
+        height: 44
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2826abe35f1f958449dbe2b9b16ee61c
+      internalID: 1474907344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_68
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 423
+        width: 58
+        height: 58
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6805f865ef6fbfc44b24c8cbc9a6e329
+      internalID: 1192870504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_69
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 420
+        width: 59
+        height: 61
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6bae8d759d6494ca904b8c6574a087
+      internalID: 888235551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_70
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 302
+        width: 147
+        height: 101
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cdabeccadf8fb54aab6e6c4685d3d2c
+      internalID: 848585446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_71
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 303
+        width: 110
+        height: 100
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7790e6b8fbf6f4ea522fad1fd12736
+      internalID: -1047338264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_72
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 359
+        width: 105
+        height: 44
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b390a73b54250484eb6b135974497333
+      internalID: 1082942107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_73
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 227
+        width: 68
+        height: 58
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b3390f82d01444b8539de7a2b4b6b8
+      internalID: 1462208700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_74
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 227
+        width: 67
+        height: 58
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a35a5fc23fa16794488fb34a2633e737
+      internalID: 1294672279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_75
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 188
+        width: 147
+        height: 97
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2a9f454eff6064889bb8e1fd8319e8
+      internalID: -588815312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_76
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 188
+        width: 117
+        height: 97
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7acc3074ddf51354fb50899cd38d2491
+      internalID: -315781216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_77
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 241
+        width: 112
+        height: 44
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4899c330600d3aa41bad8399d7fea78f
+      internalID: -1084043390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_78
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 114
+        width: 71
+        height: 57
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f193184f0cc6c5d4faefba4064c2151c
+      internalID: -2086962690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_79
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 111
+        width: 82
+        height: 60
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b68beaade7069c249953b5d2b35ace14
+      internalID: -1960034225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_80
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 111
+        width: 77
+        height: 60
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 418aeadd80b59f5438b940072adca66e
+      internalID: 55246001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_81
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 111
+        width: 68
+        height: 60
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a57fc2103da6f554dae7d066545d5dba
+      internalID: 1094868901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_82
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 74
+        width: 147
+        height: 97
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa2d9f595e2b11468442964a01635cd
+      internalID: -498345234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_83
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 74
+        width: 117
+        height: 97
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea77ea137023ab4290ce0de07a71580
+      internalID: 1067246949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_84
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 127
+        width: 112
+        height: 44
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa6afa3fa536571408cf7f29f52e004c
+      internalID: -701759618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_85
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 2
+        width: 84
+        height: 55
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e06cce5fc4fe445438b57a4ad2e21e15
+      internalID: -977612336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_86
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1249
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8adfec908ed99da4b858ba893019bc88
+      internalID: 1762677740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_74: 1294672279
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_41: -1219332689
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_8: -1976378704
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_2: -1409305823
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_81: 1094868901
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_76: -315781216
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_17: 1837233765
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_52: 103722333
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_31: -674127473
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_47: 1056137422
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_80: 55246001
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_5: -269380448
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_27: 885828507
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_73: 1462208700
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_28: 378571368
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_82: -498345234
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_86: 1762677740
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_77: -1084043390
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_49: -1026586152
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_57: 1702670686
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_16: 500683766
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_72: 1082942107
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_53: 574404912
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_43: 2039263693
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_58: 70953152
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_85: -977612336
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_56: 550022954
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_75: -588815312
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_30: -558142489
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_25: 83653726
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_66: -1098107055
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_78: -2086962690
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_18: -1512121500
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_71: -1047338264
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_11: -494682799
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_62: 1431356118
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_54: 530769501
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_64: -1382171688
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_60: -1488002357
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_45: 1837236883
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_15: -1469870018
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_34: -1969111200
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_14: -1826301877
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_70: 848585446
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_21: 1983905581
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_9: -44910099
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_63: -1649153396
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_22: 1375039504
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_51: -615092111
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_79: -1960034225
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_65: -513672643
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_0: 1045674613
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_6: 517658718
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_38: 1956381523
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_48: -405070131
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_32: 1185450051
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_1: 808531928
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_40: -778269623
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_13: 538594254
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_24: -1619396361
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_46: 1339039797
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_44: -578279376
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_55: -463130171
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_59: -773733336
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_61: 1105057477
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_35: 876363994
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_23: -680651655
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_33: 1131924777
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_3: 915545043
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_69: 888235551
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_83: 1067246949
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_29: -1071991939
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_20: 655765681
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_4: -905890799
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_37: 96561352
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_42: -319994270
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_84: -701759618
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_26: -526736856
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_36: -1809133787
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_10: 306249800
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_67: 1474907344
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_7: 2135667814
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_39: -29885635
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_50: -128435424
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_68: 1192870504
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_12: 1202778497
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_19: -655808661
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

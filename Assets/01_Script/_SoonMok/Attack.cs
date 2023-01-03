@@ -7,6 +7,7 @@ public class Attack : MonoBehaviour
 {
     public Queue<Weapon> weapons;
     public int Spear_Count;
+    public bool godSpear;
     public GameObject Spear;
     public GameObject  _weapon;
     public KeyCode grabKey;
@@ -59,6 +60,7 @@ public class Attack : MonoBehaviour
     public void GodON(Weapon weapon)
     {
         Spear_Count = 1;
+        godSpear = true;
         weapon.godSpear = true;
     }
     private void OnCollisionStay2D(Collision2D collision)
@@ -66,55 +68,42 @@ public class Attack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Input.GetKey(grabKey))
+        if (Input.GetKey(grabKey)|| Input.GetMouseButton(1))
         {
             Debug.Log("ASdf");
-            if (weapons.Count < Spear_Count)
-            {
-                if (collision.transform.parent)
-                {
-                    if (collision.transform.parent.GetComponent<Weapon>())
-                    {
+            Grab(collision);
+        }
 
-                        Debug.Log(weapons.Count);
-                        Weapon SC = (collision.transform.parent.GetComponent<Weapon>());
-                        if (SC.state == State.Item)
-                        {
-                            weapons.Enqueue(SC);
-                            SC.Grab();
-                            SC.gameObject.SetActive(false);
-                        }
+    }
+    public void Grab(Collider2D collision)
+    {
+        if (weapons.Count < Spear_Count)
+        {
+            if (collision.transform.parent)
+            {
+                if (collision.transform.parent.GetComponent<Weapon>())
+                {
+
+                    Debug.Log(weapons.Count);
+                    Weapon SC = (collision.transform.parent.GetComponent<Weapon>());
+                    if (SC.state == State.Item)
+                    {
+                        weapons.Enqueue(SC);
+                        SC.Grab();
+                        SC.gameObject.SetActive(false);
                     }
                 }
-
             }
+
         }
 
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKey(grabKey))
+        if (Input.GetKey(grabKey) || Input.GetMouseButton(1))
         {
             Debug.Log("ASdf");
-            if (weapons.Count < Spear_Count)
-            {
-                if (collision.transform.parent)
-                {
-                    if (collision.transform.parent.GetComponent<Weapon>())
-                    {
-    
-                        Debug.Log(weapons.Count);
-                        Weapon SC = (collision.transform.parent.GetComponent<Weapon>());
-                        if (SC.state == State.Item)
-                        {
-                            weapons.Enqueue(SC);
-                            SC.Grab();
-                            SC.gameObject.SetActive(false);
-                        }
-                    }
-                }
-
-            }
+            Grab(collision);
         }
 
     }

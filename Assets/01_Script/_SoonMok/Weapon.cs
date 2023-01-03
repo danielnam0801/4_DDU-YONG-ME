@@ -39,7 +39,7 @@ public class Weapon : MonoBehaviour
         }
         if (godSpear)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButton(1))
             {
                 transform.position = _playerObject.transform.position;
                 if(state != State.Grab)
@@ -48,6 +48,7 @@ public class Weapon : MonoBehaviour
                     _rigidbody.gravityScale = 1f;
 
                 }
+
             }
         }
     }
