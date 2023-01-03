@@ -57,6 +57,7 @@ public class AIBrain : MonoBehaviour
     public void Move(Vector2 direction, Vector3 targetPos)
     {
         OnMovementKeyPress?.Invoke(direction);
+        //if(!_aiActionData.isIdle)
         OnPointerPositionChanged?.Invoke(targetPos);
     }
 

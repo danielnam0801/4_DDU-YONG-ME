@@ -14,6 +14,7 @@ public class ChaseAction : AIAction
 
         Vector2 dir = (_brain.Target.position.x - transform.position.x > 0) ? new Vector2(1,0) : new Vector2(-1,0);
         Debug.Log(dir);
+        _aiActionData.isIdle = false;
         _aiMovementData.direction = dir;
         _aiMovementData.pointOfInterest = _brain.Target.position;
         _aiMovementData.speed = _brain.Enemy.EnemyData.AfterDetectSpeed();

@@ -16,8 +16,13 @@ public class AgentRenderer : MonoBehaviour
     public void FaceDirection(Vector2 pointerInput)
     {
         Vector3 direction = (Vector3)pointerInput - transform.position;
-        Vector3 result = Vector3.Cross(Vector2.up, direction);
+        
+        //transform.localScale = (dir.x > 0) ? new Vector3(1,1,1) : new Vector3(-1, 1, 1);
+        transform.localScale = (direction.x > 0) ? new Vector3(1,1,1) : new Vector3(-1, 1, 1);
 
-        _spriteRenderer.flipX = result.z > 0;
+        
+        //Vector3 result = Vector3.Cross(Vector2.up, direction);
+
+        //_spriteRenderer.flipX = result.z > 0;
     }
 }

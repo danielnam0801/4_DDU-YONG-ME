@@ -9,4 +9,6 @@ public class AIActionData : MonoBehaviour
     public bool targetSpotted;//타겟을 발견했는가
     public bool arrived;
 
+    public bool isIdle;
+
 }

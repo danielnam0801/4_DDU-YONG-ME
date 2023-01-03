@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GroundEnemyAnim : EnemyBase
+public class GroundEnemyAnim : MonoBehaviour
 {
 
     protected AIBrain _brain;
-
-    [SerializeField] UnityEvent DeadInit;
-    [SerializeField] UnityEvent DeadInitInAnim;
 
     protected readonly int _attackHash = Animator.StringToHash("Attack");
     protected readonly int _DeadTriggerHash = Animator.StringToHash("Death");
@@ -17,8 +14,9 @@ public class GroundEnemyAnim : EnemyBase
     protected readonly int _walkHash = Animator.StringToHash("Walk");
     protected readonly int _IdleHash = Animator.StringToHash("Idle");
 
+    Animator _animator;
 
-    protected override void Awake()
+    protected void Awake()
     {
         _animator = GetComponent<Animator>();
        _brain = transform.parent.GetComponent<AIBrain>();
@@ -43,7 +41,7 @@ public class GroundEnemyAnim : EnemyBase
 
     public void EnemyAttack()
     {
-        if(_enemy.enemyType != EnemyType.ShieldEnemy)
+        if(_brain.Enemy.EnemyData.enemyType != EnemyType.ShieldEnemy)
         {
              int randAttack = UnityEngine.Random.Range(1, 5); //현재 기본 : 스페셜 = 3 : 1 비율
              _animator.SetInteger(_attackHash, randAttack);
@@ -52,12 +50,11 @@ public class GroundEnemyAnim : EnemyBase
         {
             _animator.SetTrigger(_attackHash);
         }
-        //_animator.SetTrigger("canAttack");
-        //_animator.SetBool("IsAttacking", true);
     }
     public void PlayAttackAnimation()
     {
         EnemyAttack();
+        Debug.Log("AttackAnimPlay");
     }
 
     public void SetEndOfAttackAnimation()

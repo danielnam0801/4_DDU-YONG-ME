@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
         _bodyCollider = GetComponent<CapsuleCollider2D>();  
         _groundMovement = GetComponent<GroundMovement>();
         _spriteRenderer = transform.Find("VisualSprite").GetComponent<SpriteRenderer>();
+        _isActive = true;
         SetEnemyData();
     }
 

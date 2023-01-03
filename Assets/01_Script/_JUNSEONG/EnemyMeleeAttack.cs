@@ -6,6 +6,7 @@ public class EnemyMeleeAttack : EnemyAttack
 {
     public override void Attack(int damage)
     {
+        Debug.Log("AttackMEllee");
         if(_waitBeforeNextAttack == false)
         {
             _brain.AIActionData.isAttack = true;
