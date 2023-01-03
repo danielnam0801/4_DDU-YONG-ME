@@ -17,8 +17,8 @@ public class EnemyMeleeAttack : EnemyAttack
 
             if (distance < range)
             {
-                IHitable hit = _brain.Target.GetComponent<IHitable>();
-                hit?.GetHit(damage, gameObject);
+                //IHitable hit = _brain.Target.GetComponent<IHitable>();
+                //hit?.GetHit(damage, gameObject);
             }
             AttackFeedBack?.Invoke();
             StartCoroutine(WaitBeforeAttackCoroutine());

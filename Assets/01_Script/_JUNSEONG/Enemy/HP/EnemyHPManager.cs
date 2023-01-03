@@ -31,11 +31,6 @@ public class EnemyHPManager : EnemyBase
                     FlyingEnemyAnim flyingAnim = transform.GetComponentInChildren<FlyingEnemyAnim>();
                     flyingAnim.IsDead();
                 }
-                else if (this.gameObject.CompareTag("GroundEnemy"))
-                {
-                    GroundEnemyAnim groundAnim = transform.GetComponentInChildren<GroundEnemyAnim>();
-                    groundAnim.PlayDeadAnimation();
-                }
                 else
                 {
                     Debug.Log("존재하지 않는 Layer(적)");

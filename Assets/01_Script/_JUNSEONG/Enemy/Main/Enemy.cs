@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
     public EnemySO EnemyData { get => _enemyData; }
     public bool IsEnemy => true;
     public Vector3 HitPoint { get; set; }
+
+    [field: SerializeField]
     public float Health { get; set; }
 
     [field : SerializeField]
@@ -24,6 +26,11 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
     protected GroundMovement _groundMovement;
     protected CapsuleCollider2D _bodyCollider;
     protected SpriteRenderer _spriteRenderer = null;
+    protected GroundEnemyAnim _enemyAnim;
+    
+    protected EnemyDebuffData enemyDebuff;
+    public EnemyDebuffData EnemyDebuffData => enemyDebuff;
+    
     
     protected virtual void Awake()
     {
@@ -32,6 +39,8 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
         _bodyCollider = GetComponent<CapsuleCollider2D>();  
         _groundMovement = GetComponent<GroundMovement>();
         _spriteRenderer = transform.Find("VisualSprite").GetComponent<SpriteRenderer>();
+        enemyDebuff = transform.Find("AI").GetComponent<EnemyDebuffData>();
+        _enemyAnim = transform.GetComponentInChildren<GroundEnemyAnim>();
         _isActive = true;
         SetEnemyData();
     }
@@ -62,6 +71,7 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
 
     public void GetHit(float damage, GameObject damageDealer)
     {
+        Debug.Log("PlayerÇÑÅ× ¸Â¾ÒÂÇ¿°");
         if (_isDead == true) return;
 
         Health -= damage;
@@ -77,6 +87,7 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
     {
         Health = 0;
         _isDead = true;
+        _enemyAnim.PlayDeadAnimation();
         OnDie?.Invoke();
     }
 
