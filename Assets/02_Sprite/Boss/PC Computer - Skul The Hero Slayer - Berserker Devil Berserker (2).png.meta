@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1981,10 +1981,10 @@ TextureImporter:
       PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_64: -1382171688
       PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_60: -1488002357
       PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_45: 1837236883
-      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_34: -1969111200
       PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_15: -1469870018
-      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_70: 848585446
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_34: -1969111200
       PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_14: -1826301877
+      PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_70: 848585446
       PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_21: 1983905581
       PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_9: -44910099
       PC Computer - Skul The Hero Slayer - Berserker Devil Berserker (2)_63: -1649153396
