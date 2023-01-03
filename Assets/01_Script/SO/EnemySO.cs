@@ -5,9 +5,12 @@ using UnityEngine;
 public enum EnemyType
 {
     NormalEnemy,
+    HeavyEnemy,
+    LightEnemy,
     ShieldEnemy,
     FlyingNormal,
     FlyingAttack,
+    OneShotFlying,
     Terret,
     Boss
 }

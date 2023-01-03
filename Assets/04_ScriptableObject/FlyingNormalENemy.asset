@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 0
   enemyName: 
-  hp: 2
+  hp: 1
   damage: 1
   beforeDetectSpeed: 500
   afterDetectSpeed: 0
