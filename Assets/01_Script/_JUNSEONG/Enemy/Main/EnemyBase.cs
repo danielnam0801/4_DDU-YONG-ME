@@ -19,6 +19,6 @@ public class EnemyBase : MonoBehaviour
         //    _animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
         //}
         _animator = GetComponentInChildren<Animator>();
-        _target = GameObject.Find("player").GetComponent<Transform>();
+        _target = GameObject.Find("Player").GetComponent<Transform>();
     }
 }

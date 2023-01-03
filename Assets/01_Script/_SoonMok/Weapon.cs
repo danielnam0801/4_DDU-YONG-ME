@@ -71,21 +71,21 @@ public class Weapon : MonoBehaviour
     {
         if (state == State.Shoot)
         {
-            if (collision.gameObject.GetComponentInParent<EnemyOnHit>())
-            {
-                if(counter > 0)
-                {
-                    counter--;
-                }
-                else
-                {
-                    state = State.Item;
-                    _collider.isTrigger = false;
-                    gameObject.layer = _enemyLayer;
-                    _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+            //if (collision.gameObject.GetComponentInParent<EnemyOnHit>())
+            //{
+            //    if(counter > 0)
+            //    {
+            //        counter--;
+            //    }
+            //    else
+            //    {
+            //        state = State.Item;
+            //        _collider.isTrigger = false;
+            //        gameObject.layer = _enemyLayer;
+            //        _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
 
-                }
-            }
+            //    }
+            //}
             if (collision.gameObject.GetComponent<IsWall>())
             {
                 state = State.Item;

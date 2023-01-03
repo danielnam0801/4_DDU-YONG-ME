@@ -30,6 +30,7 @@ public class AIBrain : MonoBehaviour
 
     protected virtual void Awake()
     {
+        _target = GameManager.instance.Target;
         _aiActionData = transform.Find("AI").GetComponent<AIActionData>();
         _aimovementData = transform.Find("AI").GetComponent<AIMovementData>();
         enemy = transform.GetComponent<Enemy>();
