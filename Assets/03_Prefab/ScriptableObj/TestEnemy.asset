@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11c030c348b4aaa4c88d6d3d6977abef, type: 3}
-  m_Name: ShieldEnemy
+  m_Name: TestEnemy
   m_EditorClassIdentifier: 
   enemyType: 1
-  enemyName: Shield Enemy
-  hp: 1
+  enemyName: 
+  hp: 5
   damage: 1
-  beforeDetectSpeed: 1
-  afterDetectSpeed: 1.5
-  detectRange: 2
-  attackRange: 2
+  beforeDetectSpeed: 2
+  afterDetectSpeed: 3
+  detectRange: 5
+  attackRange: 0
   attackSpeed: 0
   attackDelay: 0
   dropMinExPValue: 0
