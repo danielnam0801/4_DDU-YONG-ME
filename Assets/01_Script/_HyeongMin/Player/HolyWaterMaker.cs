@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class HolyWaterMaker : MonoBehaviour
 {
-    [SerializeField] private GameObject holyWaterObj;
+    [SerializeField] private GameObject holyWaterGlassObj;
     [SerializeField] private float makeTime = 10f;
+    GameObject playerObj;
     float timer = 0;
+    private void Start()
+    {
+        playerObj = transform.parent.gameObject;
+    }
     private void Update()
     {
         timer += Time.deltaTime;
         if(timer>= makeTime)
         {
-            Instantiate(holyWaterObj, transform);
+            Instantiate(holyWaterGlassObj,playerObj.transform.position, transform.rotation);
             timer = 0;
         }
     }

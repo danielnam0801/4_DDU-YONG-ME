@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 2812496360642845224}
   - component: {fileID: 2812496360642845225}
   - component: {fileID: 2812496360642845226}
+  - component: {fileID: 6549501400183358365}
   m_Layer: 0
   m_Name: StageCamera
   m_TagString: Untagged
@@ -182,3 +183,20 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 0}
   m_Damping: 0.5
   m_MaxWindowSize: -1
+--- !u!114 &6549501400183358365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2812496360642845207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729aad4491e915a41bda2b8325cf757a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FocusTracksTarget: 0
+  m_FocusTracking: 0
+  m_FocusTarget: {fileID: 0}
+  m_FocusOffset: 0
+  m_Profile: {fileID: 11400000, guid: 90be0e749a24bc34db752a3c43989a0e, type: 2}
