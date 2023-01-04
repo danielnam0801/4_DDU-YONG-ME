@@ -9,6 +9,8 @@ public class GroundEnemyAnim : MonoBehaviour
     protected AIBrain _brain;
 
     protected readonly int _attackHash = Animator.StringToHash("Attack");
+    protected readonly int _CanAttackHash = Animator.StringToHash("canAttack");
+
     protected readonly int _DeadTriggerHash = Animator.StringToHash("Death");
     protected readonly int _DeadBoolHash = Animator.StringToHash("IsDead");
     protected readonly int _walkHash = Animator.StringToHash("Walk");
@@ -45,6 +47,7 @@ public class GroundEnemyAnim : MonoBehaviour
         {
              int randAttack = UnityEngine.Random.Range(1, 5); //현재 기본 : 스페셜 = 3 : 1 비율
              _animator.SetInteger(_attackHash, randAttack);
+            _animator.SetTrigger(_CanAttackHash);
         }
         else
         {

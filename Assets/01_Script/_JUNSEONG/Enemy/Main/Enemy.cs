@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
         enemyDebuff = transform.Find("AI").GetComponent<EnemyDebuffData>();
         _enemyAnim = transform.GetComponentInChildren<GroundEnemyAnim>();
         _isActive = true;
+  
         SetEnemyData();
     }
 
@@ -74,7 +75,9 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
         Debug.Log("PlayerÇÑÅ× ¸Â¾ÒÂÇ¿°");
         if (_isDead == true) return;
 
+        
         Health -= damage;
+       
         HitPoint = damageDealer.transform.position;
 
         OnGetHit?.Invoke();
