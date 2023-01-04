@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 
 public class Enemy : MonoBehaviour, IHitable, IAgent
 {
@@ -97,5 +98,18 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
     public void Die()
     {
         Destroy(gameObject);
+    }
+
+    public void DieMaterial()
+    {
+        Sequence seq = DOTween.Sequence();
+        Tween dissolve = DOTween.To(
+            () => _spriteRenderer.material.GetFloat("_Dissolve"),
+            x => _spriteRenderer.material.SetFloat("_Dissolve", x),
+            1f,
+            1f);
+
+        seq.Append(dissolve);
+        //seq.AppendCallback(() => Die());
     }
 }
