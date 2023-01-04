@@ -5,8 +5,7 @@ using Cinemachine;
 
 public class StageChecker : MonoBehaviour
 {
-    [SerializeField] private DoorChecker doorChecker;
-        CinemachineVirtualCamera virtualCamera;
+    CinemachineVirtualCamera virtualCamera;
     PolygonCollider2D polygonCollider;
     [SerializeField] private string camname;
     private void Awake()
@@ -18,7 +17,7 @@ public class StageChecker : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            virtualCamera.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = polygonCollider;
+            virtualCamera.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = polygonCollider;    
             virtualCamera.Follow = gameObject.transform;
         }
     }

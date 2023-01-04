@@ -24,8 +24,13 @@ TagManager:
   - PassingFloor
   - 
   - Weapon
+<<<<<<< HEAD
   - EnemyBullet
   - 
+=======
+  - HolyWaterGlass
+  - Key
+>>>>>>> origin/Hyungmin
   - 
   - 
   - 
