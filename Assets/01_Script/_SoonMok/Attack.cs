@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Weapon;
+using UnityEngine.Animations;
 
 public class Attack : MonoBehaviour
 {
@@ -12,10 +13,13 @@ public class Attack : MonoBehaviour
     [SerializeField]GameObject _grabPoint;
     public Weapon _weaponsc;
     public float Power;
+    
+    //private Animator _animator;
     [SerializeField] float angle;
     [SerializeField] Vector2 dir;
     private void Awake()
     {
+        //_animator = GetComponent<Animator>();
         weapons = new Queue<Weapon> ();
     }
     void Update()
@@ -28,6 +32,9 @@ public class Attack : MonoBehaviour
             _weapon.transform.rotation = Quaternion.Euler(0, 0, angle);
             if (Input.GetMouseButtonDown(0))
                 {
+                //_animator.SetTrigger("Attack");
+                //SHOT();
+
                 _weaponsc.Shooting(dir, Power);
                 _weaponsc = null;
                 _weapon = null;
