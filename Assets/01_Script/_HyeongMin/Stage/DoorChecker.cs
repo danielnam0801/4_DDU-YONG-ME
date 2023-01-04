@@ -4,23 +4,50 @@ using UnityEngine;
 
 public class DoorChecker : MonoBehaviour
 {
-    [SerializeField] private Door[] doorScript;
+    [SerializeField] private GameObject[] doorScript;
     [SerializeField] private bool stageClear;
     [SerializeField] private bool stagePlaying;
+
+    Animator doorAnimator;
+
+    private void Start()
+    {
+        doorScript[0] = transform.parent.gameObject;
+        doorAnimator = doorScript[0].GetComponent<Animator>();
+    }
+    void Update()
+    {
+        DoorOpening();
+    }
     void OnTriggerStay2D(Collider2D col)
     {
-        if (stageClear && !stagePlaying)
+        if (col.gameObject.layer == LayerMask.NameToLayer("Player") && col.gameObject.name == "Player")
         {
-            if (col.gameObject.layer != LayerMask.NameToLayer("Player")) { return; }
-            doorScript[0].doorOpen = true;
-            doorScript[0].doorClose = false;
+            if (col.gameObject.GetComponent<GetKeyObject>().gettingKey)
+            {
+                stageClear = true;
+            }
+            if (stageClear && !stagePlaying)
+            {
+                doorAnimator.SetBool("DoorOpen", true);
+            }
         }
     }
     void OnTriggerExit2D(Collider2D col)
     {
         if (col.gameObject.layer != LayerMask.NameToLayer("Player")) { return; }
-        doorScript[0].doorClose = true;
-        doorScript[0].doorOpen = false;
+        doorAnimator.SetBool("DoorOpen", false);
+    }
+    void DoorOpening()
+    {
+        if (doorAnimator.GetBool("DoorOpen"))
+        {
+            doorScript[0].transform.GetChild(0).gameObject.SetActive(true);
+        }
+        else
+        {
+            doorScript[0].transform.GetChild(0).gameObject.SetActive(false);
+        }
     }
 }
 

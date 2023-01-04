@@ -73,7 +73,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         {
             int random = Random.Range(0, arrayCount.Count);
             button[i].gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = playerAbilityList.abilityArr[arrayCount[random]];
-            button[i].gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = playerAbilityList.abilityTextArr[arrayCount[random]];
+            button[i].gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = playerAbilityList.abilityTextArr[arrayCount[random]];
             button[i].GetComponent<ButtonClickEvent>().buttonAbilityNumber = playerAbilityList.abilityNumber[arrayCount[random]];
             arrayCount.RemoveAt(random);
             Debug.Log(random);  
