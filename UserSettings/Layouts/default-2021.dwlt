@@ -23,10 +23,16 @@ MonoBehaviour:
     x: 0
     y: 43.2
     width: 1536
+<<<<<<< HEAD
     height: 780.8
 >>>>>>> origin/Hyungmin
   m_ShowMode: 4
   m_Title: Inspector
+=======
+    height: 820.8
+  m_ShowMode: 4
+  m_Title: Tile Palette
+>>>>>>> origin/MinHyeok
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 350}
   m_MaxSize: {x: 10000, y: 10000}
@@ -56,8 +62,12 @@ MonoBehaviour:
     height: 758.4
 =======
     width: 1536
+<<<<<<< HEAD
     height: 780.8
 >>>>>>> origin/Hyungmin
+=======
+    height: 820.8
+>>>>>>> origin/MinHyeok
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -107,10 +117,14 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 738.4
     width: 1521.6
 =======
     y: 760.8
+=======
+    y: 800.8
+>>>>>>> origin/MinHyeok
     width: 1536
 >>>>>>> origin/Hyungmin
     height: 20
@@ -124,17 +138,20 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 6}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   - {fileID: 11}
 >>>>>>> origin/Hyungmin
   - {fileID: 12}
+=======
+>>>>>>> origin/MinHyeok
   m_Position:
     serializedVersion: 2
     x: 0
@@ -148,12 +165,17 @@ MonoBehaviour:
   controlID: 5081
 =======
     width: 1536
-    height: 730.8
+    height: 770.8
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
+<<<<<<< HEAD
   vertical: 0
   controlID: 58
 >>>>>>> origin/Hyungmin
+=======
+  vertical: 1
+  controlID: 612
+>>>>>>> origin/MinHyeok
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -168,11 +190,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 7}
-  - {fileID: 11}
+  - {fileID: 13}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
     width: 1184
     height: 708.4
@@ -188,6 +211,14 @@ MonoBehaviour:
   vertical: 1
   controlID: 59
 >>>>>>> origin/Hyungmin
+=======
+    width: 1536
+    height: 770.8
+  m_MinSize: {x: 400, y: 200}
+  m_MaxSize: {x: 32384, y: 16192}
+  vertical: 0
+  controlID: 613
+>>>>>>> origin/MinHyeok
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -202,12 +233,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 8}
-  - {fileID: 9}
-  - {fileID: 10}
+  - {fileID: 12}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
     width: 1184
     height: 464.8
@@ -224,6 +255,41 @@ MonoBehaviour:
   controlID: 60
 >>>>>>> origin/Hyungmin
 --- !u!114 &8
+=======
+    width: 986.4
+    height: 770.8
+  m_MinSize: {x: 300, y: 200}
+  m_MaxSize: {x: 24288, y: 16192}
+  vertical: 1
+  controlID: 614
+--- !u!114 &8
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 9}
+  - {fileID: 10}
+  - {fileID: 11}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 986.4
+    height: 422.4
+  m_MinSize: {x: 300, y: 100}
+  m_MaxSize: {x: 24288, y: 8096}
+  vertical: 0
+  controlID: 615
+--- !u!114 &9
+>>>>>>> origin/MinHyeok
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,6 +306,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 313.6
     height: 464.8
   m_MinSize: {x: 201, y: 221}
@@ -247,9 +314,18 @@ MonoBehaviour:
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
+=======
+    width: 230.4
+    height: 422.4
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 15}
+  m_Panes:
+  - {fileID: 15}
+>>>>>>> origin/MinHyeok
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &9
+--- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,6 +340,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 313.6
     y: 0
 <<<<<<< HEAD
@@ -316,6 +393,22 @@ MonoBehaviour:
   m_LastSelected: 1
 >>>>>>> origin/Hyungmin
 --- !u!114 &10
+=======
+    x: 230.4
+    y: 0
+    width: 224.80002
+    height: 422.4
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 16}
+  m_Panes:
+  - {fileID: 16}
+  - {fileID: 17}
+  - {fileID: 18}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &11
+>>>>>>> origin/MinHyeok
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -326,14 +419,19 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Name: GameView
 =======
   m_Name: ProjectBrowser
 >>>>>>> origin/Hyungmin
+=======
+  m_Name: GridPaintPaletteWindow
+>>>>>>> origin/MinHyeok
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     x: 909.6
     y: 0
@@ -383,8 +481,21 @@ MonoBehaviour:
   - {fileID: 19}
 >>>>>>> origin/Hyungmin
   m_Selected: 0
+=======
+    x: 455.2
+    y: 0
+    width: 531.2
+    height: 422.4
+  m_MinSize: {x: 242, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 19}
+  m_Panes:
+  - {fileID: 14}
+  - {fileID: 19}
+  m_Selected: 1
+>>>>>>> origin/MinHyeok
   m_LastSelected: 0
---- !u!114 &11
+--- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -401,6 +512,7 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
     x: 0
+<<<<<<< HEAD
     y: 464.8
     width: 1184
     height: 243.60004
@@ -413,6 +525,21 @@ MonoBehaviour:
   m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &12
+=======
+    y: 422.4
+    width: 986.4
+    height: 348.4
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 20}
+  m_Panes:
+  - {fileID: 20}
+  - {fileID: 21}
+  - {fileID: 22}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &13
+>>>>>>> origin/MinHyeok
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -427,6 +554,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1184
     y: 0
     width: 337.59998
@@ -440,15 +568,120 @@ MonoBehaviour:
     y: 0
     width: 476.80005
     height: 730.8
+=======
+    x: 986.4
+    y: 0
+    width: 549.6
+    height: 770.8
+>>>>>>> origin/MinHyeok
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 20}
+  m_ActualView: {fileID: 23}
   m_Panes:
+<<<<<<< HEAD
 >>>>>>> origin/Hyungmin
   - {fileID: 20}
+=======
+  - {fileID: 23}
+  - {fileID: 24}
+  - {fileID: 25}
+  - {fileID: 26}
+>>>>>>> origin/MinHyeok
   m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &13
+  m_LastSelected: 1
+--- !u!114 &14
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Game
+    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 455.2
+    y: 73.6
+    width: 529.2
+    height: 401.4
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_SerializedViewNames: []
+  m_SerializedViewValues: []
+  m_PlayModeViewName: GameView
+  m_ShowGizmos: 0
+  m_TargetDisplay: 0
+  m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+  m_TargetSize: {x: 3840, y: 2160}
+  m_TextureFilterMode: 0
+  m_TextureHideFlags: 61
+  m_RenderIMGUI: 1
+  m_EnterPlayModeBehavior: 0
+  m_UseMipMap: 0
+  m_VSyncEnabled: 0
+  m_Gizmos: 0
+  m_Stats: 0
+  m_SelectedSizes: 06000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_ZoomArea:
+    m_HRangeLocked: 0
+    m_VRangeLocked: 0
+    hZoomLockedByDefault: 0
+    vZoomLockedByDefault: 0
+    m_HBaseRangeMin: -1536
+    m_HBaseRangeMax: 1536
+    m_VBaseRangeMin: -864
+    m_VBaseRangeMax: 864
+    m_HAllowExceedBaseRangeMin: 1
+    m_HAllowExceedBaseRangeMax: 1
+    m_VAllowExceedBaseRangeMin: 1
+    m_VAllowExceedBaseRangeMax: 1
+    m_ScaleWithWindow: 0
+    m_HSlider: 0
+    m_VSlider: 0
+    m_IgnoreScrollWheelUntilClicked: 0
+    m_EnableMouseInput: 1
+    m_EnableSliderZoomHorizontal: 0
+    m_EnableSliderZoomVertical: 0
+    m_UniformScale: 1
+    m_UpDirection: 1
+    m_DrawArea:
+      serializedVersion: 2
+      x: 0
+      y: 21
+      width: 529.2
+      height: 380.4
+    m_Scale: {x: 0.17226563, y: 0.17226563}
+    m_Translation: {x: 264.6, y: 190.2}
+    m_MarginLeft: 0
+    m_MarginRight: 0
+    m_MarginTop: 0
+    m_MarginBottom: 0
+    m_LastShownAreaInsideMargins:
+      serializedVersion: 2
+      x: -1536
+      y: -1104.1088
+      width: 3072
+      height: 2208.2175
+    m_MinimalGUI: 1
+  m_defaultScale: 0.17226563
+  m_LastWindowPixelSize: {x: 661.5, y: 501.75}
+  m_ClearInEditMode: 1
+  m_NoCameraWarning: 1
+  m_LowResolutionForAspectRatios: 01000000000000000000
+  m_XRRenderMode: 0
+  m_RenderTexture: {fileID: 0}
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1507,9 +1740,14 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73.6
+<<<<<<< HEAD
     width: 559
     height: 419
 >>>>>>> origin/Hyungmin
+=======
+    width: 229.4
+    height: 401.4
+>>>>>>> origin/MinHyeok
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1517,10 +1755,17 @@ MonoBehaviour:
 <<<<<<< HEAD
   m_SceneHierarchy:
     m_TreeViewState:
+<<<<<<< HEAD
       scrollPos: {x: 0, y: 121.20001}
       m_SelectedIDs: c06e0000
       m_LastClickedID: 28352
       m_ExpandedIDs: d2f6fffff8f6ffff10f8ffff08fbffff0afbffff086f0000106f0000146f0000186f0000
+=======
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 62c90000
+      m_LastClickedID: 51554
+      m_ExpandedIDs: 26daffffdadbffff16ddffffbcddffffc4deffff94dfffffe2e1ffff9ce2ffffeae3ffff40e5fffff4e5ffff30e8ffff56f0ffff8af2ffff42f3ffffe8f3fffff0f4ffff06f7ffff6cf8ffff08fbffff62c900009ac9000002ca000012ca0000
+>>>>>>> origin/MinHyeok
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1536,7 +1781,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 8}
+        m_ClientGUIView: {fileID: 13}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -1544,6 +1789,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
+<<<<<<< HEAD
 --- !u!114 &15
 =======
   m_SerializedViewNames: []
@@ -1612,6 +1858,9 @@ MonoBehaviour:
   m_RenderTexture: {fileID: 0}
 --- !u!114 &14
 >>>>>>> origin/Hyungmin
+=======
+--- !u!114 &16
+>>>>>>> origin/MinHyeok
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1632,6 +1881,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 320.80002
     y: 80.8
     width: 594
@@ -1642,6 +1892,12 @@ MonoBehaviour:
     width: 559
     height: 419
 >>>>>>> origin/Hyungmin
+=======
+    x: 230.40001
+    y: 73.6
+    width: 222.80002
+    height: 401.4
+>>>>>>> origin/MinHyeok
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1875,6 +2131,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 1.8760692, y: 4.2342963, z: -8.393929}
     speed: 2
     m_Value: {x: 1.8760692, y: 4.2342963, z: -8.393929}
@@ -1883,6 +2140,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.1020497, y: -0.8788154, z: 0.13765723}
 >>>>>>> origin/Hyungmin
+=======
+    m_Target: {x: 1705.6188, y: 1373.3553, z: 574.8083}
+    speed: 2
+    m_Value: {x: 1729.5167, y: 1368.3037, z: 575.89246}
+>>>>>>> origin/MinHyeok
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1934,6 +2196,7 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 8.644307
     speed: 2
     m_Value: 8.644307
@@ -1942,6 +2205,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 4.4646363
 >>>>>>> origin/Hyungmin
+=======
+    m_Target: 2517.6377
+    speed: 2
+    m_Value: 2409.2227
+>>>>>>> origin/MinHyeok
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1966,7 +2234,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &15
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1986,19 +2254,35 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 560
     y: 73.6
     width: 206.79999
     height: 419
+=======
+    x: 230.40001
+    y: 73.6
+    width: 488.4
+    height: 401.4
+>>>>>>> origin/MinHyeok
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_ViewTransforms:
     m_KeySerializationHelper:
+<<<<<<< HEAD
     - {fileID: -2314842349507717090, guid: 0f8bf2750ead96e46874a0a45b72e9ba, type: 2}
     - {fileID: -3693486495246040070, guid: 7ca40df37ddd1bc48b822a15fc431e9f, type: 2}
     - {fileID: -8451098811350889213, guid: 8540819113284c840b5dc9d453605334, type: 2}
+=======
+    - {fileID: -5665653875143028826, guid: d08841dc7fc113746b9e256aa8297c5e, type: 2}
+    - {fileID: -5665653875143028826, guid: c4b052eb2f41cea4d87a5026cb3effce, type: 2}
+    - {fileID: -5665653875143028826, guid: 24c10be3a59fdce4dae4391384c15f36, type: 2}
+    - {fileID: 356006046943284969, guid: c2fc0aafc4ba14749a6cc196ffeb52b8, type: 2}
+    - {fileID: 356006046943284969, guid: ab937231d0600440fb0d8757568d78d7, type: 2}
+    - {fileID: 1107364442111729044, guid: 713b772b1d0f74133a8ce94956352a48, type: 2}
+>>>>>>> origin/MinHyeok
     m_ValueSerializationHelper:
     - e00: 0.4795789
       e01: 0
@@ -2048,10 +2332,64 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 0.42533055
+      e01: 0
+      e02: 0
+      e03: 101.77919
+      e10: 0
+      e11: 0.42533055
+      e12: 0
+      e13: 296.17084
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.27372548
+      e01: 0
+      e02: 0
+      e03: 72.482346
+      e10: 0
+      e11: 0.27372548
+      e12: 0
+      e13: 250.3647
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.51024383
+      e01: 0
+      e02: 0
+      e03: -25.34877
+      e10: 0
+      e11: 0.51024383
+      e12: 0
+      e13: 123.10695
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
+<<<<<<< HEAD
   m_AnimatorController: {fileID: 9100000, guid: 8540819113284c840b5dc9d453605334, type: 2}
   m_BreadCrumbs:
   - m_Target: {fileID: -8451098811350889213, guid: 8540819113284c840b5dc9d453605334, type: 2}
+=======
+  m_AnimatorController: {fileID: 9100000, guid: 713b772b1d0f74133a8ce94956352a48, type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: 1107364442111729044, guid: 713b772b1d0f74133a8ce94956352a48, type: 2}
+>>>>>>> origin/MinHyeok
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -2064,7 +2402,7 @@ MonoBehaviour:
   m_CurrentEditor: 1
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &16
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2073,6 +2411,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
 =======
@@ -2297,24 +2636,35 @@ MonoBehaviour:
   m_EditorHideFlags: 1
 <<<<<<< HEAD
   m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
+=======
+  m_Script: {fileID: 12111, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> origin/MinHyeok
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
+  m_MinSize: {x: 455, y: 354}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: Game
-    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
+    m_Text: Asset Store
+    m_Image: {fileID: -7444545952099596278, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 916.8
     y: 80.8
     width: 272.40002
     height: 443.8
+=======
+    x: 230.40001
+    y: 73.6
+    width: 488.4
+    height: 401.4
+>>>>>>> origin/MinHyeok
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
+<<<<<<< HEAD
   m_SerializedViewNames: []
   m_SerializedViewValues: []
   m_PlayModeViewName: GameView
@@ -2380,6 +2730,44 @@ MonoBehaviour:
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
 --- !u!114 &18
+=======
+--- !u!114 &19
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f683d99f24875748a6656966ca9cea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 240, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Tile Palette
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 455.2
+    y: 73.6
+    width: 529.2
+    height: 401.4
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_PreviewResizer:
+    m_CachedPref: -50
+    m_ControlHash: 1964396721
+    m_PrefName: Preview_TilemapBrushInspector
+  m_Palette: {fileID: 2847390665546309270, guid: 114a01bf88b3aec44a8caf68b809b8e2, type: 3}
+  m_DrawGridGizmo: 1
+  m_DrawGizmos: 0
+--- !u!114 &20
+>>>>>>> origin/MinHyeok
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2436,10 +2824,16 @@ MonoBehaviour:
     height: 222.60004
 =======
     x: 0
+<<<<<<< HEAD
     y: 513.60004
     width: 767.8
     height: 269.8
 >>>>>>> origin/Hyungmin
+=======
+    y: 496
+    width: 985.4
+    height: 327.4
+>>>>>>> origin/MinHyeok
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -2458,15 +2852,20 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/03_Prefab/Enemy
 =======
     - Assets
 >>>>>>> origin/Hyungmin
+=======
+    - Assets/00_Scenes/MH
+>>>>>>> origin/MinHyeok
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
+<<<<<<< HEAD
 <<<<<<< HEAD
   - Assets/03_Prefab/Enemy
   m_LastFoldersGridSize: 16
@@ -2481,15 +2880,26 @@ MonoBehaviour:
 =======
   - Assets
   m_LastFoldersGridSize: -1
+=======
+  - Assets/00_Scenes/MH
+  m_LastFoldersGridSize: 57
+>>>>>>> origin/MinHyeok
   m_LastProjectPath: D:\Github\4_DDU-YONG-ME
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 79}
     m_SelectedIDs: 04780000
     m_LastClickedID: 30724
     m_ExpandedIDs: 000000000478000006780000087800000a7800000c7800000e78000010780000127800001478000016780000187800001a7800001c7800001e78000020780000227800002478000026780000287800002a7800002c7800002e78000030780000327800003478000036780000387800003a7800003c7800003e7800004078000042780000447800004678000000ca9a3b
 >>>>>>> origin/Hyungmin
+=======
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 2e8d0000
+    m_LastClickedID: 36142
+    m_ExpandedIDs: 00000000ea8c0000ec8c0000ee8c0000f08c0000f28c0000f48c0000f68c0000f88c0000fa8c0000fc8c0000fe8c0000008d0000028d0000048d0000068d0000088d00000a8d00000c8d000000ca9a3b
+>>>>>>> origin/MinHyeok
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: _JUNSEONG
@@ -2506,10 +2916,14 @@ MonoBehaviour:
       m_OriginalEventType: 0
       m_IsRenamingFilename: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 11}
 =======
       m_ClientGUIView: {fileID: 10}
 >>>>>>> origin/Hyungmin
+=======
+      m_ClientGUIView: {fileID: 12}
+>>>>>>> origin/MinHyeok
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -2522,10 +2936,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000787900007a7900007c7900007e79000080790000827900008479000086790000887900008a7900008c7900008e7900009079000092790000947900009679000000ca9a3bffffff7f
 =======
     m_ExpandedIDs: 000000000478000006780000087800000a7800000c7800000e78000010780000127800001478000016780000187800001a7800001c7800001e78000020780000227800002478000026780000287800002a7800002c7800002e78000030780000327800003478000036780000387800003a7800003c7800003e78000040780000427800004478000046780000
 >>>>>>> origin/Hyungmin
+=======
+    m_ExpandedIDs: 00000000ea8c0000ec8c0000ee8c0000f08c0000f28c0000f48c0000f68c0000f88c0000fa8c0000fc8c0000fe8c0000008d0000028d0000048d0000068d0000088d00000a8d00000c8d000000ca9a3b
+>>>>>>> origin/MinHyeok
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2557,8 +2975,12 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000e8a00000786700007a6300005e630000e2670000be630000186f0000a6a500001ea200003e6f0000083101002c6f0000de980000408d00005070000060850000cc9f00005676000092850000
 =======
     m_HadKeyboardFocusLastEvent: 0
+<<<<<<< HEAD
     m_ExpandedInstanceIDs: c623000080810000928100009e8100008c790000a0a400007e9f00006e7700001878000090a50000
 >>>>>>> origin/Hyungmin
+=======
+    m_ExpandedInstanceIDs: c6230000e8a00000786700007a6300005e630000e2670000be630000186f0000b68a0000beac0000a8ac0000b4a40000d08f0000
+>>>>>>> origin/MinHyeok
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2575,10 +2997,14 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 11}
 =======
       m_ClientGUIView: {fileID: 10}
 >>>>>>> origin/Hyungmin
+=======
+      m_ClientGUIView: {fileID: 12}
+>>>>>>> origin/MinHyeok
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -2586,6 +3012,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
@@ -2598,6 +3025,13 @@ MonoBehaviour:
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 149
 --- !u!114 &18
+=======
+    m_ScrollPosition: {x: 0, y: 0}
+    m_GridSize: 57
+  m_SkipHiddenPackages: 0
+  m_DirectoriesAreaWidth: 207
+--- !u!114 &21
+>>>>>>> origin/MinHyeok
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2618,15 +3052,25 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 513.60004
     width: 1054.2
     height: 269.8
+=======
+    y: 496
+    width: 985.4
+    height: 327.4
+>>>>>>> origin/MinHyeok
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
+<<<<<<< HEAD
 --- !u!114 &19
 >>>>>>> origin/Hyungmin
+=======
+--- !u!114 &22
+>>>>>>> origin/MinHyeok
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2646,14 +3090,22 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 768.8
     y: 73.6
     width: 288.39996
     height: 709.8
+=======
+    x: 0
+    y: 544
+    width: 1253.4
+    height: 279.4
+>>>>>>> origin/MinHyeok
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
+<<<<<<< HEAD
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
@@ -2684,6 +3136,12 @@ MonoBehaviour:
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
 --- !u!114 &20
+=======
+  m_LockTracker:
+    m_IsLocked: 0
+  m_LastSelectedObjectID: 36268
+--- !u!114 &23
+>>>>>>> origin/MinHyeok
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2704,6 +3162,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1191.2001
     y: 80.8
     width: 336.59998
@@ -2714,6 +3173,12 @@ MonoBehaviour:
     width: 475.80005
     height: 709.8
 >>>>>>> origin/Hyungmin
+=======
+    x: 986.4
+    y: 73.6
+    width: 548.6
+    height: 749.8
+>>>>>>> origin/MinHyeok
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -2735,3 +3200,109 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
+--- !u!114 &24
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12043, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 640, y: 580}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Build Settings
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 986.4
+    y: 73.6
+    width: 548.6
+    height: 749.8
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_TreeViewState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 5fd6aa2c
+    m_LastClickedID: 749393503
+    m_ExpandedIDs: ffffffff
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 0
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+--- !u!114 &25
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13953, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 800, y: 250}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Package Manager
+    m_Image: {fileID: 5076950121296946556, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 986.4
+    y: 73.6
+    width: 548.6
+    height: 749.8
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+--- !u!114 &26
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b8172b39a93e64981b6a57ccc39d67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 256, y: 400}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Collaborate
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 986.4
+    y: 73.6
+    width: 548.6
+    height: 749.8
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
