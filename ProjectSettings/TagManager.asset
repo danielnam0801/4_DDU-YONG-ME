@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - GroundEnemy
   - FlyingEnemy
   - ShieldEnemy
+  - GroundEnemy
   layers:
   - Default
   - TransparentFX
@@ -15,22 +15,17 @@ TagManager:
   - Water
   - UI
   - Player
-  - BackGround
-  - 
-  - 
   - Enemy
-  - ThroughEnemy
   - Floor
   - PassingFloor
-  - 
   - Weapon
-<<<<<<< HEAD
-  - EnemyBullet
   - 
-=======
-  - HolyWaterGlass
-  - Key
->>>>>>> origin/Hyungmin
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
