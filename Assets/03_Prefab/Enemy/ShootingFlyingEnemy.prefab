@@ -107,7 +107,7 @@ MonoBehaviour:
   AfterMovingTime: 3
   speed: 3
   XSpeedValueControl: 3
-  YSpeedValueControl: 0.11
+  YSpeedValueControl: 0.13
   speedRelativeControl: 0.1
 --- !u!50 &7856412068208170672
 Rigidbody2D:
