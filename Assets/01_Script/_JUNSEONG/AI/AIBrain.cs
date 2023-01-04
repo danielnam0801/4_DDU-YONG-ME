@@ -6,7 +6,8 @@ using UnityEngine.Events;
 public class AIBrain : MonoBehaviour
 {
     public UnityEvent<Vector2> OnMovementKeyPress;
-    public UnityEvent<Vector2> OnPointerPositionChanged;
+    public UnityEvent<Vector2> AttackAndChaseStateChanged;
+    public UnityEvent<Vector2,Vector2> IdleStateStateChanged;
     public UnityEvent OnFireButtonPress;
     
     [SerializeField]
@@ -28,7 +29,7 @@ public class AIBrain : MonoBehaviour
     Enemy enemy;
     public Enemy Enemy => enemy;
 
-    protected virtual void Awake()
+    protected virtual void Start()
     {
         _target = GameManager.instance.Target;
         _aiActionData = transform.Find("AI").GetComponent<AIActionData>();
@@ -58,8 +59,10 @@ public class AIBrain : MonoBehaviour
     public void Move(Vector2 direction, Vector3 targetPos)
     {
         OnMovementKeyPress?.Invoke(direction);
-        //if(!_aiActionData.isIdle)
-        OnPointerPositionChanged?.Invoke(targetPos);
+        if (!_aiActionData.isIdle)
+            AttackAndChaseStateChanged?.Invoke(targetPos);
+        else
+            IdleStateStateChanged?.Invoke(_aimovementData.direction, _aimovementData.beforeDirection);
     }
 
     public virtual void Attack()

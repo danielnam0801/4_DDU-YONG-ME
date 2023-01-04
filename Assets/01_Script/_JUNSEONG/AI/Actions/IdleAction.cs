@@ -24,6 +24,7 @@ public class IdleAction : AIAction
 
     public int NextMove()
     {
+
         int nextMove = UnityEngine.Random.Range(-1, 2);
 
         Debug.Log("NextMove : " + nextMove);
@@ -40,5 +41,6 @@ public class IdleAction : AIAction
     {
         yield return new WaitForSeconds(5f);
         _aiActionData.isCanThinking = true;
+        _aiMovementData.beforeDirection = new Vector2(_aiMovementData.direction.x, _aiMovementData.direction.y);
     }
 }

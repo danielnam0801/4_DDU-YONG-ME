@@ -27,7 +27,11 @@ public class GroundMovement : MonoBehaviour
 
     public void MoveAgent(Vector2 moveInput)
     {
-        _currentVelocity = _data.speed;
+        if (_enemy.EnemyDebuffData.bibleSpeedSlow)
+            _currentVelocity = _data.speed * 0.80f;
+        else
+            _currentVelocity = _data.speed;
+        
         _movementdirection = moveInput;
     }
 

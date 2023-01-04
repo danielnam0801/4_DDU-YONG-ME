@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyHPManager : EnemyBase
 {
     [SerializeField]
-    private int hp;
-    public int HP { get { return hp; }
+    private float hp;
+    public float HP { get { return hp; }
         set { this.hp = value; }
     }
 
@@ -31,11 +31,6 @@ public class EnemyHPManager : EnemyBase
                     FlyingEnemyAnim flyingAnim = transform.GetComponentInChildren<FlyingEnemyAnim>();
                     flyingAnim.IsDead();
                 }
-                else if (this.gameObject.CompareTag("GroundEnemy"))
-                {
-                    GroundEnemyAnim groundAnim = transform.GetComponentInChildren<GroundEnemyAnim>();
-                    groundAnim.PlayDeadAnimation();
-                }
                 else
                 {
                     Debug.Log("존재하지 않는 Layer(적)");
@@ -44,22 +39,28 @@ public class EnemyHPManager : EnemyBase
         }    
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void WeaponHit(float damage)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Weapon"))
-        {
-            //hp -= collision.gameObject.GetComponent<Weapon>().damage;
-            hp -= 1;
-        }
-        
+        if (isDead) return;
+        hp -= damage;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Weapon"))
-        {
-            //hp -= collision.gameObject.GetComponent<Weapon>().damage;
-            hp -= 1;
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.layer == LayerMask.NameToLayer("Weapon"))
+    //    {
+    //        //hp -= collision.gameObject.GetComponent<Weapon>().damage;
+    //        hp -= 1;
+    //    }
+        
+    //}
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.layer == LayerMask.NameToLayer("Weapon"))
+    //    {
+    //        //hp -= collision.gameObject.GetComponent<Weapon>().damage;
+    //        hp -= 1;
+    //    }
+    //}
 }

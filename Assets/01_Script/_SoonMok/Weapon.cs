@@ -35,7 +35,6 @@ public class Weapon : MonoBehaviour
         {
             _rigidbody.velocity = Vector2.zero;
             _collider.isTrigger = false;
-
         }
         if (godSpear)
         {
@@ -72,21 +71,21 @@ public class Weapon : MonoBehaviour
     {
         if (state == State.Shoot)
         {
-            //if (collision.gameObject.GetComponentInParent<EnemyOnHit>())
-            //{
-            //    if(counter > 0)
-            //    {
-            //        counter--;
-            //    }
-            //    else
-            //    {
-            //        state = State.Item;
-            //        _collider.isTrigger = false;
-            //        gameObject.layer = _enemyLayer;
-            //        _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+            if (collision.gameObject.GetComponent<Enemy>())
+            {
+                if (counter > 0)
+                {
+                    counter--;
+                }
+                else
+                {
+                    state = State.Item;
+                    _collider.isTrigger = false;
+                    gameObject.layer = _enemyLayer;
+                    _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
 
-            //    }
-            //}
+                }
+            }
             if (collision.gameObject.GetComponent<IsWall>())
             {
                 state = State.Item;
@@ -109,21 +108,36 @@ public class Weapon : MonoBehaviour
                 _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
 
             }
-            //if (collision.gameObject.GetComponentInParent<EnemyOnHit>())
-            //{
-            //    if (counter > 0)
-            //    {
-            //        Debug.LogError("ASdf");
-            //        collision.gameObject.GetComponentInParent<EnemyOnHit>().WeaponHit();
-            //        counter--;
-            //    }
-            //    else
-            //    {
-            //        state = State.Item;
-            //        _collider.isTrigger = false;
+            if (collision.gameObject.CompareTag("GroundEnemy"))
+            {
+                if (counter > 0)
+                {
+                    //Debug.LogError("ASdf");
+                    collision.gameObject.GetComponent<Enemy>().GetHit(damage, gameObject);
+                    counter--;
+                }
+                else
+                {
+                    state = State.Item;
+                    _collider.isTrigger = false;
 
-            //    }
-            //}
+                }
+            }
+            if (collision.gameObject.CompareTag("FlyingEnemy"))
+            {
+                if (counter > 0)
+                {
+                    //Debug.LogError("ASdf");
+                    collision.gameObject.GetComponent<EnemyHPManager>().WeaponHit(damage);
+                    counter--;
+                }
+                else
+                {
+                    state = State.Item;
+                    _collider.isTrigger = false;
+
+                }
+            }
         }
     
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 
 public class Enemy : MonoBehaviour, IHitable, IAgent
 {
@@ -9,6 +10,8 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
     public EnemySO EnemyData { get => _enemyData; }
     public bool IsEnemy => true;
     public Vector3 HitPoint { get; set; }
+
+    [field: SerializeField]
     public float Health { get; set; }
 
     [field : SerializeField]
@@ -24,6 +27,11 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
     protected GroundMovement _groundMovement;
     protected CapsuleCollider2D _bodyCollider;
     protected SpriteRenderer _spriteRenderer = null;
+    protected GroundEnemyAnim _enemyAnim;
+    
+    protected EnemyDebuffData enemyDebuff;
+    public EnemyDebuffData EnemyDebuffData => enemyDebuff;
+    
     
     protected virtual void Awake()
     {
@@ -32,7 +40,10 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
         _bodyCollider = GetComponent<CapsuleCollider2D>();  
         _groundMovement = GetComponent<GroundMovement>();
         _spriteRenderer = transform.Find("VisualSprite").GetComponent<SpriteRenderer>();
+        enemyDebuff = transform.Find("AI").GetComponent<EnemyDebuffData>();
+        _enemyAnim = transform.GetComponentInChildren<GroundEnemyAnim>();
         _isActive = true;
+  
         SetEnemyData();
     }
 
@@ -59,12 +70,15 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
             _attack.Attack(_enemyData.Damage());
         }
     }
-
+    
     public void GetHit(float damage, GameObject damageDealer)
     {
+        Debug.Log("PlayerÇÑÅ× ¸Â¾ÒÂÇ¿°");
         if (_isDead == true) return;
 
+        
         Health -= damage;
+       
         HitPoint = damageDealer.transform.position;
 
         OnGetHit?.Invoke();
@@ -77,11 +91,25 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
     {
         Health = 0;
         _isDead = true;
+        _enemyAnim.PlayDeadAnimation();
         OnDie?.Invoke();
     }
 
     public void Die()
     {
         Destroy(gameObject);
+    }
+
+    public void DieMaterial()
+    {
+        Sequence seq = DOTween.Sequence();
+        Tween dissolve = DOTween.To(
+            () => _spriteRenderer.material.GetFloat("_Dissolve"),
+            x => _spriteRenderer.material.SetFloat("_Dissolve", x),
+            1f,
+            1f);
+
+        seq.Append(dissolve);
+        //seq.AppendCallback(() => Die());
     }
 }

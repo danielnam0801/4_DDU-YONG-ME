@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 3
   enemyName: Shield Enemy
-  hp: 1
+  hp: 3
   damage: 1
   beforeDetectSpeed: 1
   afterDetectSpeed: 1.5
