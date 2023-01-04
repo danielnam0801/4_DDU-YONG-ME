@@ -9,7 +9,7 @@ public class WallCheck : MonoBehaviour
 
     private void Awake()
     {
-        _movement = transform.parent.Find("AI").GetComponent<AIMovementData>();
+        _movement = transform.Find("AI").GetComponent<AIMovementData>();
     }
 
     private void Update()
