@@ -6,53 +6,30 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
-      value: 515250075c0c595e5f5a5e71122159444e4e4a2f7a7d7f602f284d66b4b76661
+      value: 535201515450585f5c5b0d7a4171594414161e2e7b2e73612e7a1c30e7b8666c
       flags: 0
-<<<<<<< HEAD
     RecentlyUsedSceneGuid-1:
       value: 01070d5200545a0c5a5c552146735a444e4e1d7b7b297431787c1b32e6b8313a
       flags: 0
     RecentlyUsedSceneGuid-2:
-      value: 065307525705590f0c0b5b7513700e4445151c7c782b776428784566e3b4626f
+      value: 515250075c0c595e5f5a5e71122159444e4e4a2f7a7d7f602f284d66b4b76661
       flags: 0
     RecentlyUsedSceneGuid-3:
-      value: 535201515450585f5c5b0d7a4171594414161e2e7b2e73612e7a1c30e7b8666c
+      value: 065307525705590f0c0b5b7513700e4445151c7c782b776428784566e3b4626f
       flags: 0
     RecentlyUsedSceneGuid-4:
-      value: 010500000406585a5f0b5c7440255c4446164d2b752e20612f7e1c62b6e6653e
+      value: 5a52060707565a580c0a597b142208444e15492b287a2463292a4b32b3b5676e
       flags: 0
     RecentlyUsedSceneGuid-5:
       value: 540106050301580e5f5c5e774974084445164e282d7b7f317d2c1b35b1e6646c
-=======
-    RecentlyUsedSceneGuid-2:
-      value: 010500000406585a5f0b5c7440255c4446164d2b752e20612f7e1c62b6e6653e
-      flags: 0
-    RecentlyUsedSceneGuid-3:
-      value: 535201515450585f5c5b0d7a4171594414161e2e7b2e73612e7a1c30e7b8666c
-      flags: 0
-    RecentlyUsedSceneGuid-4:
-      value: 01070d5200545a0c5a5c552146735a444e4e1d7b7b297431787c1b32e6b8313a
-      flags: 0
-    RecentlyUsedSceneGuid-5:
-      value: 065307525705590f0c0b5b7513700e4445151c7c782b776428784566e3b4626f
       flags: 0
     RecentlyUsedSceneGuid-6:
-      value: 5a52060707565a580c0a597b142208444e15492b287a2463292a4b32b3b5676e
->>>>>>> origin/Hyungmin
+      value: 010500000406585a5f0b5c7440255c4446164d2b752e20612f7e1c62b6e6653e
       flags: 0
     RecentlyUsedSceneGuid-7:
       value: 5309060056565c0d5c560e7344700c44174e4179752b22647d7f1f30e3e1306d
       flags: 0
     UnityEditor.ShaderGraph.Blackboard:
-<<<<<<< HEAD
-      value: 18135939215a0a5004000b0e15254b524c030a3f2964643d120d1230e9e93a3fd6e826abbd3c3e302a07a37e0901373ae01e0008f707250d171df81a53a5405d419548954b994b489f49459f9a4487bb828398a8d5d4cfd7ccd6bafdfae4eff4daf7a3e8afbcbe9afce1ade8f69b9e9d979bef919f969b90e99e93de81e0dbc9dc94dfcd9b9f9a818bddf0c3f2dce5bdd1fbf0c6c5ebc9b680
-      flags: 0
-    UnityEditor.ShaderGraph.FloatingWindowsLayout2:
-      value: 181344140043005e1a220d3b1f364b524c0c5a27130c293326201334cee5322ca0bd30e8eb293a707b0fd0180b3d0a36fc0d3d04e649500d1002ee0b5dbd1d2c27c00ad113cb1e10e41f1addc80993b98d9884a69ae6d8f0d1cda9e8fbfefaf9f9dea3fdb9ade882f0f7b0e1e380cafbf2c3adc18e9cd285a2908b82ec879c8b8986d58781d4898b8cd9f6d5fadce5bdd1fbf5c4c1ebc1fbcdcecdea33e2ff35323130e2a1a5ab
-      flags: 0
-    UnityEditor.ShaderGraph.InspectorWindow:
-      value: 18135939215a0a5004000b0e15254b524c1119263f2d6a722016393ce1eb3d36e5d339f9a560393d3511ea7046333e09f7181d02f50a06241708ee0b05bd4a435f95548717f73713d91006c1c309d0effad0d2f9ddffa5828e91f0beb6fdd1cbfceba0b9f0b3bed8e8f5ade1ff8c978883d3f59e9e919c89e8828183ef8180838e86d6878bd0c5c6
-=======
       value: 18135939215a0a5004000b0e15254b524c030a3f2964643d120d1230e9e93a3fd6e826abbd3c3e302a07a37e0901373ae01e0008f707250d171df81a53a5405d41895ac825e0100ec20313c0d91cddccd3d0c7efcca9bd8e908bf0a2a4a0bea8aca4f6adfdfcaf92e6edf38e9ccbddc18390ac86d4849395ea829f83f291cb918382d58697d7c5c6
       flags: 0
     UnityEditor.ShaderGraph.FloatingWindowsLayout2:
@@ -60,7 +37,6 @@ EditorUserSettings:
       flags: 0
     UnityEditor.ShaderGraph.InspectorWindow:
       value: 18135939215a0a5004000b0e15254b524c1119263f2d6a722016393ce1eb3d36e5d339f9a560393d3511ea7046333e09f7181d02f50a06241708ee0b05bd4a435f95548717f73713d91006c1c309d0effad0d2f9ddffa5828e91f0beb6fdd1cbfceba0b9f0b3bed8e8f5ace8f68c9e9d9893e19d989e9b93e883889ffcca90898b81d0988bd7888b88dff2ddf5c0f4f5c1f6b98b
->>>>>>> origin/Hyungmin
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
