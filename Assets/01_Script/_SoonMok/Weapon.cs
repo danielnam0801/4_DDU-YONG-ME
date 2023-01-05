@@ -94,6 +94,15 @@ public class Weapon : MonoBehaviour
                 _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll; 
 
             }
+            if (collision.gameObject.GetComponent<BossHP>())
+            {
+                state = State.Item;
+                _collider.isTrigger = false;
+                gameObject.layer = _enemyLayer;
+                collision.gameObject.GetComponent<BossHP>().Damage(1);
+                _rigidbody.gravityScale = 10f;
+
+            }
         }
 
     }
