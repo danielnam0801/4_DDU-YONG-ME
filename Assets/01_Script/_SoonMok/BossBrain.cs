@@ -8,24 +8,46 @@ public class BossBrain : MonoBehaviour
     [SerializeField] private float _secondSpeed;
     [SerializeField] GameObject LHand;
     [SerializeField] GameObject RHand;
+    [SerializeField] public int HP;
+    [SerializeField] private Vector3 _origin;
+    [SerializeField] private float i = 0;
     [ContextMenu("StartPatton")]
-    public void StartPatton()
+
+    private void OnEnable()
     {
-        StartCoroutine(Pattons());
+        _origin = transform.position;
     }
-    IEnumerator Pattons()
+    public void Awake()
+    {
+        StopAllCoroutines();
+        StartCoroutine(Pattons());
+        _origin = transform.position;
+    }
+    IEnumerator Pattons()   
     {
         while (true)
         {
             yield return new WaitForSeconds(_firstSpeed);
-            switch(Random.Range(0, 2))
+            if (HP < 9)
             {
-                case 0:
-                    Instantiate(LHand);
-                    break;
-                case 1:
-                    break;
+                int a = Random.Range(0, 2);
+                LHand.GetComponent<BossHand>().SetPatton(a,_firstSpeed);
+                RHand.GetComponent<BossHand>().SetPatton(a,_firstSpeed);
+
+            }
+            else
+            {
+                int a = Random.Range(0, 2);
+                LHand.GetComponent<BossHand>().SetPatton(a, _secondSpeed);
+                RHand.GetComponent<BossHand>().SetPatton(a, _secondSpeed);
+
             }
         }
+    }
+    private void Update()
+    {
+        i += Time.deltaTime * 2.5f;
+        transform.position = _origin + (new Vector3(Mathf.Sin(i), Mathf.Cos(i)));
+        if (i > 360) i = 0;
     }
 }

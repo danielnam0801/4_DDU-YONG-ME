@@ -7,29 +7,21 @@ public class PlayerHP : MonoBehaviour
     public int stCross;
     public static PlayerHP instance;
     public bool isArmor;
-    [SerializeField] private int hp;
-    [SerializeField] private int maxHP;
-    public int HP
+    public int hp;
+    public int MaxHp;
+    private void Awake()
     {
-        get { return hp; }
-        set { hp = value;}
-    }
-    public int MaxHP
-    {
-        
-        get { return maxHP;}
-        set { maxHP = value;}
+        hp = MaxHp;
     }
     public void Damage(int damage)
     {
-        if (isArmor) damage -= 1;
         Debug.Log(damage);
-        HP -= damage;
-        Debug.Log(HP);
+        if (isArmor) damage -= 1;
+        hp -= damage;
     }
     public void Heal(int heal)
     {
         
-        HP += heal;
+        hp += heal;
     }
 }
