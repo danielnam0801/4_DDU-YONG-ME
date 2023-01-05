@@ -990,6 +990,11 @@ MonoBehaviour:
   m_AmplitudeGain: 4
   m_FrequencyGain: 2
   mNoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!1 &919272202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7049542437111037167, guid: 20fa980e8821f114db1bce9ab845567a, type: 3}
+  m_PrefabInstance: {fileID: 5743072316282375284}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &954056271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2266,6 +2271,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 241346623181189569, guid: 20fa980e8821f114db1bce9ab845567a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316280281884611237, guid: 20fa980e8821f114db1bce9ab845567a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.549
+      objectReference: {fileID: 0}
     - target: {fileID: 5743072314539988932, guid: 20fa980e8821f114db1bce9ab845567a, type: 3}
       propertyPath: _layerMask.m_Bits
       value: 4352
@@ -2330,6 +2343,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5743072314539988955, guid: 20fa980e8821f114db1bce9ab845567a, type: 3}
+      propertyPath: _grabPoint
+      value: 
+      objectReference: {fileID: 919272202}
     - target: {fileID: 5743072314539988955, guid: 20fa980e8821f114db1bce9ab845567a, type: 3}
       propertyPath: Spear_Count
       value: 1
