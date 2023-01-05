@@ -6,7 +6,6 @@ public class WallCheckDecision : AIDecision
 {
     public LayerMask wallLayer;
 
-
     public override bool MakeADecision()
     {
         RaycastHit2D wallCheck = Physics2D.Raycast(transform.position, GameManager.instance.Target.position, 15, wallLayer);
@@ -16,15 +15,4 @@ public class WallCheckDecision : AIDecision
             return false;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
