@@ -110,9 +110,10 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
             () => _spriteRenderer.material.GetFloat("_Dissolve"),
             x => _spriteRenderer.material.SetFloat("_Dissolve", x),
             0f,
-            1f);
+            1.5f);
 
         seq.Append(dissolve);
+        seq.OnComplete(() => Die());
         //seq.AppendCallback(() => Die());
     }
 }

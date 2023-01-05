@@ -457,7 +457,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decisions:
   - {fileID: 4624629376007683687}
-  - {fileID: 4624629376076901899}
   positiveState: {fileID: 4624629376585608761}
   negativeState: {fileID: 0}
 --- !u!114 &4624629376007683687

@@ -352,7 +352,6 @@ GameObject:
   - component: {fileID: 4340472157226283983}
   - component: {fileID: 4340472157226283982}
   - component: {fileID: 4340472157226283981}
-  - component: {fileID: 5564395547678111115}
   m_Layer: 7
   m_Name: TranChase
   m_TagString: Untagged
@@ -389,7 +388,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decisions:
   - {fileID: 4340472157226283981}
-  - {fileID: 5564395547678111115}
   positiveState: {fileID: 4340472156926026643}
   negativeState: {fileID: 0}
 --- !u!114 &4340472157226283981
@@ -405,18 +403,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _distance: 5
---- !u!114 &5564395547678111115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4340472157226283976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7cf703de99020947979540eb5fe3763, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4340472157488580412
 GameObject:
   m_ObjectHideFlags: 0
