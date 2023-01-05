@@ -127,8 +127,8 @@ public class Walk : MonoBehaviour
         if (_canJump)
         {
 
-            if (Physics2D.BoxCast(_col.bounds.center, _col.size*0.5f, 0f, Vector2.down, 0.1f, _layerMask) ||
-                Physics2D.BoxCast(_col.bounds.center, _col.size*0.5f, 0f, Vector2.down, 0.1f, _layerMask2) /*|| 
+            if (Physics2D.BoxCast(_col.bounds.center, _col.size*0.5f, 0f, Vector2.down, 0.1f, Define.Floor) ||
+                Physics2D.BoxCast(_col.bounds.center, _col.size*0.5f, 0f, Vector2.down, 0.1f, Define.PassingFloor) /*|| 
                 Physics2D.BoxCast(_col.bounds.center, _col.size, 0f, Vector2.down, 0.1f, _layerMask3)*/)
             {
                 _moveTo.y = 0;
@@ -147,7 +147,7 @@ public class Walk : MonoBehaviour
     }
     bool DownJump()
     {
-        downpan = Physics2D.BoxCast(_col.bounds.center, _col.size, 0f, Vector2.down, 0.1f, _layerMask2);
+        downpan = Physics2D.BoxCast(_col.bounds.center, _col.size, 0f, Vector2.down, 0.1f, Define.PassingFloor);
         if (downpan)
         {
             return true;

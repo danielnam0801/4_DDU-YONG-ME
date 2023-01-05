@@ -12,7 +12,6 @@ public class CheckWall : MonoBehaviour
     {
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         _moveData = transform.parent.Find("AI").GetComponent<AIMovementData>();
-        transform.gameObject.layer = Define.Enemy;
     }
 
     private void Update()

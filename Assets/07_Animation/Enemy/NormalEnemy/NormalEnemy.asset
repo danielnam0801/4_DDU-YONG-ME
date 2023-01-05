@@ -21,6 +21,6 @@ MonoBehaviour:
   detectRange: 5
   attackRange: 2
   attackSpeed: 2
-  attackDelay: 0
+  attackDelay: 2
   dropMinExPValue: 5
   dropMaxExPValue: 6

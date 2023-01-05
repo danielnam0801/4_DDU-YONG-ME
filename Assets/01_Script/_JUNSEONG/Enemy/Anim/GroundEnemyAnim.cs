@@ -62,6 +62,12 @@ public class GroundEnemyAnim : MonoBehaviour
 
     public void SetEndOfAttackAnimation()
     {
+        StartCoroutine("TimeWait");
+    }
+
+    IEnumerator TimeWait()
+    {
+        yield return new WaitForSeconds(0.15f);
         _brain.AIActionData.isAttack = false;
     }
 

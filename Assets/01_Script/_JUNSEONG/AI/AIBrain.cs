@@ -60,7 +60,7 @@ public class AIBrain : MonoBehaviour
     {
         OnMovementKeyPress?.Invoke(direction);
         if (!_aiActionData.isIdle)
-            AttackAndChaseStateChanged?.Invoke(targetPos);
+                AttackAndChaseStateChanged?.Invoke(targetPos);
         else
             IdleStateStateChanged?.Invoke(_aimovementData.direction, _aimovementData.beforeDirection);
     }
