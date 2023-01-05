@@ -81,7 +81,7 @@ public class GroundEnemyAnim : MonoBehaviour
     public void EndOfDeadAnimation()
     {
         Debug.Log("Á×À½");
-        _brain.Enemy.Die();
+        //_brain.Enemy.Die();
     }
 
 }

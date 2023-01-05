@@ -26,7 +26,7 @@ public class PlayerAbilityList : MonoBehaviour
 
     private void Start()
     {
-        playerObj = GameObject.Find("Player");
+        playerObj = GameObject.Find("Player1");
         walk = playerObj.GetComponent<Walk>();
         attack = playerObj.GetComponent<Attack>();
         playerHp = playerObj.GetComponent<PlayerHP>();
