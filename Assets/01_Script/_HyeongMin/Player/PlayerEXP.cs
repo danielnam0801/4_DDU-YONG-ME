@@ -7,7 +7,7 @@ public class PlayerEXP : MonoBehaviour
     PlayerUpgradeManager playerUpgradeManager;
 
     public int exp;
-    [SerializeField] private int maxExp;
+    public int maxExp;
     [SerializeField] private int maxExpUp;
     [SerializeField] private int level;
     private void Start()
@@ -21,6 +21,7 @@ public class PlayerEXP : MonoBehaviour
     }
     public void ExpUp(int expUp)
     {
+        GetComponent<AudioSource>().Play();
         exp += expUp;
     }
     void LevelUp()

@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7341153798505632234}
-  - component: {fileID: 7341153798505632232}
   - component: {fileID: 7341153798505632231}
+  - component: {fileID: 5020112793076019067}
   m_Layer: 0
   m_Name: Bible
   m_TagString: Untagged
@@ -34,20 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7341153798505632232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7341153798505632235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b5f28c3f40c2ee4186ce02d99201a36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  holyWaterGlassObj: {fileID: 0}
-  makeTime: 10
 --- !u!61 &7341153798505632231
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -74,6 +60,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.5, y: 0.72669727}
   m_EdgeRadius: 0
+--- !u!114 &5020112793076019067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7341153798505632235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad03378de4225c840965da4344872db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7341153799707670780
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,3 +422,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c44f3808950cb04b97a659a85dd8e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spinSpeed: 0
