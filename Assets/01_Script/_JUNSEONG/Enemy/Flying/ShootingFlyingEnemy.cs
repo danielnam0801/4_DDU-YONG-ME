@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ShootingFlyingEnemy : EnemyBase
 {
@@ -27,6 +28,7 @@ public class ShootingFlyingEnemy : EnemyBase
     [SerializeField] 
     [Range(0,10)] private float speedRelativeControl;
 
+    public UnityEvent AttackFeedBack;
 
     protected override void Awake()
     {
@@ -43,6 +45,7 @@ public class ShootingFlyingEnemy : EnemyBase
             if (isCanAttack)
             {
                 anim.FlyingAttack();
+                AttackFeedBack?.Invoke();
                 StartCoroutine(ShootingWaiter());
                 isCanAttack = false;
             }

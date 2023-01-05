@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerEXP : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PlayerEXP : MonoBehaviour
     public int maxExp;
     [SerializeField] private int maxExpUp;
     [SerializeField] private int level;
+
+    public UnityEvent LevelUpFeedBack;
+    
     private void Start()
     {
         playerUpgradeManager = GameObject.Find("InGameUI").GetComponent<PlayerUpgradeManager>();
@@ -21,7 +25,7 @@ public class PlayerEXP : MonoBehaviour
     }
     public void ExpUp(int expUp)
     {
-        GetComponent<AudioSource>().Play();
+        LevelUpFeedBack?.Invoke();
         exp += expUp;
     }
     void LevelUp()

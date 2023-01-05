@@ -10,6 +10,8 @@ public class ShieldCollision : MonoBehaviour
     BoxCollider2D _boxCollider; // shield collider
     ShieldData _shieldData;
 
+    public UnityEvent OnHit;
+
     private void Awake()
     {
         _aiBrain = transform.parent.parent.GetComponent<AIBrain>(); 
@@ -41,6 +43,7 @@ public class ShieldCollision : MonoBehaviour
             else {
                 if (collision.GetComponent<Weapon>())
                 {
+                    OnHit?.Invoke();
                     collision.gameObject.GetComponent<Weapon>().state = Weapon.State.Item;
                     Debug.Log("ONHIT");
                     collision.gameObject.GetComponent<Collider2D>().isTrigger = false;

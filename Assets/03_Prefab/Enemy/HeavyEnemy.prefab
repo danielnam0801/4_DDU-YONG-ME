@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 81369581499661481}
   - component: {fileID: 81369581499661480}
   - component: {fileID: 81369581499661483}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: TranAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 81369581531928011}
   - component: {fileID: 81369581531928010}
   - component: {fileID: 81369581531928053}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: IdleState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 81369581633799638}
   - component: {fileID: 81369581633799633}
   - component: {fileID: 81369581633799632}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: BaseCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,12 +185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867b087fd8a25b146973fd03eb3af621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SideWall:
-    serializedVersion: 2
-    m_Bits: 128
-  CheckPlatform:
-    serializedVersion: 2
-    m_Bits: 8192
 --- !u!1 &81369582199381186
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +196,7 @@ GameObject:
   - component: {fileID: 81369582199381197}
   - component: {fileID: 81369582199381196}
   - component: {fileID: 81369582199381199}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: TranIdle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +259,7 @@ GameObject:
   - component: {fileID: 81369582249202040}
   - component: {fileID: 81369582249202043}
   - component: {fileID: 81369582249202042}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: TranChase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +335,7 @@ GameObject:
   - component: {fileID: 81369582541343864}
   - component: {fileID: 81369582541343867}
   - component: {fileID: 216497928}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: TranChase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +415,7 @@ GameObject:
   - component: {fileID: 81369582803138745}
   - component: {fileID: 81369582803138750}
   - component: {fileID: -5104590075654007909}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: HeavyEnemy
   m_TagString: GroundEnemy
   m_Icon: {fileID: 0}
@@ -443,6 +437,7 @@ Transform:
   - {fileID: 81369583410262019}
   - {fileID: 81369583136643649}
   - {fileID: 81369581633799638}
+  - {fileID: 1715019521140118815}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -574,6 +569,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5684725610949507528}
+        m_TargetAssemblyTypeName: AgendSound, Assembly-CSharp
+        m_MethodName: PlayAttackSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _attackDelay: 0
 --- !u!114 &81369582803138748
 MonoBehaviour:
@@ -607,6 +614,30 @@ MonoBehaviour:
       - m_Target: {fileID: 81369582803138751}
         m_TargetAssemblyTypeName: GroundMovement, Assembly-CSharp
         m_MethodName: StopImmediatelly
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 81369582803138748}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: DieMaterial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5684725610949507528}
+        m_TargetAssemblyTypeName: AgendSound, Assembly-CSharp
+        m_MethodName: PlayDeathSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -680,7 +711,7 @@ GameObject:
   - component: {fileID: 81369583115082810}
   - component: {fileID: 81369583115082789}
   - component: {fileID: 81369583115082788}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: ChaseState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -745,7 +776,7 @@ GameObject:
   - component: {fileID: 81369583136643651}
   - component: {fileID: 81369583136643648}
   - component: {fileID: 81369583136643650}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: AI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -828,7 +859,7 @@ GameObject:
   - component: {fileID: 81369583151832063}
   - component: {fileID: 81369583151832062}
   - component: {fileID: 81369583151832057}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: AttackState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -892,7 +923,7 @@ GameObject:
   - component: {fileID: 81369583410262029}
   - component: {fileID: 81369583410262018}
   - component: {fileID: 81369583410262031}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: VisualSprite
   m_TagString: GroundEnemy
   m_Icon: {fileID: 0}
@@ -946,7 +977,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: b024f21f08c2a4b4da3599164d949cf2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1010,3 +1041,148 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8d9cf78a1214947a55323e7a7e679e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4221701144823239140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1715019521140118815}
+  - component: {fileID: 5684725610949507528}
+  - component: {fileID: 6721882130495342233}
+  m_Layer: 7
+  m_Name: AgentSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1715019521140118815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4221701144823239140}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 81369582803138738}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5684725610949507528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4221701144823239140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3d3ddb819ff4b459ca64e3f2aa7b8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pitchRandomes: 0.25
+  _hitClip: {fileID: 0}
+  _deathClip: {fileID: 8300000, guid: d0ecec50f01762b488aa3e5c35382008, type: 3}
+  _attackClip: {fileID: 8300000, guid: b7d68e1cfd9800e40b87d48dc840c276, type: 3}
+--- !u!82 &6721882130495342233
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4221701144823239140}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
