@@ -173,7 +173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &409654851
 Animator:
   serializedVersion: 4
@@ -1583,6 +1583,10 @@ PrefabInstance:
     - target: {fileID: 4750676905815956715, guid: 27bc5b28eb5a4e44c9da57b8721bc1ae, type: 3}
       propertyPath: m_Name
       value: panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750676906427031719, guid: 27bc5b28eb5a4e44c9da57b8721bc1ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27bc5b28eb5a4e44c9da57b8721bc1ae, type: 3}
