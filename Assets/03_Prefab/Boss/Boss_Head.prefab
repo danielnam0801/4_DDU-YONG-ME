@@ -140,6 +140,8 @@ MonoBehaviour:
   Hp: 0
   _hitting: 0
   _spriteRenderer: {fileID: 4796485030894304572}
+  i: 0
+  _isDead: 0
 --- !u!1 &4796485031079686025
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +250,7 @@ MonoBehaviour:
     m_Bits: 256
   cam: {fileID: 0}
   a: {fileID: 0}
-  _stone: {fileID: 0}
+  _stone: {fileID: 7075280151960027360, guid: 49169b292122ee840897346f53d49a2e, type: 3}
   _horizontalDistance: -5
   _verticalDistance: 16.58
   _startPos: {x: -6, y: 0, z: 0}
@@ -387,7 +389,7 @@ MonoBehaviour:
     m_Bits: 256
   cam: {fileID: 0}
   a: {fileID: 0}
-  _stone: {fileID: 0}
+  _stone: {fileID: 7075280151960027360, guid: 49169b292122ee840897346f53d49a2e, type: 3}
   _horizontalDistance: 5
   _verticalDistance: 16.58
   _startPos: {x: 6, y: 0, z: 0}

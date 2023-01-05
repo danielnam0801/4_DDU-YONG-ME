@@ -10,7 +10,7 @@ public  class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        target = GameObject.Find("Player1").GetComponent<Transform>();
+        target = GameObject.Find("Player").GetComponent<Transform>();
         if(instance == null)
         {
             instance = this;

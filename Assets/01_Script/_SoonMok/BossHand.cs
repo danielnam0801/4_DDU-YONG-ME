@@ -21,6 +21,8 @@ public class BossHand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cam = Define.VCam;
+        PlayerObject = GameManager.instance.Target.gameObject;
     }
     
     public void SetPatton(int num, float wait)

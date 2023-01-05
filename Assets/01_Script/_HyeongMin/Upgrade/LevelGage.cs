@@ -9,7 +9,7 @@ public class LevelGage : MonoBehaviour
     void Start()
     {
         slider = GetComponent<Slider>();
-        playerEXP = GameObject.Find("Player1").GetComponent<PlayerEXP>();
+        playerEXP = GameObject.Find("Player").GetComponent<PlayerEXP>();
     }
     void Update()
     {
