@@ -132,7 +132,6 @@ public class Walk : MonoBehaviour
                 Physics2D.BoxCast(_col.bounds.center, _col.size, 0f, Vector2.down, 0.1f, _layerMask3)*/)
             {
                 _moveTo.y = 0;
-                Debug.Log("true");
                 return true;
             }
             else
