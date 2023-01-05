@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class SpinSpin : MonoBehaviour
 {
+    [SerializeField] private float spinSpeed;
     Transform objTransform;
-    int a;
+    float a;
     private void Start()
     {
         objTransform = GetComponent<Transform>();
     }
     void Update()
     {
-        a += 1;
+        a += spinSpeed;
         objTransform.rotation = Quaternion.Euler(new Vector3(80, 0, a));
     }
 }
