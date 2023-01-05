@@ -417,9 +417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7cf703de99020947979540eb5fe3763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &4340472157488580412
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,9 +681,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b3166d4406cd941842013ebfe7f64c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &4340472158072893128
 GameObject:
   m_ObjectHideFlags: 0

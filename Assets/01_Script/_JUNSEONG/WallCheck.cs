@@ -5,7 +5,6 @@ using UnityEngine;
 public class WallCheck : MonoBehaviour
 {
     AIMovementData _movement;
-    public LayerMask wallLayer;
 
     private void Awake()
     {
@@ -14,7 +13,8 @@ public class WallCheck : MonoBehaviour
 
     private void Update()
     {
-        RaycastHit2D sideWalkCheck = Physics2D.Raycast(transform.position, new Vector3(_movement.direction.x, 0, 0), 1.5f, wallLayer);
+        RaycastHit2D sideWalkCheck = Physics2D.Raycast(transform.position, new Vector3(_movement.direction.x, 0, 0), 1.5f, Define.Floor);
+        Debug.DrawRay(transform.position, new Vector3(_movement.direction.x,0,0) * 1.5f, Color.yellow);
         if (sideWalkCheck.collider != null)
         {
             _movement.direction.x = -_movement.direction.x;

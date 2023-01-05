@@ -5,10 +5,6 @@ using UnityEngine;
 
 public class CheckWall : MonoBehaviour
 {
-
-    public LayerMask SideWall;
-    public LayerMask CheckPlatform;
-
     CapsuleCollider2D capsuleCollider;
     AIMovementData _moveData;
 
@@ -16,6 +12,7 @@ public class CheckWall : MonoBehaviour
     {
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         _moveData = transform.parent.Find("AI").GetComponent<AIMovementData>();
+        transform.gameObject.layer = Define.Enemy;
     }
 
     private void Update()
@@ -25,7 +22,7 @@ public class CheckWall : MonoBehaviour
 
     private void PlatformCheck()
     {
-        RaycastHit2D platformCheck = Physics2D.Raycast(capsuleCollider.bounds.center + new Vector3(_moveData.direction.x, 0 , 0 ), Vector2.down, 0.5f, CheckPlatform);
+        RaycastHit2D platformCheck = Physics2D.Raycast(capsuleCollider.bounds.center + new Vector3(_moveData.direction.x, 0 , 0 ), Vector2.down, 0.5f, Define.Floor);
         Debug.DrawRay(capsuleCollider.bounds.center + new Vector3(_moveData.direction.x, 0, 0), Vector2.down * 0.5f , Color.red);
         if(platformCheck.collider == null)
         {
@@ -36,7 +33,7 @@ public class CheckWall : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == SideWall)
+        if(collision.gameObject.layer == Define.Floor)
         {
             _moveData.direction.x = -_moveData.direction.x;
             _moveData.thinkTime = 0;
