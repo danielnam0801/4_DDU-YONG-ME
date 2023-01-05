@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
+    [SerializeField] private PlayerHP player;
     [SerializeField] private bool isExplosion;
     [SerializeField] private int damage;
     [SerializeField] private bool isActivated;
     [SerializeField] private GameObject expObj;
+    private void Awake()
+    {
+        player = GameManager.FindObjectOfType<PlayerHP>();
+    }
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<Walk>() && !isActivated)
         {
             if (isExplosion)
             {
-                damage = collision.gameObject.GetComponent<PlayerHP>().MaxHP;
+                damage = player.MaxHp;
+                Debug.Log(player.MaxHp);
                 Instantiate(expObj).transform.position = transform.position;
 
                 Destroy(expObj, 1f);
@@ -22,7 +28,6 @@ public class Trap : MonoBehaviour
             StartCoroutine(TrapDelay());
             Vector2 dir = new Vector2(collision.gameObject.transform.position.x - transform.position.x, 3f * collision.gameObject.transform.position.y - transform.position.y > 0 ? 5 : -1); ;
             if (GetComponentInChildren<SenceSc>() && GetComponentInChildren<SenceSc>().item == SenceSc.Item.FakePlat) dir.y = 1;
-            Debug.Log(dir.y);
             dir.Normalize();
             collision.gameObject.GetComponent<Walk>().JumpKiller(0.5f);
             collision.gameObject.GetComponent<Walk>().KnockBack(dir.normalized * 13);
@@ -32,8 +37,7 @@ public class Trap : MonoBehaviour
                 collision.gameObject.GetComponent<PlayerHP>().stCross--;
 
             }
-            collision.gameObject.GetComponent<PlayerHP>().Damage(damage);
-            Debug.Log("asdf;");
+            player.Damage(damage);
             if (isExplosion) Destroy(gameObject);
         }
     }
