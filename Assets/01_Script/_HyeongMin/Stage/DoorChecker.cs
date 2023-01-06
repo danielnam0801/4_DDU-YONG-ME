@@ -33,20 +33,17 @@ public class DoorChecker : MonoBehaviour
             }
         }
     }
-    void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.gameObject.layer != LayerMask.NameToLayer("Player")) { return; }
-        doorAnimator.SetBool("DoorOpen", false);
-    }
     void DoorOpening()
     {
         if (doorAnimator.GetBool("DoorOpen"))
         {
             doorScript[0].transform.GetChild(0).gameObject.SetActive(true);
+            doorScript[0].transform.GetChild(2).gameObject.SetActive(false);
         }
         else
         {
             doorScript[0].transform.GetChild(0).gameObject.SetActive(false);
+            doorScript[0].transform.GetChild(2).gameObject.SetActive(true);
         }
     }
 }
