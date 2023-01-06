@@ -22,10 +22,15 @@ public class PlayerAbilityList : MonoBehaviour
     public int[] abilityNumber;
     public List<int> abilityArrCount = new List<int>();
     public List<int> usedNumber = new List<int>();
+    public List<int> levelUpNumber = new List<int>();
+    public List<int> finalList = new List<int>();
     public List<Sprite> spriteArr = new List<Sprite>();
+
+    public int[] abilityLevel;
     
     private void Start()
     {
+        abilityLevel = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
         playerObj = GameObject.Find("Player");
         walk = playerObj.GetComponent<Walk>();
         attack = playerObj.GetComponent<Attack>();

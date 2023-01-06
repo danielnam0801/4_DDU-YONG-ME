@@ -10,7 +10,7 @@ public class KeyScript : MonoBehaviour
         if (col.gameObject.layer == LayerMask.NameToLayer(playerLayerName))
         {
             GetKeyObject getKeyScript = col.gameObject.GetComponent<GetKeyObject>();
-            getKeyScript.gettingKey = true;
+            getKeyScript.gettingKey++;
             Destroy(gameObject);
         }
     }

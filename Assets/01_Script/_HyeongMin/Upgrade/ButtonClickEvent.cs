@@ -18,12 +18,27 @@ public class ButtonClickEvent : MonoBehaviour
     {
         clickSound.Play();
         playerAbilityList.AbilitySelect(buttonAbilityNumber);
-        if (usedCheck(buttonAbilityNumber - 1))
+        if (!playerAbilityList.usedNumber.Contains(buttonAbilityNumber - 1) && usedCheck(buttonAbilityNumber - 1))
         {
+            inGameUI.transform.GetChild(3).GetChild(playerAbilityList.itemNumber).GetComponent<Image>().sprite = transform.GetChild(2).GetComponent<Image>().sprite;
             playerAbilityList.usedNumber.Add(buttonAbilityNumber - 1);
+            playerAbilityList.itemNumber++;
         }
-        inGameUI.transform.GetChild(3).GetChild(playerAbilityList.itemNumber).GetComponent<Image>().sprite = transform.GetChild(2).GetComponent<Image>().sprite;
-        playerAbilityList.itemNumber++;
+        else
+        {
+            if (playerAbilityList.abilityLevel[buttonAbilityNumber - 1] == 1)
+            {
+                inGameUI.transform.GetChild(3).GetChild(playerAbilityList.itemNumber).GetComponent<Image>().sprite = transform.GetChild(2).GetComponent<Image>().sprite;
+                playerAbilityList.itemNumber++;
+                playerAbilityList.levelUpNumber.Add(buttonAbilityNumber - 1);
+            }
+            if (playerAbilityList.levelUpNumber.Contains(buttonAbilityNumber - 1))
+            {
+                playerAbilityList.abilityLevel[buttonAbilityNumber - 1]++;
+            }
+        }
+
+
         StartCoroutine(playerUpgradeManager.ButtonDown());
         Time.timeScale = 1;
     }

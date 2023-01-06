@@ -23,7 +23,7 @@ public class DoorChecker : MonoBehaviour
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Player") && col.gameObject.name == "Player")
         {
-            if (col.gameObject.GetComponent<GetKeyObject>().gettingKey)
+            if (col.gameObject.GetComponent<GetKeyObject>().gettingKey > 0)
             {
                 stageClear = true;
             }
