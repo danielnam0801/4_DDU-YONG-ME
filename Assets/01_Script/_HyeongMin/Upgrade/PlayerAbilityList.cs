@@ -13,28 +13,26 @@ public class PlayerAbilityList : MonoBehaviour
     [SerializeField] private GameObject bibleObj;
     [SerializeField] private GameObject holyWater;
     [SerializeField] private GameObject holyGrailObj;
-    [SerializeField] private Spears spears;
 
     GameObject playerObj;
 
     public string[] abilityArr;
     public string[] abilityTextArr;
+    public int itemNumber = 0;
     public int[] abilityNumber;
     public List<int> abilityArrCount = new List<int>();
     public List<int> usedNumber = new List<int>();
     public List<Sprite> spriteArr = new List<Sprite>();
-
+    
     private void Start()
     {
-        playerObj = GameObject.Find("Player1");
+        playerObj = GameObject.Find("Player");
         walk = playerObj.GetComponent<Walk>();
         attack = playerObj.GetComponent<Attack>();
         playerHp = playerObj.GetComponent<PlayerHP>();
         bibleObj = playerObj.transform.GetChild(1).gameObject;
         holyWater = playerObj.transform.GetChild(2).gameObject;
         holyGrailObj = playerObj.transform.GetChild(3).gameObject;
-
-        spears = GameObject.Find("Spears").GetComponent<Spears>();
     }
     public void AbilitySelect(int selectNumber)
     {
@@ -47,8 +45,7 @@ public class PlayerAbilityList : MonoBehaviour
     }
     void Ability2Upgrade()
     {
-        spears.godSpear = true;
-        attack.Spear_Count = 1;
+        attack.GodON(FindObjectOfType<Weapon>());
         Debug.Log("축복받은 창");
         usedNumber.Add(4);
     }
@@ -61,7 +58,6 @@ public class PlayerAbilityList : MonoBehaviour
     {
         attack.Spear_Count += 1;
         Debug.Log("쓸만한 가죽 가방");
-        usedNumber.Add(2);
     }
     void Ability5Upgrade()
     {
