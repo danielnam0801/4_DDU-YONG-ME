@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class GetKeyObject : MonoBehaviour
 {
-    public bool gettingKey;
+    public int gettingKey;
 }

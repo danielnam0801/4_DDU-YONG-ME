@@ -13,8 +13,16 @@ public class LevelGage : MonoBehaviour
     }
     void Update()
     {
-        slider.maxValue = playerEXP.maxExp;
-        slider.value = playerEXP.exp;
-        slider.minValue = 0;
+        if (playerEXP.level != 6)
+        {
+            slider.maxValue = playerEXP.maxExp;
+            slider.value = playerEXP.exp;
+            slider.minValue = 0;
+        }
+        else
+        {
+            slider.maxValue = 1;
+            slider.value = 1;
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 public class PlayerUpgradeManager : MonoBehaviour
 {
     [SerializeField] private PlayerAbilityList playerAbilityList;
@@ -53,8 +54,10 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     void AbilitySelect()
     {
+
         playerAbilityList.abilityArrCount = new List<int>();
         List<int> arrayCount = new List<int>();
+
         for (int i = 0; i < playerAbilityList.abilityArr.Length; i++)
         {
             playerAbilityList.abilityArrCount.Add(i);
@@ -69,12 +72,21 @@ public class PlayerUpgradeManager : MonoBehaviour
             {
                 arrayCount.Remove(playerAbilityList.usedNumber[i]);
             }
+
         }
+
         Debug.Log(arrayCount.Count);
         for (int i = 0; i < button.Length; ++i)
         {
             int random = Random.Range(0, arrayCount.Count);
-            button[i].gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = playerAbilityList.abilityArr[arrayCount[random]];
+            if (playerAbilityList.abilityLevel[arrayCount[random]] >= 2)
+            {
+                button[i].gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = playerAbilityList.abilityArr[arrayCount[random]] + $" LV { playerAbilityList.abilityLevel[arrayCount[random]]} ";
+            }
+            else
+            {
+                button[i].gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = playerAbilityList.abilityArr[arrayCount[random]];
+            }
             button[i].gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = playerAbilityList.abilityTextArr[arrayCount[random]];
             button[i].gameObject.transform.GetChild(2).GetComponent<Image>().sprite = playerAbilityList.spriteArr[arrayCount[random]];
             button[i].GetComponent<ButtonClickEvent>().buttonAbilityNumber = playerAbilityList.abilityNumber[arrayCount[random]];
