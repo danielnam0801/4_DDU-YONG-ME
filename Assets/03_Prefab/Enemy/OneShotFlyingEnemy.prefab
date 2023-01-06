@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 4672870862837860445}
   - component: {fileID: 4672870862837860441}
   - component: {fileID: 4672870862837860440}
+  - component: {fileID: 4307783444196755072}
   m_Layer: 7
   m_Name: OneShotFlyingEnemy
   m_TagString: FlyingEnemy
@@ -283,6 +284,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemy: {fileID: 11400000, guid: 72b048e6c6c39334baad195f39b4551c, type: 2}
   _animator: {fileID: 0}
+--- !u!114 &4307783444196755072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4672870862837860446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd22c1b40f44a254db8b894536ff524d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4672870863256884708
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +539,18 @@ MonoBehaviour:
       - m_Target: {fileID: 3408340917124017794}
         m_TargetAssemblyTypeName: AgendSound, Assembly-CSharp
         m_MethodName: PlayDeathSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4307783444196755072}
+        m_TargetAssemblyTypeName: EnemyExp, Assembly-CSharp
+        m_MethodName: DieExpUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
