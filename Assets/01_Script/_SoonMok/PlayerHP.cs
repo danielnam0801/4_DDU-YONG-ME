@@ -40,7 +40,6 @@ public class PlayerHP : MonoBehaviour
 
     public void Die()
     {
-        OnDie?.Invoke();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 

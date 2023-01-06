@@ -89,7 +89,7 @@ public class FlyingEnemy : EnemyBase
             {
                 speed = _enemy.AfterDetectSpeed();
                 transform.position = Vector2.MoveTowards(this.transform.position, _target.position, speed * Time.deltaTime);
-                PlayerPosCheck();
+                //PlayerPosCheck();
             }
         }
         #endregion

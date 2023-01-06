@@ -8,6 +8,11 @@ public class NextStageChecker : MonoBehaviour
     [SerializeField] private bool dontLoadScene;
     DoorChecker doorChecker;
     [SerializeField] private bool keyUsed;
+
+    private void Awake()
+    {
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Player"))

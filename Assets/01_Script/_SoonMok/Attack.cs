@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using static Weapon;
 
 public class Attack : MonoBehaviour
@@ -20,6 +21,8 @@ public class Attack : MonoBehaviour
     [SerializeField] Vector2 dir;
     private PlayerAnimatoinoControll animCtrl;
     [SerializeField] private GameObject _weaponPrefeb;
+
+    public UnityEvent AttackFeedBack;
     private void Awake()
     {
         animCtrl = GetComponent<PlayerAnimatoinoControll>();
@@ -35,6 +38,7 @@ public class Attack : MonoBehaviour
             _weapon.transform.rotation = Quaternion.Euler(0, 0, angle);
             if (Input.GetMouseButtonDown(0))
             {
+                AttackFeedBack?.Invoke();
                 animCtrl.StartAttack();
                 _weaponsc.Shooting(dir.normalized, Power, damage);
                 weapons.Dequeue();

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossHP : MonoBehaviour
 {
@@ -45,7 +46,12 @@ public class BossHP : MonoBehaviour
             i += 180 * Time.deltaTime;
             transform.rotation = Quaternion.Euler(0,0,i);
             transform.localScale -= new Vector3(Time.deltaTime * 0.3f, Time.deltaTime * 0.3f, 0);
-            if (transform.localScale.x < 0) Destroy(gameObject);
+            if (transform.localScale.x < 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
+                Destroy(gameObject);
+            }
+
         }
     }
 }
