@@ -63,6 +63,12 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
         transform.Find("AI/AttackState/TranChase")
             .GetComponent<DecisionOuter>().Distance = _enemyData.AttackRange();
 
+        if(EnemyData.enemyType == EnemyType.ShieldEnemy)
+        {
+            transform.Find("AI/AttackState/TranChase")
+            .GetComponent<DecisionNotShield>().Distance = _enemyData.AttackRange();
+        }
+
         Health = _enemyData.HP();
     }
 

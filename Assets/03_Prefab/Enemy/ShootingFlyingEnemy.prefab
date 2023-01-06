@@ -248,13 +248,13 @@ MonoBehaviour:
   _animator: {fileID: 0}
   isCanAttack: 1
   isMoving: 0
-  BackMovingTime: 3
+  BackMovingTime: 4
   BackAfterMovingTime: 3
   AfterMovingTime: 3
   speed: 3
   XSpeedValueControl: 3
   YSpeedValueControl: 0.13
-  speedRelativeControl: 0.1
+  speedRelativeControl: 0.2
   AttackFeedBack:
     m_PersistentCalls:
       m_Calls:

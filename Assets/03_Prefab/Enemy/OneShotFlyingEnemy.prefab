@@ -205,9 +205,6 @@ MonoBehaviour:
   rightCheck: {fileID: 4672870864067208824}
   roofCheck: {fileID: 4672870863847129915}
   groundCheck: {fileID: 4672870863256884708}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8320
   dirX: 1
   dirY: 0.25
   isCanChase: 0
@@ -219,7 +216,7 @@ MonoBehaviour:
   isMoving: 0
   HideVision:
     serializedVersion: 2
-    m_Bits: 14583
+    m_Bits: 1911
 --- !u!50 &4672870862837860444
 Rigidbody2D:
   serializedVersion: 4
@@ -518,6 +515,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3408340917124017794}
+        m_TargetAssemblyTypeName: AgendSound, Assembly-CSharp
+        m_MethodName: PlayDeathSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

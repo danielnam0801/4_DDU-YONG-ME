@@ -9,7 +9,7 @@ public class FlyingEnemy : EnemyBase
 
     private Rigidbody2D EnemyRB;
     public GameObject rightCheck, roofCheck, groundCheck;
-    public LayerMask groundLayer;
+    private LayerMask groundLayer;
     private bool facingRight = true, groundTouch, roofTouch, rightTouch;
     public float dirX = 1, dirY = 0.25f;
 
@@ -59,6 +59,7 @@ public class FlyingEnemy : EnemyBase
 
         if((_enemy.enemyType == EnemyType.FlyingAttack || _enemy.enemyType == EnemyType.OneShotFlying) && !isAttacking) //공격중이 아니고 
         {
+            Debug.Log("OneShot FLying  " + gameObject.name);
             DetectPlayer();
         }
 
@@ -154,7 +155,7 @@ public class FlyingEnemy : EnemyBase
         if (distanceFromPlayer < lineOfSite)
         {
             int layerMask = (-1) - (1 << LayerMask.NameToLayer("Enemy"));
-            RaycastHit2D canChasePlayer = Physics2D.Raycast(transform.position, _target.transform.position - transform.position, 5 ,HideVision);; // EnemyLayer을 제외한 모든 레이어를 감지
+            RaycastHit2D canChasePlayer = Physics2D.Raycast(transform.position, _target.transform.position - transform.position, 15 ,HideVision);; // EnemyLayer을 제외한 모든 레이어를 감지
             Debug.Log("현재 레이 닿은 오브젝트 : ", canChasePlayer.collider);
             Debug.DrawRay(transform.position * 5, _target.position - transform.position);
             if (canChasePlayer.collider.CompareTag("Player"))// 가장 먼저 닿은 레이가 플레이어일때 // 추적할 수 있게 됨

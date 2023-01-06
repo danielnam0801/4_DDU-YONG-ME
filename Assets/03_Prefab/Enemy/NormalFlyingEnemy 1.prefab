@@ -239,9 +239,6 @@ MonoBehaviour:
   rightCheck: {fileID: 2318934764801324089}
   roofCheck: {fileID: 2318934764986782074}
   groundCheck: {fileID: 2318934764528453541}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8320
   dirX: 1
   dirY: 0.25
   isCanChase: 0

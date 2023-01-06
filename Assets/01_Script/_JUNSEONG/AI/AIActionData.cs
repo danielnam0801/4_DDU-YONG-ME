@@ -10,5 +10,6 @@ public class AIActionData : MonoBehaviour
     public bool arrived;
 
     public bool isIdle;
+    public bool isShield = false;
 
 }

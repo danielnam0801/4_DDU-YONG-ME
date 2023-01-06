@@ -147,6 +147,30 @@ public class Weapon : MonoBehaviour
 
                 }
             }
+            if (collision.gameObject.CompareTag("Shield"))
+            {
+                if (counter > 0)
+                {
+                    //Debug.LogError("ASdf");
+                    if(collision.GetComponent<ShieldCollision>().ShieldData.attackTowardsTheShield == false)
+                    {
+                        collision.transform.parent.parent.gameObject.GetComponent<Enemy>().GetHit(damage, gameObject);
+                        _rigidbody.AddForce(Vector2.down, ForceMode2D.Impulse);
+                        counter--;
+                    }
+                    else
+                    {
+                        state = State.Item;
+                        _collider.isTrigger = false;
+                    }
+                }
+                else
+                {
+                    state = State.Item;
+                    _collider.isTrigger = false;
+
+                }
+            }
         }
     
     }

@@ -51,7 +51,7 @@ public class GroundEnemyAnim : MonoBehaviour
         }
         else
         {
-            _animator.SetTrigger(_attackHash);
+            _animator.SetBool(_attackHash,true);
         }
     }
     public void PlayAttackAnimation()
@@ -65,6 +65,10 @@ public class GroundEnemyAnim : MonoBehaviour
         StartCoroutine("TimeWait");
     }
 
+    public void AttackBoolSet()
+    {
+        _animator.SetBool(_attackHash, false);
+    }
     IEnumerator TimeWait()
     {
         yield return new WaitForSeconds(0.15f);

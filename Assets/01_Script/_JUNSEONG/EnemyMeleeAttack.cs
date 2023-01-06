@@ -20,7 +20,10 @@ public class EnemyMeleeAttack : EnemyAttack
                 //IHitable hit = _brain.Target.GetComponent<IHitable>();
                 //hit?.GetHit(damage, gameObject);
             }
-            AttackFeedBack?.Invoke();
+            if(_brain.AIActionData.isShield == false)
+            {
+                AttackFeedBack?.Invoke();
+            }
             StartCoroutine(WaitBeforeAttackCoroutine());
 
         }   

@@ -2500,7 +2500,7 @@ MonoBehaviour:
   stCross: 0
   isArmor: 0
   hp: 0
-  maxHP: 1234
+  MaxHp: 0
 --- !u!114 &1202383605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2578,7 +2578,7 @@ MonoBehaviour:
   stCross: 0
   isArmor: 0
   hp: 6
-  maxHP: 6
+  MaxHp: 0
 --- !u!50 &1202383608
 Rigidbody2D:
   serializedVersion: 4
@@ -2714,6 +2714,9 @@ MonoBehaviour:
   maxExp: 5
   maxExpUp: 2
   level: 1
+  LevelUpFeedBack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1202383613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5324,6 +5327,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9041979453499521031, guid: 791d33d71580f3f42b73c3ecd52debbb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9041979454079472219, guid: 791d33d71580f3f42b73c3ecd52debbb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

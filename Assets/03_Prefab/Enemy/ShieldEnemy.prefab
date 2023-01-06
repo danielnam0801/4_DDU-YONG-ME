@@ -10,10 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1707909453}
   - component: {fileID: 1707909454}
+  - component: {fileID: 3898407123127049494}
   - component: {fileID: 1707909455}
+  - component: {fileID: 864862059}
   m_Layer: 7
   m_Name: ShieldCollider
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,6 +61,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2501918, y: 1.0526719}
   m_EdgeRadius: 0
+--- !u!61 &3898407123127049494
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707909452}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.39, y: 1.13}
+  m_EdgeRadius: 0
 --- !u!114 &1707909455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +114,94 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!61 &864862059
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707909452}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!1 &1837418104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1837418105}
+  - component: {fileID: 1837418107}
+  - component: {fileID: 1837418106}
+  m_Layer: 7
+  m_Name: FeedBackHit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1837418105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837418104}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.1, y: -0.40999985, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4624629376273648302}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1837418107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837418104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9021b0d92708f140ac5981c8c260240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _feedbackToPlay:
+  - {fileID: 1837418106}
+--- !u!114 &1837418106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837418104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968eedf41ef682840ab13dc6bb9e401e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _beforeFreezeDelay: 0.05
+  _unFreezeTimeDelay: 0.1
+  _timeFreezeValue: 0.3
 --- !u!1 &4624629374970171058
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +460,7 @@ GameObject:
   - component: {fileID: 4624629375715533669}
   - component: {fileID: 4624629375715533668}
   - component: {fileID: 4624629375715533671}
-  - component: {fileID: 4624629375715533670}
+  - component: {fileID: 1261354653}
   m_Layer: 7
   m_Name: TranChase
   m_TagString: Untagged
@@ -380,8 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decisions:
-  - {fileID: 4624629375715533671}
-  - {fileID: 4624629375715533670}
+  - {fileID: 1261354653}
   positiveState: {fileID: 4624629376585608761}
   negativeState: {fileID: 0}
 --- !u!114 &4624629375715533671
@@ -397,7 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _distance: 2
---- !u!114 &4624629375715533670
+--- !u!114 &1261354653
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -406,9 +521,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4624629375715533666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2db46ac762b87b744a103148120fa8dd, type: 3}
+  m_Script: {fileID: 11500000, guid: c365eec48491a284a91ab0d00df95c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _distance: 5
 --- !u!1 &4624629376007683682
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +639,7 @@ Transform:
   - {fileID: 4624629376602974301}
   - {fileID: 4624629375104333770}
   - {fileID: 2573416988082257217}
+  - {fileID: 1837418105}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -734,7 +851,19 @@ MonoBehaviour:
         m_CallState: 2
   <OnGetHit>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1837418107}
+        m_TargetAssemblyTypeName: FeedBackPlayer, Assembly-CSharp
+        m_MethodName: PlayFeedback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _isActive: 0
 --- !u!50 &4624629376273648293
 Rigidbody2D:
@@ -751,7 +880,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -904,6 +1033,7 @@ MonoBehaviour:
   targetSpotted: 0
   arrived: 0
   isIdle: 0
+  isShield: 0
 --- !u!114 &4624629376602974300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,7 +1154,7 @@ GameObject:
   - component: {fileID: 4624629376876577299}
   m_Layer: 7
   m_Name: VisualSprite
-  m_TagString: Untagged
+  m_TagString: ShieldEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

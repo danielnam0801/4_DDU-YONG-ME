@@ -6,17 +6,18 @@ using UnityEngine.Events;
 public class ShieldCollision : MonoBehaviour
 {
     AIBrain _aiBrain;
-    CapsuleCollider2D _capsuleCollider;// enemyº»Ã¼ collider
+    CapsuleCollider2D _capsuleCollider;// enemyï¿½ï¿½Ã¼ collider
     BoxCollider2D _boxCollider; // shield collider
-    ShieldData _shieldData;
+    private ShieldData _shieldData;
+    public ShieldData ShieldData => _shieldData;
 
     public UnityEvent OnHit;
 
     private void Awake()
     {
         _aiBrain = transform.parent.parent.GetComponent<AIBrain>(); 
-        _capsuleCollider = transform.parent.parent.GetComponent<CapsuleCollider2D>(); // ENemyº»ÀÎÀÇ ÄÝ¶óÀÌ´õ Ã£±â
-        _boxCollider = transform.GetComponent<BoxCollider2D>(); // ENemyº»ÀÎÀÇ ÄÝ¶óÀÌ´õ Ã£±â
+        _capsuleCollider = transform.parent.parent.GetComponent<CapsuleCollider2D>(); // ENemyï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¶ï¿½ï¿½Ì´ï¿½ Ã£ï¿½ï¿½
+        _boxCollider = transform.GetComponent<BoxCollider2D>(); // ENemyï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¶ï¿½ï¿½Ì´ï¿½ Ã£ï¿½ï¿½
         _shieldData = transform.parent.parent.Find("AI").GetComponent<ShieldData>();
     }
 
@@ -27,28 +28,32 @@ public class ShieldCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == Define.Weapon)
+        if (collision.GetComponent<Weapon>())
         {
-            if(_shieldData.attackTowardsTheShield == false)
+            if (_shieldData.attackTowardsTheShield == false)
             {
-                if (collision.GetComponent<Weapon>())
-                {
-                    _aiBrain.Enemy.GetHit(collision.gameObject.GetComponent<Weapon>().damage, collision.gameObject);
-                    collision.gameObject.GetComponent<Weapon>().state = Weapon.State.Item;
-                    Debug.Log("ONHIT");
-                    collision.gameObject.GetComponent<Collider2D>().isTrigger = false;
-                    CollisionRigid(collision);
-                }
+                //if (collision.GetComponent<Weapon>())
+                //{
+                //    Debug.Log("ISSHIELDHIT");
+                //    Vector3 collisionPoint = GetComponent<Collider>().ClosestPoint(transform.position);
+                //    _aiBrain.Enemy.GetHit(collision.GetComponent<Weapon>().damage, collision.gameObject);
+                //    collision.GetComponent<Weapon>().state = Weapon.State.Item;
+                //    Debug.Log("ONHIT");
+                //    collision.GetComponent<Collider2D>().isTrigger = false;
+                //    CollisionRigid(collision);
+                //}
             }
-            else {
-                if (collision.GetComponent<Weapon>())
-                {
-                    OnHit?.Invoke();
-                    collision.gameObject.GetComponent<Weapon>().state = Weapon.State.Item;
-                    Debug.Log("ONHIT");
-                    collision.gameObject.GetComponent<Collider2D>().isTrigger = false;
-                    CollisionRigid(collision);
-                }
+            else
+            {
+                OnHit?.Invoke();
+                //if (collision.GetComponent<Weapon>())
+                //{
+                //    OnHit?.Invoke();
+                //    collision.GetComponent<Weapon>().state = Weapon.State.Item;
+                //    Debug.Log("ONHIT");
+                //    collision.GetComponent<Collider2D>().isTrigger = false;
+                //    CollisionRigid(collision);
+                //}
             }
             //EnemyColliderDisAble(collision);
         }
@@ -64,9 +69,9 @@ public class ShieldCollision : MonoBehaviour
 
     private void CanDamageCheck()
     {
-        if (_capsuleCollider.bounds.center.x - _boxCollider.bounds.center.x > 0) // ¿ÞÂÊÀ» º¸´ÂÁß
+        if (_capsuleCollider.bounds.center.x - _boxCollider.bounds.center.x > 0) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         {
-            if (GameManager.instance.Target.position.x - transform.position.x > 0) // ÇÃ·¹ÀÌ¾î°¡ ¿À¸¥ÂÊ
+            if (GameManager.instance.Target.position.x - transform.position.x > 0) // ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             {
                 _shieldData.attackTowardsTheShield = false;
             }
@@ -75,9 +80,9 @@ public class ShieldCollision : MonoBehaviour
                 _shieldData.attackTowardsTheShield = true;
             }
         }
-        else // ¿À¸¥ÂÊÀ» º¸´ÂÁß
+        else // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         {
-            if (GameManager.instance.Target.position.x - transform.position.x > 0) // ÇÃ·¹ÀÌ¾î°¡ ¿À¸¥ÂÊ
+            if (GameManager.instance.Target.position.x - transform.position.x > 0) // ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             {
                 _shieldData.attackTowardsTheShield = true;
             }
@@ -97,10 +102,10 @@ public class ShieldCollision : MonoBehaviour
 
         //Vector3 incomingVector = collision.transform.position - _aiBrain.transform.position;
         //incomingVector = incomingVector.normalized;
-        //// Ãæµ¹ÇÑ ¸éÀÇ ¹ý¼± º¤ÅÍ¸¦ ±¸ÇØ³½´Ù.
+        //// ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½Ø³ï¿½ï¿½ï¿½.
         //Vector3 normalVector = collision.contacts[0].normal;
-        //// ¹ý¼± º¤ÅÍ¿Í ÀÔ»çº¤ÅÍÀ» ÀÌ¿ëÇÏ¿© ¹Ý»çº¤ÅÍ¸¦ ¾Ë¾Æ³½´Ù.
-        //Vector3 reflectVector = Vector3.Reflect(incomingVector, normalVector); //¹Ý»ç°¢
+        //// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½Ô»çº¤ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ï¿ï¿½ ï¿½Ý»çº¤ï¿½Í¸ï¿½ ï¿½Ë¾Æ³ï¿½ï¿½ï¿½.
+        //Vector3 reflectVector = Vector3.Reflect(incomingVector, normalVector); //ï¿½Ý»ç°¢
         //reflectVector = reflectVector.normalized;
 
 
