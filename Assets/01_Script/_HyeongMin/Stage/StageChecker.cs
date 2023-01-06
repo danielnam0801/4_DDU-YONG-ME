@@ -17,8 +17,9 @@ public class StageChecker : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            virtualCamera.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = polygonCollider;    
+            virtualCamera.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = polygonCollider;
             virtualCamera.Follow = gameObject.transform;
         }
     }
 }
+

@@ -79,7 +79,7 @@ public class PlayerUpgradeManager : MonoBehaviour
             button[i].gameObject.transform.GetChild(2).GetComponent<Image>().sprite = playerAbilityList.spriteArr[arrayCount[random]];
             button[i].GetComponent<ButtonClickEvent>().buttonAbilityNumber = playerAbilityList.abilityNumber[arrayCount[random]];
             arrayCount.RemoveAt(random);
-            Debug.Log(random);  
+            Debug.Log(random);
         }
     }
 }
