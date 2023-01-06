@@ -19,7 +19,7 @@ public class FlyingEnemyAnim : EnemyBase
         animator = GetComponent<Animator>();
 
         enemy = transform.parent.GetComponent<FlyingEnemy>();
-        shoot = GameObject.Find("ShootPoint").GetComponent<Shooting>();
+        shoot = transform.parent.GetComponent<Shooting>();
     }
 
     public void IsChasing(bool boolean)

@@ -30,6 +30,8 @@ public class ShootingFlyingEnemy : EnemyBase
 
     public UnityEvent AttackFeedBack;
 
+    public bool canDetectAttack = false;
+
     protected override void Awake()
     {
         base.Awake();
@@ -40,9 +42,11 @@ public class ShootingFlyingEnemy : EnemyBase
     {
         Flip();
         float distanceToPlayer = Vector2.Distance(transform.position, _target.transform.position);
-        if(distanceToPlayer < _enemy.AttackRange())
+        CanAttack();
+        if (distanceToPlayer < _enemy.AttackRange())
         {
-            if (isCanAttack)
+
+            if (isCanAttack && canDetectAttack)
             {
                 anim.FlyingAttack();
                 AttackFeedBack?.Invoke();
@@ -54,9 +58,27 @@ public class ShootingFlyingEnemy : EnemyBase
                 if (!isMoving) // 움직이는 중이 아니면
                 {
                     EnemyMoving(transform.position);
-                    isMoving = true;    
+                    isMoving = true;
                 }
             }
+        }
+    }
+
+    private void CanAttack()
+    {
+        int layerMask = (-1) - (1 << LayerMask.NameToLayer("Enemy"));
+        RaycastHit2D canChasePlayer = Physics2D.Raycast(transform.position, _target.transform.position - transform.position, 15, ~(Define.Weapon | Define.Enemy)); // EnemyLayer을 제외한 모든 레이어를 감지
+        Debug.Log("현재 레이 닿은 오브젝트 : ", canChasePlayer.collider);
+        Debug.DrawRay(transform.position * 5, _target.position - transform.position);
+        if (canChasePlayer.collider != null)
+        {
+            if (canChasePlayer.collider.CompareTag("Player"))// 가장 먼저 닿은 레이가 플레이어일때 // 추적할 수 있게 됨
+            {
+                Debug.Log("추적가능!");
+                canDetectAttack = true; // 현재는 장애물이 사이에 있으면 추적이 그냥 끊기는 방식
+            }
+            else canDetectAttack = false;
+
         }
     }
 

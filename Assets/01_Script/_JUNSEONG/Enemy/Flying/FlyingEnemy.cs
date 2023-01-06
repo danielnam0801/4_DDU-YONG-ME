@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class FlyingEnemy : EnemyBase
 {
@@ -88,7 +89,7 @@ public class FlyingEnemy : EnemyBase
             {
                 speed = _enemy.AfterDetectSpeed();
                 transform.position = Vector2.MoveTowards(this.transform.position, _target.position, speed * Time.deltaTime);
-
+                PlayerPosCheck();
             }
         }
         #endregion
@@ -96,6 +97,7 @@ public class FlyingEnemy : EnemyBase
         EnemyRB.velocity = new Vector2(dirX, dirY) * speed * Time.deltaTime;
         
     }
+
 
 
     private bool CanAttackCheck()
@@ -120,12 +122,13 @@ public class FlyingEnemy : EnemyBase
         transform.Rotate(new Vector3(0, 180, 0));
         dirX = -dirX;   
     }
+
     #endregion
     void HitDetection()
     {
-        rightTouch = Physics2D.OverlapCircle(rightCheck.transform.position, circleRadius, groundLayer);
-        roofTouch = Physics2D.OverlapCircle (roofCheck.transform.position, circleRadius, groundLayer);
-        groundTouch = Physics2D.OverlapCircle(groundCheck.transform.position, circleRadius, groundLayer);
+        rightTouch = Physics2D.OverlapCircle(rightCheck.transform.position, circleRadius, Define.Floor | Define.PassingFloor);
+        roofTouch = Physics2D.OverlapCircle (roofCheck.transform.position, circleRadius, Define.Floor | Define.PassingFloor);
+        groundTouch = Physics2D.OverlapCircle(groundCheck.transform.position, circleRadius, Define.Floor | Define.PassingFloor);
         HitLogic();   
     }
 
@@ -155,7 +158,7 @@ public class FlyingEnemy : EnemyBase
         if (distanceFromPlayer < lineOfSite)
         {
             int layerMask = (-1) - (1 << LayerMask.NameToLayer("Enemy"));
-            RaycastHit2D canChasePlayer = Physics2D.Raycast(transform.position, _target.transform.position - transform.position, 15 ,HideVision);; // EnemyLayer을 제외한 모든 레이어를 감지
+            RaycastHit2D canChasePlayer = Physics2D.Raycast(transform.position, _target.transform.position - transform.position, 15, layerMask); // EnemyLayer을 제외한 모든 레이어를 감지
             Debug.Log("현재 레이 닿은 오브젝트 : ", canChasePlayer.collider);
             Debug.DrawRay(transform.position * 5, _target.position - transform.position);
             if (canChasePlayer.collider.CompareTag("Player"))// 가장 먼저 닿은 레이가 플레이어일때 // 추적할 수 있게 됨
@@ -164,58 +167,28 @@ public class FlyingEnemy : EnemyBase
                 isCanChase = true; // 현재는 장애물이 사이에 있으면 추적이 그냥 끊기는 방식
             }
             else isCanChase = false;
-            
-            if(_enemy.enemyType == EnemyType.OneShotFlying) // Trigger 활성화 한번만 되게 하는 코드
+
+            if (_enemy.enemyType == EnemyType.OneShotFlying) // Trigger 활성화 한번만 되게 하는 코드
             {
                 if (OneShotEnemyDetectPlayer == false)
                 {
+                    //StartCoroutine("OneShotEnemyMove", _target.transform.position);
                     anim.DetectPlayer();
                     OneShotEnemyDetectPlayer = true;
                 }
             }
-            #region 바꾸기 전
-            //if(_enemy.enemyType == EnemyType.OneShotFlying)
-            //PlayerPosCheck();
-            //if (distanceFromPlayer > attackLineOfSite && !_isAttacking) // attack범위 바깥쪽에 있을때
-            //{
-            //    _isChasing = true;
-            //    speed = _enemy.AfterDetectSpeed();
-            //    Debug.Log("쫓아가는중");
-            //    transform.position = Vector2.MoveTowards(this.transform.position, _target.position, speed * Time.deltaTime);
-            //}
-            //else //attack 범위 안에있을때
-            //{
-            //    if(_enemy.enemyType == EnemyType.OneShotFlying)
-            //    {
-            //        Debug.Log("OneShotFlying Check = true");
-            //        hpManager.HP = 0;// hp를 0으로 만들어서 터지게
-            //    }
-            //    else
-            //    {
-            //        if (_isCanAttack) //공격중이 아닐때 / 공격할수 있는지 감지시작한다
-            //        {
-            //            _isChasing = false;
-            //            speed = 0;
-            //            AttackPlayer();
-            //        }
-            //        else
-            //        {
-            //            speed = 0;
-            //        }
-            //    }
-            //}
-            //}
-            //else
-            //{
-            //    _isChasing = false;
-            //    speed = _enemy.BeforeDetectSpeed();
-            // 
-            //}
-            #endregion
+           // #region 바꾸기 전
         }
-        //else isCanAttack = false;
     }
 
+    //IEnumerator OneShotEnemyMove(Transform playerPos)
+    //{
+    //    float time = 0f;
+    //    while(time > 3f)
+    //    {
+    //    }
+    //    transform.DOMove()
+    //}
     private void AttackPlayer()
     {
         anim.Attack();

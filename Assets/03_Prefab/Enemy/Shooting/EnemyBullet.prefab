@@ -158,4 +158,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sizeduration: 1.5
-  ease: 0
+  sizeValue: 2
+  ease: 5

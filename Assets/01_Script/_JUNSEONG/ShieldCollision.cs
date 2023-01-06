@@ -30,32 +30,17 @@ public class ShieldCollision : MonoBehaviour
     {
         if (collision.GetComponent<Weapon>())
         {
-            if (_shieldData.attackTowardsTheShield == false)
+            if(collision.GetComponent<Weapon>().state == Weapon.State.Shoot)
             {
-                //if (collision.GetComponent<Weapon>())
-                //{
-                //    Debug.Log("ISSHIELDHIT");
-                //    Vector3 collisionPoint = GetComponent<Collider>().ClosestPoint(transform.position);
-                //    _aiBrain.Enemy.GetHit(collision.GetComponent<Weapon>().damage, collision.gameObject);
-                //    collision.GetComponent<Weapon>().state = Weapon.State.Item;
-                //    Debug.Log("ONHIT");
-                //    collision.GetComponent<Collider2D>().isTrigger = false;
-                //    CollisionRigid(collision);
-                //}
+                if (_shieldData.attackTowardsTheShield == false)
+                {
+
+                }
+                else
+                {
+                    OnHit?.Invoke();
+                }
             }
-            else
-            {
-                OnHit?.Invoke();
-                //if (collision.GetComponent<Weapon>())
-                //{
-                //    OnHit?.Invoke();
-                //    collision.GetComponent<Weapon>().state = Weapon.State.Item;
-                //    Debug.Log("ONHIT");
-                //    collision.GetComponent<Collider2D>().isTrigger = false;
-                //    CollisionRigid(collision);
-                //}
-            }
-            //EnemyColliderDisAble(collision);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
