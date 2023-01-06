@@ -21,7 +21,7 @@ public class CheckWall : MonoBehaviour
 
     private void PlatformCheck()
     {
-        RaycastHit2D platformCheck = Physics2D.Raycast(capsuleCollider.bounds.center + new Vector3(_moveData.direction.x, 0 , 0 ), Vector2.down, 0.5f, Define.Floor);
+        RaycastHit2D platformCheck = Physics2D.Raycast(capsuleCollider.bounds.center + new Vector3(_moveData.direction.x, 0 , 0 ), Vector2.down, 0.5f, Define.Floor | Define.PassingFloor);
         Debug.DrawRay(capsuleCollider.bounds.center + new Vector3(_moveData.direction.x, 0, 0), Vector2.down * 0.5f , Color.red);
         if(platformCheck.collider == null)
         {

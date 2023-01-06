@@ -11,7 +11,7 @@ public class NextStageChecker : MonoBehaviour
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            col.gameObject.GetComponent<GetKeyObject>().gettingKey = false;
+            col.gameObject.GetComponentInParent<GetKeyObject>().gettingKey = false;
             //LoadScene;
         }
     }
