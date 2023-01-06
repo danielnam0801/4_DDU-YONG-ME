@@ -14,7 +14,7 @@ public class NextStageChecker : MonoBehaviour
         {
             if (!keyUsed)
             {
-                col.gameObject.GetComponent<GetKeyObject>().gettingKey--;
+                col.gameObject.GetComponentInParent<GetKeyObject>().gettingKey--;
                 keyUsed = true;
             }
             //LoadScene;

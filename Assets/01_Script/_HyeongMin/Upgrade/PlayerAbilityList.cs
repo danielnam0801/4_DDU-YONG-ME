@@ -50,7 +50,7 @@ public class PlayerAbilityList : MonoBehaviour
     }
     void Ability2Upgrade()
     {
-        attack.GodON(FindObjectOfType<Weapon>());
+        attack.GodON();
         Debug.Log("축복받은 창");
         usedNumber.Add(4);
     }

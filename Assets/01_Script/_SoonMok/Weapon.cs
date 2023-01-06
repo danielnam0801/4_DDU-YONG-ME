@@ -40,13 +40,15 @@ public class Weapon : MonoBehaviour
         {
             if (Input.GetMouseButton(1))
             {
-                transform.position = _playerObject.transform.position;
+                _playerObject = FindObjectOfType<Attack>().gameObject;
                 if(state != State.Grab)
                 {
                     state = State.Item;
                     _rigidbody.gravityScale = 1f;
+                    transform.position = _playerObject.transform.position;
 
                 }
+
 
             }
         }
@@ -98,7 +100,7 @@ public class Weapon : MonoBehaviour
                 }
                 else
                 {
-                    collision.gameObject.GetComponent<Enemy>().GetHit(damage, gameObject);
+                    collision.gameObject.GetComponent<EnemyHPManager>().WeaponHit(damage);
 
                     state = State.Item;
                     _collider.isTrigger = false;
@@ -118,6 +120,7 @@ public class Weapon : MonoBehaviour
                     }
                     else
                     {
+                        //collision.transform.parent.parent.gameObject.GetComponent<Enemy>().GetHit(damage, gameObject);
                         state = State.Item;
                         _collider.isTrigger = false;
                     }
@@ -188,7 +191,7 @@ public class Weapon : MonoBehaviour
                 }
                 else
                 {
-                    collision.gameObject.GetComponent<Enemy>().GetHit(damage, gameObject);
+                    collision.gameObject.GetComponent<EnemyHPManager>().WeaponHit(damage);
 
                     state = State.Item;
                     _collider.isTrigger = false;
@@ -208,7 +211,7 @@ public class Weapon : MonoBehaviour
                     }
                     else
                     {
-                        collision.gameObject.GetComponent<Enemy>().GetHit(damage, gameObject);
+                        collision.transform.parent.parent.gameObject.GetComponent<Enemy>().GetHit(damage, gameObject);
 
                         state = State.Item;
                         _collider.isTrigger = false;

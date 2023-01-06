@@ -18,21 +18,10 @@ public class HolyWater : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-       
-        if (col.GetComponent<TestEnemy>())
+        if (col.transform.CompareTag("GroundEnemy"))
         {
-            Debug.LogError("Holy true");
-            TestEnemy enemyMovement = col.GetComponent<TestEnemy>();
-            Destroy(col.gameObject);
-        }
-    }
-    private void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.GetComponent<TestEnemy>())
-        {
-            Debug.LogError("Holy false");
-            TestEnemy enemyMovement = col.GetComponent<TestEnemy>();
-            Destroy(col.gameObject);
+            //Debug.LogError("bible true");
+            col.GetComponentInParent<Enemy>().GetHit(10,this.gameObject);
         }
     }
 }

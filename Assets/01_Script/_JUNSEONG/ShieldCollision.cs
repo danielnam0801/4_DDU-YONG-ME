@@ -45,11 +45,11 @@ public class ShieldCollision : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == Define.Floor)
-        {
-            _aiBrain.AIMovementData.direction.x = -_aiBrain.AIMovementData.direction.x;
-            _aiBrain.AIMovementData.thinkTime = 0f;
-        }
+        //if (collision.gameObject.layer == Define.Floor)
+        //{
+        //    _aiBrain.AIMovementData.direction.x = -_aiBrain.AIMovementData.direction.x;
+        //    _aiBrain.AIMovementData.thinkTime = 0f;
+        //}
     }
 
     private void CanDamageCheck()

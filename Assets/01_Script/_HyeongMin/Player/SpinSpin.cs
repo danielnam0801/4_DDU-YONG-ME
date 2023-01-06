@@ -10,6 +10,7 @@ public class SpinSpin : MonoBehaviour
     private void Start()
     {
         objTransform = GetComponent<Transform>();
+        spinSpeed = 0.5f;
     }
     void Update()
     {

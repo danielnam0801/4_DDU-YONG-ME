@@ -32,6 +32,11 @@ public class GroundMovement : MonoBehaviour
         else
             _currentVelocity = _data.speed;
 
+        if(_enemy.EnemyDebuffData.HolyGrailSlow)
+            _currentVelocity = _data.speed * 0.90f;
+        else
+            _currentVelocity = _data.speed;
+
         _movementdirection = moveInput;
     }
 
