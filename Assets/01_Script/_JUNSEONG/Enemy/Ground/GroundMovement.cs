@@ -10,7 +10,7 @@ public class GroundMovement : MonoBehaviour
     private Rigidbody2D rb;
 
     private int nextMove = 0;
- 
+
     public UnityEvent<float> onVelocityChange;
 
     protected float _currentVelocity = 0;
@@ -31,7 +31,7 @@ public class GroundMovement : MonoBehaviour
             _currentVelocity = _data.speed * 0.80f;
         else
             _currentVelocity = _data.speed;
-        
+
         _movementdirection = moveInput;
     }
 
@@ -40,7 +40,7 @@ public class GroundMovement : MonoBehaviour
     {
         Debug.Log("Current Velocity : " + _currentVelocity);
         onVelocityChange?.Invoke(_movementdirection.x);
-        rb.velocity = _movementdirection * _currentVelocity;
+        rb.velocity = new Vector2(_movementdirection.x * _currentVelocity, rb.velocity.y);
     }
 
     public void StopImmediatelly()
