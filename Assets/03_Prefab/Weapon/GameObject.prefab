@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1214552582488862633}
   - component: {fileID: 1214552582488862632}
   - component: {fileID: 618900066666360968}
-  m_Layer: 15
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   damage: 3
   counter_origin: 3
   _playerObject: {fileID: 0}
-  _enemyLayer: 12
+  _enemyLayer: 8
   _weaponLayer: 15
   state: 2
 --- !u!1 &1214552583838753409
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 1214552583838753422}
   - component: {fileID: 1214552583838753421}
   - component: {fileID: 8341060908884308900}
-  m_Layer: 15
+  m_Layer: 10
   m_Name: Spear
   m_TagString: Untagged
   m_Icon: {fileID: 0}

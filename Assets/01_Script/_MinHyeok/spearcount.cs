@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class spearcount : MonoBehaviour
 {
-    public GameObject PoolBullet;
-    public GameObject[] PoolBullets = new GameObject[3];
+    [SerializeField] Attack _attackSc;
     private int bulletCount = 0;
     private int bulletTextCount = 3;
 
@@ -14,24 +13,13 @@ public class spearcount : MonoBehaviour
 
     void Start()
     {
-
-        for (int i = 0; i < PoolBullets.Length; i++)
-        {
-            PoolBullets[i] = Instantiate(PoolBullet);
-            PoolBullets[i].SetActive(false);
-        }
+        _attackSc = FindObjectOfType<Attack>();
     }
 
     void Update()
     {
-        bulletText.text = $"{bulletTextCount}/" + PoolBullets.Length.ToString();
+        
+        bulletText.text = $"{_attackSc.weapons.Count}/{_attackSc.Spear_Count}";
     }
-
-    public void bulletpool()
-    {
-        PoolBullets[bulletCount].SetActive(true);
-        bulletCount++;
-        bulletTextCount--;
-
-    }
+    
 }
