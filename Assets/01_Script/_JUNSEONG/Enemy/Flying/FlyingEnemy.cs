@@ -37,6 +37,7 @@ public class FlyingEnemy : EnemyBase
         attackLineOfSite = _enemy.AttackRange();
         anim = transform.GetChild(0).GetComponent<FlyingEnemyAnim>();// 비쥬얼 스프라이트는 이 스크립트가 있는 곳 바로 밑에 존재해야함
         hpManager = transform.GetComponent<EnemyHPManager>();
+        groundLayer = Define.Floor;
         //if(_enemy.enemyType == EnemyType.FlyingAttack)
         //{
             
