@@ -18,4 +18,9 @@ public  class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     
     }
+
+    private void Init()
+    {
+        //Define.VCam.GetCinemachineComponent<Ci>
+    }
 }

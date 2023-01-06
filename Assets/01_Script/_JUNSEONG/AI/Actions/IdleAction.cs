@@ -14,7 +14,7 @@ public class IdleAction : AIAction
 
         if (_aiActionData.isCanThinking)
         {
-            Debug.Log("EnemyThink");
+            Debug.Log("EnemyThink " + _brain.gameObject.name);
             _aiMovementData.direction = new Vector2(NextMove(),0);
             _aiActionData.isCanThinking = false;
         }

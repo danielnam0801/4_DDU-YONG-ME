@@ -24,10 +24,10 @@ public class Bullet : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            //플레이어의 hp --
+            collision.collider.GetComponentInParent<PlayerHP>().hp -= 1;
             Dead();
         }
-        else if(collision.gameObject.layer != 10)// EnemyLayer가 아닌경우만
+        else if(collision.gameObject.layer != Define.Enemy)// EnemyLayer가 아닌경우만
         {
             Dead();    
         }

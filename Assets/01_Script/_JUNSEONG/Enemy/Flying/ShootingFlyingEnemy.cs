@@ -67,7 +67,7 @@ public class ShootingFlyingEnemy : EnemyBase
     private void CanAttack()
     {
         int layerMask = (-1) - (1 << LayerMask.NameToLayer("Enemy"));
-        RaycastHit2D canChasePlayer = Physics2D.Raycast(transform.position, _target.transform.position - transform.position, 15, ~(Define.Weapon | Define.Enemy)); // EnemyLayer을 제외한 모든 레이어를 감지
+        RaycastHit2D canChasePlayer = Physics2D.Raycast(transform.position, _target.transform.position - transform.position, 15, Define.Player | Define.Floor | Define.PassingFloor); // EnemyLayer을 제외한 모든 레이어를 감지
         Debug.Log("현재 레이 닿은 오브젝트 : ", canChasePlayer.collider);
         Debug.DrawRay(transform.position * 5, _target.position - transform.position);
         if (canChasePlayer.collider != null)

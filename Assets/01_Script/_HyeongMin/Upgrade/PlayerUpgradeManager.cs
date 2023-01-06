@@ -15,7 +15,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     private void Start()
     {
         playerAbilityList.abilityArr = new string[10] { "헤르메스의 신발", "축복받은 창", "성물 장착", "쓸만한 가죽 가방", "십자가", "중갑 갑옷", "슬라임 점액 신발", "성경", "성수병", "성배" };
-        playerAbilityList.abilityTextArr = new string[10] { "이동속도 10% 증가", "창 회수 가능, 무기 최대 소지 개수 1개 제한", "공격력 1 증가", "무기 최대 개수 1 증가", "함정으로 받는 피해 1회 무시", "받는 대미지 0.5 감소, 이동속도 10% 감소", "벽 붙기 가능", "주변 적 이동속도 20% 감소", "10초마다 성수 생성, 성수 범위 내 적들 사망", "주변 적 이동속도 10% 감소, 3초동안 있으면 사망 " };
+        playerAbilityList.abilityTextArr = new string[10] { "이동속도 10% 증가", "창 회수 가능(우클릭), 무기 최대 소지 개수 1개 제한", "공격력 1 증가", "무기 최대 개수 1 증가", "함정으로 받는 피해 1회 무시", "받는 대미지 0.5 감소, 이동속도 10% 감소", "벽 붙기 가능", "주변 적 이동속도 20% 감소", "10초마다 성수 생성, 성수 범위 내 적들 사망", "주변 적 이동속도 10% 감소, 3초동안 있으면 사망 " };
         buttonTransformY = Mathf.Abs(button[0].transform.position.y - transform.position.y) / buttonUpDownRange;
         upgradeButtons.SetActive(false);
     }

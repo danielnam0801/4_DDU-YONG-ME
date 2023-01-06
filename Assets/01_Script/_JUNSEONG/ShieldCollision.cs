@@ -32,11 +32,7 @@ public class ShieldCollision : MonoBehaviour
         {
             if(collision.GetComponent<Weapon>().state == Weapon.State.Shoot)
             {
-                if (_shieldData.attackTowardsTheShield == false)
-                {
-
-                }
-                else
+                if (_shieldData.attackTowardsTheShield == true)
                 {
                     OnHit?.Invoke();
                 }
@@ -76,39 +72,5 @@ public class ShieldCollision : MonoBehaviour
                 _shieldData.attackTowardsTheShield = false;
             }
         }
-    }
-
-    public void CollisionRigid(Collider2D collision)
-    {
-        Rigidbody2D rb = collision.transform.GetComponentInParent<Rigidbody2D>();
-        //rb.constraints = RigidbodyConstraints2D.FreezePositionX;
-        //rb.gravityScale = 10f;
-
-
-        //Vector3 incomingVector = collision.transform.position - _aiBrain.transform.position;
-        //incomingVector = incomingVector.normalized;
-        //// �浹�� ���� ���� ���͸� ���س���.
-        //Vector3 normalVector = collision.contacts[0].normal;
-        //// ���� ���Ϳ� �Ի纤���� �̿��Ͽ� �ݻ纤�͸� �˾Ƴ���.
-        //Vector3 reflectVector = Vector3.Reflect(incomingVector, normalVector); //�ݻ簢
-        //reflectVector = reflectVector.normalized;
-
-
-        //rb.AddForce(Vector3.down + reflectVector, ForceMode2D.Impulse);
-        rb.AddForce(Vector3.down, ForceMode2D.Impulse);
-
-    }
-
-    public void EnemyColliderDisAble(Collision2D collision)
-    {
-        StartCoroutine("EnemyBodyAble", collision);
-    }
-
-    IEnumerator EnemyBodyAble(Collision2D collision)
-    {
-        _capsuleCollider.enabled = false;
-        yield return new WaitForSeconds(1f);
-        _capsuleCollider.enabled = true;
-        
     }
 }

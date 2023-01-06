@@ -36,7 +36,10 @@ public class HolyGrail : MonoBehaviour
                 Debug.Log("OmaewaMoShindeiru");
                 if (col.gameObject.CompareTag("GroundEnemy"))
                 {
-                    col.GetComponentInParent<Enemy>().GetHit(10, this.gameObject);
+                    if(col != null)
+                    {
+                        col.GetComponentInParent<Enemy>().GetHit(10, this.gameObject);
+                    }
                 }
                 enemy.HolyGrailSlow = false;
             }

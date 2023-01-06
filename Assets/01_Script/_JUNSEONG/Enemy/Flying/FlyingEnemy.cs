@@ -158,7 +158,7 @@ public class FlyingEnemy : EnemyBase
         if (distanceFromPlayer < lineOfSite)
         {
             int layerMask = (-1) - (1 << LayerMask.NameToLayer("Enemy"));
-            RaycastHit2D canChasePlayer = Physics2D.Raycast(transform.position, _target.transform.position - transform.position, 15, layerMask); // EnemyLayer을 제외한 모든 레이어를 감지
+            RaycastHit2D canChasePlayer = Physics2D.Raycast(transform.position, _target.transform.position - transform.position, 15, Define.Player | Define.Floor | Define.PassingFloor); // EnemyLayer을 제외한 모든 레이어를 감지
             Debug.Log("현재 레이 닿은 오브젝트 : ", canChasePlayer.collider);
             Debug.DrawRay(transform.position * 5, _target.position - transform.position);
             if (canChasePlayer.collider.CompareTag("Player"))// 가장 먼저 닿은 레이가 플레이어일때 // 추적할 수 있게 됨
@@ -211,5 +211,13 @@ public class FlyingEnemy : EnemyBase
         Gizmos.DrawWireSphere(groundCheck.transform.position, circleRadius);
         Gizmos.DrawWireSphere(transform.position, lineOfSite);
         Gizmos.DrawWireSphere(transform.position, attackLineOfSite);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponentInParent<PlayerHP>().hp -= 1;
+        }
     }
 }
