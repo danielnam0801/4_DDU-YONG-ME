@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class HPUI : MonoBehaviour
 {
-    PlayerHP playerHP;
+    [SerializeField] private PlayerHP playerHP;
     private void Awake()
     {
         playerHP = GameObject.Find("Player").GetComponent<PlayerHP>();
