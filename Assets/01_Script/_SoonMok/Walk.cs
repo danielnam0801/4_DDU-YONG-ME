@@ -45,22 +45,22 @@ public class Walk : MonoBehaviour
         rigibody.velocity = Vector2.zero;
         Jump(_jumppower);
         Move(Input.GetAxisRaw("Horizontal"));
-        //if (slimeShoes)
-        //{
-        //    Collider2D _collider = GetComponent<Collider2D>();
-        //    RaycastHit2D left1 = Physics2D.BoxCast(_collider.bounds.center+Vector3.left*0.5f, _collider.bounds.size * 0.5f, 0, Vector2.left, 0.1f, _layerMask);
-        //    RaycastHit2D left2 = Physics2D.BoxCast(_collider.bounds.center + Vector3.left * 0.5f, _collider.bounds.size * 0.5f, 0, Vector2.left, 0.1f, _layerMask2);
-        //    if (left1 || left2) Left = true; else Left = false;
-        //    RaycastHit2D right = Physics2D.BoxCast(_collider.bounds.center + Vector3.right * 0.5f, _collider.bounds.size * 0.5f, 0, Vector2.right, 0.1f, _layerMask2);
-        //    RaycastHit2D right2 = Physics2D.BoxCast(_collider.bounds.center + Vector3.right * 0.5f, _collider.bounds.size * 0.5f, 0, Vector2.right, 0.1f, _layerMask2);
-        //    if (right2|| right) Right= true; else Right= false;
+        if (slimeShoes)
+        {
+            Collider2D _collider = GetComponent<Collider2D>();
+            RaycastHit2D left1 = Physics2D.BoxCast(_collider.bounds.center + Vector3.left * 0.5f, _collider.bounds.size * 0.5f, 0, Vector2.left, 0.1f, _layerMask);
+            RaycastHit2D left2 = Physics2D.BoxCast(_collider.bounds.center + Vector3.left * 0.5f, _collider.bounds.size * 0.5f, 0, Vector2.left, 0.1f, _layerMask2);
+            if (left1 || left2) Left = true; else Left = false;
+            RaycastHit2D right = Physics2D.BoxCast(_collider.bounds.center + Vector3.right * 0.5f, _collider.bounds.size * 0.5f, 0, Vector2.right, 0.1f, _layerMask2);
+            RaycastHit2D right2 = Physics2D.BoxCast(_collider.bounds.center + Vector3.right * 0.5f, _collider.bounds.size * 0.5f, 0, Vector2.right, 0.1f, _layerMask2);
+            if (right2 || right) Right = true; else Right = false;
 
-        //    if (!CheckGround() && (Left || Right))
-        //    {
-        //        _gravity = 0;
-        //    }
-        //    else _gravity = _originGravity;
-        //}
+            if (!CheckGround() && (Left || Right))
+            {
+                _gravity = 0;
+            }
+            else _gravity = _originGravity;
+        }
         if (Mathf.Abs(_moveTo.x) > 0)
         {
             _animControl.StartRun();
@@ -127,12 +127,11 @@ public class Walk : MonoBehaviour
         if (_canJump)
         {
 
-            if (Physics2D.BoxCast(_col.bounds.center, _col.size*0.5f, 0f, Vector2.down, 0.1f, _layerMask) ||
-                Physics2D.BoxCast(_col.bounds.center, _col.size*0.5f, 0f, Vector2.down, 0.1f, _layerMask2) /*|| 
+            if (Physics2D.BoxCast(_col.bounds.center, _col.size*0.7f, 0f, Vector2.down, 0.1f, Define.Floor) ||
+                Physics2D.BoxCast(_col.bounds.center, _col.size*0.7f, 0f, Vector2.down, 0.1f, Define.PassingFloor) /*|| 
                 Physics2D.BoxCast(_col.bounds.center, _col.size, 0f, Vector2.down, 0.1f, _layerMask3)*/)
             {
                 _moveTo.y = 0;
-                Debug.Log("true");
                 return true;
             }
             else
@@ -147,7 +146,7 @@ public class Walk : MonoBehaviour
     }
     bool DownJump()
     {
-        downpan = Physics2D.BoxCast(_col.bounds.center, _col.size, 0f, Vector2.down, 0.1f, _layerMask2);
+        downpan = Physics2D.BoxCast(_col.bounds.center, _col.size, 0f, Vector2.down, 0.1f, Define.PassingFloor);
         if (downpan)
         {
             return true;

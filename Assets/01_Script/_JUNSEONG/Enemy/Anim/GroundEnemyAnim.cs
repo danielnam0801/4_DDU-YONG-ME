@@ -51,7 +51,7 @@ public class GroundEnemyAnim : MonoBehaviour
         }
         else
         {
-            _animator.SetTrigger(_attackHash);
+            _animator.SetBool(_attackHash,true);
         }
     }
     public void PlayAttackAnimation()
@@ -62,6 +62,16 @@ public class GroundEnemyAnim : MonoBehaviour
 
     public void SetEndOfAttackAnimation()
     {
+        StartCoroutine("TimeWait");
+    }
+
+    public void AttackBoolSet()
+    {
+        _animator.SetBool(_attackHash, false);
+    }
+    IEnumerator TimeWait()
+    {
+        yield return new WaitForSeconds(0.15f);
         _brain.AIActionData.isAttack = false;
     }
 
@@ -75,7 +85,7 @@ public class GroundEnemyAnim : MonoBehaviour
     public void EndOfDeadAnimation()
     {
         Debug.Log("Á×À½");
-        _brain.Enemy.Die();
+        //_brain.Enemy.Die();
     }
 
 }

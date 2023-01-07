@@ -1,35 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour
 {
     public int stCross;
     public static PlayerHP instance;
     public bool isArmor;
-    [SerializeField] private int hp;
-    [SerializeField] private int maxHP;
-    public int HP
+    public bool isDead;
+    public int hp;
+    public int MaxHp;
+
+    public UnityEvent OnDie;
+    public UnityEvent OnHit;
+
+    private void Awake()
     {
-        get { return hp; }
-        set { hp = value;}
-    }
-    public int MaxHP
-    {
-        
-        get { return maxHP;}
-        set { maxHP = value;}
+        hp = MaxHp;
     }
     public void Damage(int damage)
     {
-        if (isArmor) damage -= 1;
+        if (isDead == true) return;
         Debug.Log(damage);
-        HP -= damage;
-        Debug.Log(HP);
+        if (isArmor) damage -= 1;
+        hp -= damage;
+        OnHit?.Invoke();
+        if (hp <= 0) {
+            isDead = true;
+            Die();
+        }
+        
     }
     public void Heal(int heal)
     {
-        
-        HP += heal;
+        hp += heal;
     }
+
+    public void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
+
 }

@@ -7,10 +7,14 @@ TagManager:
   tags: []
 =======
   tags:
-  - GroundEnemy
   - FlyingEnemy
   - ShieldEnemy
+<<<<<<< HEAD
 >>>>>>> JunseongNam
+=======
+  - GroundEnemy
+  - Shield
+>>>>>>> PleaseEndJunseong
   layers:
   - Default
   - TransparentFX
@@ -19,17 +23,22 @@ TagManager:
   - Water
   - UI
   - Player
-  - BackGround
-  - 
-  - 
   - Enemy
-  - ThroughEnemy
   - Floor
   - PassingFloor
-  - 
   - Weapon
+<<<<<<< HEAD
   - HolyWaterGlass
   - Key
+=======
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+>>>>>>> PleaseEndJunseong
   - 
   - 
   - 

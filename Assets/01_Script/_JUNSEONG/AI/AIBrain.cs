@@ -29,12 +29,16 @@ public class AIBrain : MonoBehaviour
     Enemy enemy;
     public Enemy Enemy => enemy;
 
+    GroundEnemyAnim _groundEnemyAnim;
+    public GroundEnemyAnim GroundEnemyAnim { get => _groundEnemyAnim; }
+
     protected virtual void Start()
     {
         _target = GameManager.instance.Target;
         _aiActionData = transform.Find("AI").GetComponent<AIActionData>();
         _aimovementData = transform.Find("AI").GetComponent<AIMovementData>();
         enemy = transform.GetComponent<Enemy>();
+        _groundEnemyAnim = transform.Find("VisualSprite").GetComponent<GroundEnemyAnim>();
     }
 
     protected void Update()
@@ -60,7 +64,7 @@ public class AIBrain : MonoBehaviour
     {
         OnMovementKeyPress?.Invoke(direction);
         if (!_aiActionData.isIdle)
-            AttackAndChaseStateChanged?.Invoke(targetPos);
+                AttackAndChaseStateChanged?.Invoke(targetPos);
         else
             IdleStateStateChanged?.Invoke(_aimovementData.direction, _aimovementData.beforeDirection);
     }

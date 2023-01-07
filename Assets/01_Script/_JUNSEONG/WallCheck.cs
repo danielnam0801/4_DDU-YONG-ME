@@ -5,16 +5,16 @@ using UnityEngine;
 public class WallCheck : MonoBehaviour
 {
     AIMovementData _movement;
-    public LayerMask wallLayer;
 
-    private void Awake()
+    private void Start()
     {
-        _movement = transform.parent.Find("AI").GetComponent<AIMovementData>();
+        _movement = transform.Find("AI").GetComponent<AIMovementData>();
     }
 
     private void Update()
     {
-        RaycastHit2D sideWalkCheck = Physics2D.Raycast(transform.position, new Vector3(_movement.direction.x, 0, 0), 1.5f, wallLayer);
+        RaycastHit2D sideWalkCheck = Physics2D.Raycast(transform.position, new Vector3(_movement.direction.x, 0, 0), 1.5f, Define.Floor);
+        Debug.DrawRay(transform.position + Vector3.up, new Vector3(_movement.direction.x,0,0) * 1.5f, Color.black);
         if (sideWalkCheck.collider != null)
         {
             _movement.direction.x = -_movement.direction.x;

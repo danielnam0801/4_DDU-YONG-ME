@@ -5,4 +5,5 @@ using UnityEngine;
 public class EnemyDebuffData : MonoBehaviour
 {
     public bool bibleSpeedSlow = false;
+    public bool HolyGrailSlow = false;
 }

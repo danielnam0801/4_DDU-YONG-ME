@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAbilityList : MonoBehaviour
 {
@@ -12,18 +13,24 @@ public class PlayerAbilityList : MonoBehaviour
     [SerializeField] private GameObject bibleObj;
     [SerializeField] private GameObject holyWater;
     [SerializeField] private GameObject holyGrailObj;
-    [SerializeField] private Spears spears;
 
     GameObject playerObj;
 
     public string[] abilityArr;
     public string[] abilityTextArr;
+    public int itemNumber = 0;
     public int[] abilityNumber;
     public List<int> abilityArrCount = new List<int>();
     public List<int> usedNumber = new List<int>();
+    public List<int> levelUpNumber = new List<int>();
+    public List<int> finalList = new List<int>();
+    public List<Sprite> spriteArr = new List<Sprite>();
 
+    public int[] abilityLevel;
+    
     private void Start()
     {
+        abilityLevel = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
         playerObj = GameObject.Find("Player");
         walk = playerObj.GetComponent<Walk>();
         attack = playerObj.GetComponent<Attack>();
@@ -31,11 +38,6 @@ public class PlayerAbilityList : MonoBehaviour
         bibleObj = playerObj.transform.GetChild(1).gameObject;
         holyWater = playerObj.transform.GetChild(2).gameObject;
         holyGrailObj = playerObj.transform.GetChild(3).gameObject;
-
-        spears = GameObject.Find("Spears").GetComponent<Spears>();
-
-        abilityArr = new string[10] { "헤르메스의 신발", "축복받은 창", "성물 장착", "쓸만한 가죽 가방", "십자가", "중갑 갑옷", "슬라임 점액 신발", "성경", "성수병", "성배" };
-        abilityTextArr = new string[10] { "이동속도 10% 증가", "창 회수 가능, 무기 최대 개수 1개 제한", "공격력 1 증가", "무기 최대 개수 1 증가", "함정으로 받는 피해 1회 무시", "받는 대미지 0.5 감소, 이동속도 10% 감소", "벽 붙기 가능", "주변 적 이동속도 10% 감소", "10초마다 성수 생성, 성수 범위 내 적들 사망", "주변 적 이동속도 5% 감소, 3초동안 있으면 사망 " };
     }
     public void AbilitySelect(int selectNumber)
     {
@@ -48,9 +50,9 @@ public class PlayerAbilityList : MonoBehaviour
     }
     void Ability2Upgrade()
     {
-        spears.godSpear = true;
-        attack.Spear_Count = 1;
+        attack.GodON();
         Debug.Log("축복받은 창");
+        usedNumber.Add(4);
     }
     void Ability3Upgrade()
     {

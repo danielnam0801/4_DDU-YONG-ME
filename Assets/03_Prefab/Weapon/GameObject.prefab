@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1214552582488862633}
   - component: {fileID: 1214552582488862632}
   - component: {fileID: 618900066666360968}
-  m_Layer: 15
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   damage: 3
   counter_origin: 3
   _playerObject: {fileID: 0}
-  _enemyLayer: 12
+  _enemyLayer: 8
   _weaponLayer: 15
   state: 2
 --- !u!1 &1214552583838753409
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 1214552583838753422}
   - component: {fileID: 1214552583838753421}
   - component: {fileID: 8341060908884308900}
-  m_Layer: 15
+  m_Layer: 10
   m_Name: Spear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4e420a03241f4a649acb326938658849, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -213,12 +213,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.039205045, y: 1.4436234}
-      - {x: -0.31140247, y: 0.97542435}
-      - {x: -0.30345488, y: -0.049663782}
-      - {x: -0.16847512, y: -0.22912207}
-      - {x: -0.07840535, y: -0.44764468}
-      - {x: 0.041032672, y: -0.47871104}
-      - {x: 0.2549808, y: -0.06451078}
-      - {x: 0.28604716, y: 1.0467932}
-      - {x: 0.040665224, y: 1.4513898}
+    - - {x: -0.17594343, y: 1.5118629}
+      - {x: -0.19388849, y: 1.1219444}
+      - {x: -0.19093326, y: 0.10110606}
+      - {x: -0.18044457, y: -0.19606939}
+      - {x: -0.16793127, y: -0.5446311}
+      - {x: 0.08228841, y: -0.56109166}
+      - {x: 0.16914652, y: -0.26787522}
+      - {x: 0.17073429, y: 1.0020003}
+      - {x: 0.16571243, y: 1.1328493}
+      - {x: 0.16886663, y: 1.5135607}

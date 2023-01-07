@@ -35,19 +35,21 @@ public class Weapon : MonoBehaviour
         {
             _rigidbody.velocity = Vector2.zero;
             _collider.isTrigger = false;
-
         }
         if (godSpear)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButton(1))
             {
-                transform.position = _playerObject.transform.position;
+                _playerObject = FindObjectOfType<Attack>().gameObject;
                 if(state != State.Grab)
                 {
                     state = State.Item;
                     _rigidbody.gravityScale = 1f;
+                    transform.position = _playerObject.transform.position;
 
                 }
+
+
             }
         }
     }
@@ -71,18 +73,62 @@ public class Weapon : MonoBehaviour
     {
         if (state == State.Shoot)
         {
-            if (collision.gameObject.GetComponentInParent<EnemyOnHit>())
+            if (collision.gameObject.CompareTag("GroundEnemy"))
             {
-                if(counter > 0)
+                if (counter > 0)
                 {
+                    //Debug.LogError("ASdf");
+                    collision.gameObject.GetComponent<Enemy>().GetHit(damage, gameObject);
                     counter--;
+                }
+                else
+                {
+                    collision.gameObject.GetComponent<Enemy>().GetHit(damage, gameObject);
+
+                    state = State.Item;
+                    _collider.isTrigger = false;
+
+                }
+            }
+            if (collision.gameObject.CompareTag("FlyingEnemy"))
+            {
+                if (counter > 0)
+                {
+                    //Debug.LogError("ASdf");
+                    collision.gameObject.GetComponent<EnemyHPManager>().WeaponHit(damage);
+                    counter--;
+                }
+                else
+                {
+                    collision.gameObject.GetComponent<EnemyHPManager>().WeaponHit(damage);
+
+                    state = State.Item;
+                    _collider.isTrigger = false;
+
+                }
+            }
+            if (collision.gameObject.CompareTag("Shield"))
+            {
+                if (counter > 0)
+                {
+                    //Debug.LogError("ASdf");
+                    if (collision.GetComponent<ShieldCollision>().ShieldData.attackTowardsTheShield == false)
+                    {
+                        collision.transform.parent.parent.gameObject.GetComponent<Enemy>().GetHit(damage, gameObject);
+                        _rigidbody.AddForce(Vector2.down, ForceMode2D.Impulse);
+                        counter--;
+                    }
+                    else
+                    {
+                        //collision.transform.parent.parent.gameObject.GetComponent<Enemy>().GetHit(damage, gameObject);
+                        state = State.Item;
+                        _collider.isTrigger = false;
+                    }
                 }
                 else
                 {
                     state = State.Item;
                     _collider.isTrigger = false;
-                    gameObject.layer = _enemyLayer;
-                    _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
 
                 }
             }
@@ -92,6 +138,15 @@ public class Weapon : MonoBehaviour
                 _collider.isTrigger = false;
                 gameObject.layer = _enemyLayer;
                 _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll; 
+
+            }
+            if (collision.gameObject.GetComponent<BossHP>())
+            {
+                state = State.Item;
+                _collider.isTrigger = false;
+                gameObject.layer = _enemyLayer;
+                collision.gameObject.GetComponent<BossHP>().Damage(1);
+                _rigidbody.gravityScale = 10f;
 
             }
         }
@@ -108,21 +163,67 @@ public class Weapon : MonoBehaviour
                 _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
 
             }
-            //if (collision.gameObject.GetComponentInParent<EnemyOnHit>())
-            //{
-            //    if (counter > 0)
-            //    {
-            //        Debug.LogError("ASdf");
-            //        collision.gameObject.GetComponentInParent<EnemyOnHit>().WeaponHit();
-            //        counter--;
-            //    }
-            //    else
-            //    {
-            //        state = State.Item;
-            //        _collider.isTrigger = false;
+            if (collision.gameObject.CompareTag("GroundEnemy"))
+            {
+                if (counter > 0)
+                {
+                    //Debug.LogError("ASdf");
+                    collision.gameObject.GetComponent<Enemy>().GetHit(damage, gameObject);
+                    counter--;
 
-            //    }
-            //}
+                }
+                else
+                {
+                    collision.gameObject.GetComponent<Enemy>().GetHit(damage, gameObject);
+
+                    state = State.Item;
+                    _collider.isTrigger = false;
+
+                }
+            }
+            if (collision.gameObject.CompareTag("FlyingEnemy"))
+            {
+                if (counter > 0)
+                {
+                    //Debug.LogError("ASdf");
+                    collision.gameObject.GetComponent<EnemyHPManager>().WeaponHit(damage);
+                    counter--;
+                }
+                else
+                {
+                    collision.gameObject.GetComponent<EnemyHPManager>().WeaponHit(damage);
+
+                    state = State.Item;
+                    _collider.isTrigger = false;
+
+                }
+            }
+            if (collision.gameObject.CompareTag("Shield"))
+            {
+                if (counter > 0)
+                {
+                    //Debug.LogError("ASdf");
+                    if(collision.GetComponent<ShieldCollision>().ShieldData.attackTowardsTheShield == false)
+                    {
+                        collision.transform.parent.parent.gameObject.GetComponent<Enemy>().GetHit(damage, gameObject);
+                        _rigidbody.AddForce(Vector2.down, ForceMode2D.Impulse);
+                        counter--;
+                    }
+                    else
+                    {
+                        collision.transform.parent.parent.gameObject.GetComponent<Enemy>().GetHit(damage, gameObject);
+
+                        state = State.Item;
+                        _collider.isTrigger = false;
+                    }
+                }
+                else
+                {
+                    state = State.Item;
+                    _collider.isTrigger = false;
+
+                }
+            }
         }
     
     }

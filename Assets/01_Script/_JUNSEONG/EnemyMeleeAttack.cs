@@ -11,19 +11,38 @@ public class EnemyMeleeAttack : EnemyAttack
         {
             _brain.AIActionData.isAttack = true;
 
-            float range = _brain.Enemy.EnemyData.AttackRange();
+            //if (distance < range)
+            //{
+            //    PlayerHP playerHP = GameManager.instance.Target.gameObject.GetComponent<PlayerHP>();
+            //    playerHP.Damage(damage);
+            //}
 
-            float distance = Vector2.Distance(transform.position, _brain.Target.position);
-
-            if (distance < range)
+            
+            if(_brain.AIActionData.isShield == false)
             {
-                //IHitable hit = _brain.Target.GetComponent<IHitable>();
-                //hit?.GetHit(damage, gameObject);
+                AttackFeedBack?.Invoke();
+                if(_brain.Enemy.EnemyData.enemyType != EnemyType.ShieldEnemy)
+                {
+                    StartCoroutine("Wait",damage);
+                }
             }
-            AttackFeedBack?.Invoke();
             StartCoroutine(WaitBeforeAttackCoroutine());
 
         }   
+    }
+    
+    IEnumerator Wait(int damage)
+    {
+        float range = _brain.Enemy.EnemyData.AttackRange();
+
+        yield return new WaitForSeconds(0.3f);
+        float distance = Vector2.Distance(transform.position, _brain.Target.position);
+        
+        if (distance < range)
+        {
+            PlayerHP playerHP = GameManager.instance.Target.gameObject.GetComponent<PlayerHP>();
+            playerHP.Damage(damage);
+        }
     }
 }
 

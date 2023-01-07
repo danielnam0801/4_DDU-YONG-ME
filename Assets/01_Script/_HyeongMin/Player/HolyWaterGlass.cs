@@ -5,9 +5,12 @@ using UnityEngine;
 public class HolyWaterGlass : MonoBehaviour
 {
     [SerializeField] private GameObject holyWaterObj;
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D coll)
     {
-        Instantiate(holyWaterObj,transform.position, transform.rotation);
-        Destroy(gameObject);
+        if (coll.gameObject.layer == LayerMask.NameToLayer("Floor") || coll.gameObject.layer == LayerMask.NameToLayer("PassingFloor"))
+        {
+            Instantiate(holyWaterObj, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
     }
 }

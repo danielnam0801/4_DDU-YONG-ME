@@ -4,72 +4,44 @@ using UnityEngine;
 
 public class HolyGrail : MonoBehaviour
 {
-    //private void OnTriggerEnter2D(Collider2D col)
-    //{
-    //    if (col.GetComponent<EnemyMovement>())
-    //    {
-    //        Debug.LogError("grail true");
-    //        EnemyMovement enemyMovement = col.GetComponent<EnemyMovement>();
-    //        enemyMovement.holyGrailSpeedSlow = true;
-    //        StartCoroutine(HolyGrailAbility(col));
-    //    }
-    //}
-    //private void OnTriggerExit2D(Collider2D col)
-    //{
-    //    if (col.GetComponent<EnemyMovement>())
-    //    {
-    //        Debug.LogError("grail false");
-    //        EnemyMovement enemyMovement = col.GetComponent<EnemyMovement>();
-    //        enemyMovement.holyGrailSpeedSlow = false;
-    //    }
-    //}
-    //IEnumerator HolyGrailAbility(Collider2D col)
-    //{
-    //    EnemyMovement enemyMovement = col.GetComponent<EnemyMovement>();
-    //    float timer = 0;
-    //    while (enemyMovement.holyGrailSpeedSlow)
-    //    {
-    //        timer += Time.deltaTime;
-    //        if(timer >= 3)
-    //        {
-    //            Debug.Log("OmaewaMoShindeiru");
-    //            enemyMovement.holyGrailSpeedSlow = false;
-    //        }
-    //    }
-    //    return null;
-    //}
+
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.GetComponent<TestEnemy>())
+        if (col.transform.CompareTag("GroundEnemy"))
         {
-            Debug.LogError("grail true");
-            TestEnemy enemyMovement = col.GetComponent<TestEnemy>();
-            enemyMovement.holyGrailSpeedSlow = true;
             StartCoroutine(HolyGrailAbility(col));
+            //Debug.LogError("bible true");
+            col.transform.Find("AI").GetComponent<EnemyDebuffData>().HolyGrailSlow = true;
         }
     }
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (col.GetComponent<TestEnemy>())
+        if (col.transform.CompareTag("GroundEnemy"))
         {
-            Debug.LogError("grail false");
-            TestEnemy enemyMovement = col.GetComponent<TestEnemy>();
-            enemyMovement.holyGrailSpeedSlow = false;
+            //Debug.LogError("bible true");
+            col.transform.Find("AI").GetComponent<EnemyDebuffData>().HolyGrailSlow = true;
         }
     }
     IEnumerator HolyGrailAbility(Collider2D col)
     {
         TestEnemy enemyMovement = col.GetComponent<TestEnemy>();
+        EnemyDebuffData enemy = col.transform.Find("AI").GetComponent<EnemyDebuffData>();
         float timer = 0;
-        while (enemyMovement.holyGrailSpeedSlow)
+        while (enemy.HolyGrailSlow)
         {
             timer += 0.15f;
             yield return new WaitForSeconds(0.1f);
             if (timer >= 3)
             {
                 Debug.Log("OmaewaMoShindeiru");
-                Destroy(col.gameObject);
-                enemyMovement.holyGrailSpeedSlow = false;
+                if (col.gameObject.CompareTag("GroundEnemy"))
+                {
+                    if(col != null)
+                    {
+                        col.GetComponentInParent<Enemy>().GetHit(10, this.gameObject);
+                    }
+                }
+                enemy.HolyGrailSlow = false;
             }
         }
         yield return null;

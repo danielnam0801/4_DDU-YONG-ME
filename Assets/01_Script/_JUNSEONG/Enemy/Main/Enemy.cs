@@ -43,6 +43,9 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
         enemyDebuff = transform.Find("AI").GetComponent<EnemyDebuffData>();
         _enemyAnim = transform.GetComponentInChildren<GroundEnemyAnim>();
         _isActive = true;
+        if(_spriteRenderer.material.HasProperty("_Dissolve")){
+            _spriteRenderer.material.SetFloat("_Dissolve", 1);
+        }
   
         SetEnemyData();
     }
@@ -59,6 +62,12 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
             .GetComponent<DecisionInner>().Distance = _enemyData.AttackRange();
         transform.Find("AI/AttackState/TranChase")
             .GetComponent<DecisionOuter>().Distance = _enemyData.AttackRange();
+
+        if(EnemyData.enemyType == EnemyType.ShieldEnemy)
+        {
+            transform.Find("AI/AttackState/TranChase")
+            .GetComponent<DecisionNotShield>().Distance = _enemyData.AttackRange();
+        }
 
         Health = _enemyData.HP();
     }
@@ -106,10 +115,11 @@ public class Enemy : MonoBehaviour, IHitable, IAgent
         Tween dissolve = DOTween.To(
             () => _spriteRenderer.material.GetFloat("_Dissolve"),
             x => _spriteRenderer.material.SetFloat("_Dissolve", x),
-            1f,
-            1f);
+            0f,
+            1.5f);
 
         seq.Append(dissolve);
+        seq.OnComplete(() => Die());
         //seq.AppendCallback(() => Die());
     }
 }

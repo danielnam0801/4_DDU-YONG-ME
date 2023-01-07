@@ -23,7 +23,7 @@ public class DoorChecker : MonoBehaviour
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Player") && col.gameObject.name == "Player")
         {
-            if (col.gameObject.GetComponent<GetKeyObject>().gettingKey)
+            if (col.gameObject.GetComponent<GetKeyObject>().gettingKey > 0)
             {
                 stageClear = true;
             }
@@ -33,21 +33,19 @@ public class DoorChecker : MonoBehaviour
             }
         }
     }
-    void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.gameObject.layer != LayerMask.NameToLayer("Player")) { return; }
-        doorAnimator.SetBool("DoorOpen", false);
-    }
     void DoorOpening()
     {
         if (doorAnimator.GetBool("DoorOpen"))
         {
             doorScript[0].transform.GetChild(0).gameObject.SetActive(true);
+            doorScript[0].transform.GetChild(2).gameObject.SetActive(false);
         }
         else
         {
             doorScript[0].transform.GetChild(0).gameObject.SetActive(false);
+            doorScript[0].transform.GetChild(2).gameObject.SetActive(true);
         }
     }
 }
+
 

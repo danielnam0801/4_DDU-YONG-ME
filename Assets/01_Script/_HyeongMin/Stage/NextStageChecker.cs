@@ -5,12 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class NextStageChecker : MonoBehaviour
 {
+    [SerializeField] private bool dontLoadScene;
     DoorChecker doorChecker;
+    [SerializeField] private bool keyUsed;
+
+    private void Awake()
+    {
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.layer == LayerMask.NameToLayer("Player") && col.gameObject.name == "Player")
+        if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            col.gameObject.GetComponent<GetKeyObject>().gettingKey = false;
+            if (!keyUsed)
+            {
+                col.gameObject.GetComponentInParent<GetKeyObject>().gettingKey--;
+                keyUsed = true;
+            }
             //LoadScene;
         }
     }
